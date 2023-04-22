@@ -3,6 +3,7 @@ package interfaz;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class Presentacion {
 
@@ -34,11 +35,7 @@ public class Presentacion {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
+
 	/****
 	 * Ingresa la localidad, devuelve true o false si se pudo o no***/
 	public boolean IngresarLocalidad(String localidad) {return false;}
@@ -55,5 +52,22 @@ public class Presentacion {
 	 * **/
 	public void ModificarSolucion() {}
 	
-
+	
+	
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setBounds(25, 32, 46, 14);
+		frame.getContentPane().add(lblNewLabel);
+	}
+	
+	
+	
+	
+	
+	
 }
