@@ -3,6 +3,7 @@ package negocio;
 public class Grafo {
 	int arista;
 	int vertice;
+	
 	/***
 	 * Constructor del Grafo
 	 * ***/
