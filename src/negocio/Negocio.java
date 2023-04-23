@@ -18,5 +18,8 @@ public class Negocio {
 	public int DarCostoEnpesos() {return 0;}
 	public void MostrarGrafos() {}
 	
+	// borrar, solo pruebo comittear
+	public void metodoDePrueba() {}
+	
 
 }
