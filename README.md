@@ -23,3 +23,5 @@ GrafoTest
 1)La aplicación debe permitir al usuario registrar una serie de localidades, incluyendo el nombre,
 provincia, latitud y longitud de cada una. : $Esto se entiende de la siguiente manera, los vertices (localidades) van a ser modificados en el transcurso de ejecucion de la aplicacion, por lo tanto necesitamos una implementacion en la que la complejidad de agregar o eliminar vertices no sea tan grande.
 En un principio decidi que seria mas eficiente la matriz de adyacencia, pero pase por alto la dinamica del tp. Por lo tanto, en este momento considero que es mejor una implementacion por lista de vecinos, ya que el orden de complejidad de agregar es O(1) amortizado y eliminar es O(n)
+~~~~~~~~~~~~~~~~~~NOTAS~~~~~~~~~~~~~
+Proximamente eliminar toda implementacion relacionada a matriz de adyacencia y quedarse con lista de vecinos.
