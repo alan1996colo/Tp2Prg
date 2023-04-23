@@ -1,4 +1,4 @@
-package grafos;
+package negocio;
 
 import java.util.ArrayList;
 import java.util.Set;

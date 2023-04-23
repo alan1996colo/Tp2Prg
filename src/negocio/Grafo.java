@@ -1,4 +1,4 @@
-package grafos;
+package negocio;
 
 
 import java.util.HashSet;
@@ -70,13 +70,13 @@ public class Grafo {
 			throw new IllegalArgumentException("Los vertices deben estar entre 0 y |V| : " + i);
 	}	
 	public static void main (String[] args)
-	{
+	{/* Esto se prueba en el test
 		Grafo grafo = new Grafo(5);
 		grafo.agregarArista(2, 3);
 		grafo.agregarArista(3, 4);
 		System.out.println(grafo.existeArista(2, 3));
-		System.out.println(grafo.existeArista(1, 1));
-	}
+		System.out.println(grafo.existeArista(1, 2));
+*/	}
 
 	
 	
