@@ -1,4 +1,4 @@
-package grafoLista;
+package negocio;
 
 public class Ciudad {
 	private String nombreCiudad;

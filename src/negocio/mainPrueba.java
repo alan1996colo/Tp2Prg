@@ -1,4 +1,4 @@
-package grafoLista;
+package negocio;
 
 import java.util.List;
 

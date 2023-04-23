@@ -1,4 +1,4 @@
-package grafoLista;
+package negocio;
 
 public class Arista {
     private Nodo nodoDestino;
