@@ -8,9 +8,10 @@ public class BFS
 {	
 	private static ArrayList<Integer> L;
 	private static boolean [] marcados;
+	//modificar la clase para que funcione con "GrafoLista" y "Nodo"
 	
 
-	public static boolean esConexo(Grafo g) 
+	public static boolean esConexo(GrafoLista g) 
 	{
 		if (g==null)
 			throw new IllegalArgumentException("Se consulta un grafo null");
@@ -21,7 +22,7 @@ public class BFS
 	}
 
 
-	public static Set<Integer> alcanzables (Grafo g, int origen)
+	public static Set<Integer> alcanzables (GrafoLista g, int origen)
 	{
 		Set<Integer> ret = new HashSet<Integer>();
 		inicializarRecorrido(g,origen);
@@ -37,15 +38,15 @@ public class BFS
 	}
 
 
-	private static void agregarVecinosPendientes(Grafo g, int i)
+	private static void agregarVecinosPendientes(GrafoLista g, int i)
 	{
-		for (int vertice : g.vecinos(i))
-			if (marcados[vertice]==false && L.contains(vertice)==false)
-				L.add(vertice);
+		//for ( Nodo vertice : g.vecinos(i)) 
+			//if (marcados[vertice]==false && L.contains(vertice)==false)
+				//L.add(vertice);
 	}
 
 
-	private static void inicializarRecorrido(Grafo g, int origen) {
+	private static void inicializarRecorrido(GrafoLista g, int origen) {
 		L = new ArrayList<Integer>();
 		marcados= new boolean [g.tamanio()];
 		L.add(origen);

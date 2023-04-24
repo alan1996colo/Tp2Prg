@@ -22,6 +22,14 @@ public class GrafoLista {
         return nodos;
     }
     
+    public int tamanio() {//cambiarle nombre a getTamanio mas tarde
+    	return this.nodos.size();
+    }
+    //cambiar nombre a getVecinos mas tarde
+    public Nodo vecinos(int i) {return this.nodos.get(i);
+    	
+    }
+    
     
     public static double distanciaEntrePuntos(Nodo ciudad1, Nodo ciudad2) {
     	double latitud1=ciudad1.getLatitud();
