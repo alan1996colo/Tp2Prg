@@ -15,10 +15,10 @@ public class BFS
 	{
 		if (g==null)
 			throw new IllegalArgumentException("Se consulta un grafo null");
-		if (g.tamanio()==0)
+		if (g.getTamanio()==0)
 			return true;	
 		
-		return alcanzables(g,0).size()==g.tamanio();
+		return alcanzables(g,0).size()==g.getTamanio();
 	}
 
 
@@ -39,16 +39,18 @@ public class BFS
 
 
 	private static void agregarVecinosPendientes(GrafoLista g, int i)
-	{
-		//for ( Nodo vertice : g.vecinos(i)) 
-			//if (marcados[vertice]==false && L.contains(vertice)==false)
-				//L.add(vertice);
+	{int cont=0;
+		for ( Arista vertice : g.getVecinos(i)) 
+			
+			if (marcados[cont]==false && L.contains(vertice)==false)
+				L.add(cont);
+		cont++;
 	}
 
 
 	private static void inicializarRecorrido(GrafoLista g, int origen) {
 		L = new ArrayList<Integer>();
-		marcados= new boolean [g.tamanio()];
+		marcados= new boolean [g.getTamanio()];
 		L.add(origen);
 	}
 

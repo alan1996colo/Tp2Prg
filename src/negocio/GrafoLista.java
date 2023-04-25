@@ -2,7 +2,7 @@ package negocio;
 import java.util.*;
 
 public class GrafoLista {	
-    private List<Nodo> nodos;
+    private List<Nodo> nodos;//lista de nodos
     
     public GrafoLista() {
         this.nodos = new ArrayList<>();
@@ -22,11 +22,11 @@ public class GrafoLista {
         return nodos;
     }
     
-    public int tamanio() {//cambiarle nombre a getTamanio mas tarde
+    public int getTamanio() {//cambiarle nombre a getTamanio mas tarde
     	return this.nodos.size();
     }
     //cambiar nombre a getVecinos mas tarde
-    public Nodo vecinos(int i) {return this.nodos.get(i);
+    public List<Arista> getVecinos(int i) {return this.nodos.get(i).getVecinos();
     	
     }
     
