@@ -1,0 +1,3911 @@
+[  {
+    "nombreCiudad": "Buenos Aires", 
+   "latitud": "-34.5997", 
+    "longitud": "-58.3819",
+    "nombreProvincia": "Buenos Aires, Ciudad Autónoma de"}, {
+    "nombreCiudad": "Córdoba", 
+   "latitud": "-31.4167", 
+    "longitud": "-64.1833",
+    "nombreProvincia": "Córdoba" 
+   
+  }, 
+  {
+    "nombreCiudad": "Rosario", 
+   "latitud": "-32.9575", 
+    "longitud": "-60.6394",
+    "nombreProvincia": "Santa Fe"
+   
+  }, 
+  {
+    "nombreCiudad": "Comodoro Rivadavia", 
+   "latitud": "-45.8667", 
+    "longitud": "-67.5000",
+    "nombreProvincia": "Chubut"
+   
+  }, 
+  {
+    "nombreCiudad": "San Miguel de Tucumán", 
+   "latitud": "-26.8167", 
+    "longitud": "-65.2167",
+    "nombreProvincia": "Tucumán"
+   
+  }, 
+  {
+    "nombreCiudad": "Mar del Plata", 
+   "latitud": "-38.0000", 
+    "longitud": "-57.5500",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Salta", 
+   "latitud": "-24.7883", 
+    "longitud": "-65.4106",
+    "nombreProvincia": "Salta"
+   
+  }, 
+  {
+    "nombreCiudad": "San Juan", 
+   "latitud": "-31.5375", 
+    "longitud": "-68.5364",
+    "nombreProvincia": "San Juan"
+   
+  }, 
+  {
+    "nombreCiudad": "Lanús", 
+   "latitud": "-34.7000", 
+    "longitud": "-58.4000",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Florencio Varela", 
+   "latitud": "-34.8167", 
+    "longitud": "-58.2833",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Santa Fe", 
+   "latitud": "-31.6333", 
+    "longitud": "-60.7000",
+    "nombreProvincia": "Santa Fe"
+   
+  }, 
+  {
+    "nombreCiudad": "Corrientes", 
+   "latitud": "-27.4833", 
+    "longitud": "-58.8167",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "San Salvador de Jujuy", 
+   "latitud": "-24.1856", 
+    "longitud": "-65.2994",
+    "nombreProvincia": "Jujuy"
+   
+  }, 
+  {
+    "nombreCiudad": "Bahía Blanca", 
+   "latitud": "-38.7167", 
+    "longitud": "-62.2667",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Resistencia", 
+   "latitud": "-27.4514", 
+    "longitud": "-58.9867",
+    "nombreProvincia": "Chaco"
+   
+  }, 
+  {
+    "nombreCiudad": "Posadas", 
+   "latitud": "-27.3667", 
+    "longitud": "-55.8969",
+    "nombreProvincia": "Misiones"
+   
+  }, 
+  {
+    "nombreCiudad": "Santiago del Estero", 
+   "latitud": "-27.7844", 
+    "longitud": "-64.2669",
+    "nombreProvincia": "Santiago del Estero"
+   
+  }, 
+  {
+    "nombreCiudad": "Paraná", 
+   "latitud": "-31.7444", 
+    "longitud": "-60.5175",
+    "nombreProvincia": "Entre Ríos"
+   
+  }, 
+  {
+    "nombreCiudad": "Merlo", 
+   "latitud": "-34.6653", 
+    "longitud": "-58.7275",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "González Catán", 
+   "latitud": "-34.7708", 
+    "longitud": "-58.6464",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Neuquén", 
+   "latitud": "-38.9573", 
+    "longitud": "-68.0455",
+    "nombreProvincia": "Neuquén"
+   
+  }, 
+  {
+    "nombreCiudad": "Quilmes", 
+   "latitud": "-34.7167", 
+    "longitud": "-58.2667",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Banfield", 
+   "latitud": "-34.7500", 
+    "longitud": "-58.3833",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Formosa", 
+   "latitud": "-26.1847", 
+    "longitud": "-58.1758",
+    "nombreProvincia": "Formosa"
+   
+  }, 
+  {
+    "nombreCiudad": "José C. Paz", 
+   "latitud": "-34.5167", 
+    "longitud": "-58.7667",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "La Plata", 
+   "latitud": "-34.9333", 
+    "longitud": "-57.9500",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Godoy Cruz", 
+   "latitud": "-32.9167", 
+    "longitud": "-68.8333",
+    "nombreProvincia": "Mendoza"
+   
+  }, 
+  {
+    "nombreCiudad": "Isidro Casanova", 
+   "latitud": "-34.7000", 
+    "longitud": "-58.5833",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "La Rioja", 
+   "latitud": "-29.4131", 
+    "longitud": "-66.8558",
+    "nombreProvincia": "La Rioja"
+   
+  }, 
+  {
+    "nombreCiudad": "Berazategui", 
+   "latitud": "-34.7679", 
+    "longitud": "-58.2133",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "San Luis", 
+   "latitud": "-33.2994", 
+    "longitud": "-66.3392",
+    "nombreProvincia": "San Luis"
+   
+  }, 
+  {
+    "nombreCiudad": "José María Ezeiza", 
+   "latitud": "-34.8333", 
+    "longitud": "-58.5167",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "San Nicolás de los Arroyos", 
+   "latitud": "-33.3333", 
+    "longitud": "-60.2167",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Catamarca", 
+   "latitud": "-28.4686", 
+    "longitud": "-65.7792",
+    "nombreProvincia": "Catamarca"
+   
+  }, 
+  {
+    "nombreCiudad": "Río Cuarto", 
+   "latitud": "-33.1230", 
+    "longitud": "-64.3478",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "San Miguel", 
+   "latitud": "-34.5333", 
+    "longitud": "-58.7167",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Concordia", 
+   "latitud": "-31.3922", 
+    "longitud": "-58.0169",
+    "nombreProvincia": "Entre Ríos"
+   
+  }, 
+  {
+    "nombreCiudad": "Rafael Castillo", 
+   "latitud": "-34.7167", 
+    "longitud": "-58.6167",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Florencio Varela", 
+   "latitud": "-34.8167", 
+    "longitud": "-58.3833",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "San Justo", 
+   "latitud": "-34.6833", 
+    "longitud": "-58.5500",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Ituzaingó", 
+   "latitud": "-34.6582", 
+    "longitud": "-58.6672",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Temperley", 
+   "latitud": "-34.7667", 
+    "longitud": "-58.3833",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Ramos Mejía", 
+   "latitud": "-34.6500", 
+    "longitud": "-58.5667",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "San Martín", 
+   "latitud": "-33.0806", 
+    "longitud": "-68.4706",
+    "nombreProvincia": "Mendoza"
+   
+  }, 
+  {
+    "nombreCiudad": "Tandil", 
+   "latitud": "-37.3167", 
+    "longitud": "-59.1333",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Puerto Madryn", 
+   "latitud": "-42.7730", 
+    "longitud": "-65.0366",
+    "nombreProvincia": "Chubut"
+   
+  }, 
+  {
+    "nombreCiudad": "Mendoza", 
+   "latitud": "-32.8833", 
+    "longitud": "-68.8333",
+    "nombreProvincia": "Mendoza"
+   
+  }, 
+  {
+    "nombreCiudad": "San Carlos de Bariloche", 
+   "latitud": "-41.1500", 
+    "longitud": "-71.3000",
+    "nombreProvincia": "Río Negro"
+   
+  }, 
+  {
+    "nombreCiudad": "Lomas de Zamora", 
+   "latitud": "-34.7667", 
+    "longitud": "-58.4000",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Mercedes", 
+   "latitud": "-33.6667", 
+    "longitud": "-65.4667",
+    "nombreProvincia": "San Luis"
+   
+  }, 
+  {
+    "nombreCiudad": "Bernal", 
+   "latitud": "-34.7000", 
+    "longitud": "-58.2833",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Esteban Echeverría", 
+   "latitud": "-34.8167", 
+    "longitud": "-58.4667",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Gualeguaychú", 
+   "latitud": "-33.0078", 
+    "longitud": "-58.5111",
+    "nombreProvincia": "Entre Ríos"
+   
+  }, 
+  {
+    "nombreCiudad": "San Rafael", 
+   "latitud": "-34.6175", 
+    "longitud": "-68.3356",
+    "nombreProvincia": "Mendoza"
+   
+  }, 
+  {
+    "nombreCiudad": "Castelar", 
+   "latitud": "-34.6500", 
+    "longitud": "-58.6500",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "La Banda", 
+   "latitud": "-27.7333", 
+    "longitud": "-64.2500",
+    "nombreProvincia": "Santiago del Estero"
+   
+  }, 
+  {
+    "nombreCiudad": "Santa Rosa", 
+   "latitud": "-36.6203", 
+    "longitud": "-64.2906",
+    "nombreProvincia": "La Pampa"
+   
+  }, 
+  {
+    "nombreCiudad": "Berisso", 
+   "latitud": "-34.8667", 
+    "longitud": "-57.8667",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Libertad", 
+   "latitud": "-34.6833", 
+    "longitud": "-58.6833",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Morón", 
+   "latitud": "-34.6500", 
+    "longitud": "-58.6167",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Burzaco", 
+   "latitud": "-34.8167", 
+    "longitud": "-58.3667",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Zárate", 
+   "latitud": "-34.0833", 
+    "longitud": "-59.0333",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Río Gallegos", 
+   "latitud": "-51.6333", 
+    "longitud": "-69.2333",
+    "nombreProvincia": "Santa Cruz"
+   
+  }, 
+  {
+    "nombreCiudad": "Caseros", 
+   "latitud": "-34.6167", 
+    "longitud": "-58.5333",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Luzuriaga", 
+   "latitud": "-34.6667", 
+    "longitud": "-58.5833",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Trelew", 
+   "latitud": "-43.2533", 
+    "longitud": "-65.3094",
+    "nombreProvincia": "Chubut"
+   
+  }, 
+  {
+    "nombreCiudad": "Ciudad General Belgrano", 
+   "latitud": "-34.7261", 
+    "longitud": "-58.5289",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Rafaela", 
+   "latitud": "-31.2667", 
+    "longitud": "-61.4833",
+    "nombreProvincia": "Santa Fe"
+   
+  }, 
+  {
+    "nombreCiudad": "San Francisco Solano", 
+   "latitud": "-34.7667", 
+    "longitud": "-58.3167",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Pergamino", 
+   "latitud": "-33.8836", 
+    "longitud": "-60.5669",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Campana", 
+   "latitud": "-34.1667", 
+    "longitud": "-58.9167",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Olavarría", 
+   "latitud": "-36.9000", 
+    "longitud": "-60.3333",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Monte Chingolo", 
+   "latitud": "-34.7333", 
+    "longitud": "-58.3500",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Junín", 
+   "latitud": "-34.5939", 
+    "longitud": "-60.9464",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Presidencia Roque Sáenz Peña", 
+   "latitud": "-26.7833", 
+    "longitud": "-60.4500",
+    "nombreProvincia": "Chaco"
+   
+  }, 
+  {
+    "nombreCiudad": "Luján", 
+   "latitud": "-34.5703", 
+    "longitud": "-59.1050",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "General Roca", 
+   "latitud": "-39.0333", 
+    "longitud": "-67.5833",
+    "nombreProvincia": "Río Negro"
+   
+  }, 
+  {
+    "nombreCiudad": "Remedios de Escalada", 
+   "latitud": "-34.7167", 
+    "longitud": "-58.4000",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Pilar", 
+   "latitud": "-34.4588", 
+    "longitud": "-58.9142",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Gobernador Gálvez", 
+   "latitud": "-33.0251", 
+    "longitud": "-60.6337",
+    "nombreProvincia": "Santa Fe"
+   
+  }, 
+  {
+    "nombreCiudad": "Necochea", 
+   "latitud": "-38.5500", 
+    "longitud": "-58.7333",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Ezpeleta", 
+   "latitud": "-34.7517", 
+    "longitud": "-58.2344",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa María", 
+   "latitud": "-32.4103", 
+    "longitud": "-63.2314",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "Venado Tuerto", 
+   "latitud": "-33.7500", 
+    "longitud": "-61.9667",
+    "nombreProvincia": "Santa Fe"
+   
+  }, 
+  {
+    "nombreCiudad": "San Ramón de la Nueva Orán", 
+   "latitud": "-23.1361", 
+    "longitud": "-64.3222",
+    "nombreProvincia": "Salta"
+   
+  }, 
+  {
+    "nombreCiudad": "Concepción del Uruguay", 
+   "latitud": "-32.4833", 
+    "longitud": "-58.2333",
+    "nombreProvincia": "Entre Ríos"
+   
+  }, 
+  {
+    "nombreCiudad": "Goya", 
+   "latitud": "-29.1333", 
+    "longitud": "-59.2500",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "Bella Vista", 
+   "latitud": "-34.5333", 
+    "longitud": "-58.6667",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Lomas del Mirador", 
+   "latitud": "-34.6667", 
+    "longitud": "-58.5297",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Reconquista", 
+   "latitud": "-29.1443", 
+    "longitud": "-59.6438",
+    "nombreProvincia": "Santa Fe"
+   
+  }, 
+  {
+    "nombreCiudad": "Las Heras", 
+   "latitud": "-32.8250", 
+    "longitud": "-68.8017",
+    "nombreProvincia": "Mendoza"
+   
+  }, 
+  {
+    "nombreCiudad": "Oberá", 
+   "latitud": "-27.4833", 
+    "longitud": "-55.1333",
+    "nombreProvincia": "Misiones"
+   
+  }, 
+  {
+    "nombreCiudad": "Wilde", 
+   "latitud": "-34.7000", 
+    "longitud": "-58.3167",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Santo Tomé", 
+   "latitud": "-31.6667", 
+    "longitud": "-60.7667",
+    "nombreProvincia": "Santa Fe"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Carlos Paz", 
+   "latitud": "-31.4000", 
+    "longitud": "-64.5167",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Domínico", 
+   "latitud": "-34.6917", 
+    "longitud": "-58.3333",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "San Francisco", 
+   "latitud": "-31.4356", 
+    "longitud": "-62.0714",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "Los Polvorines", 
+   "latitud": "-34.5000", 
+    "longitud": "-58.7000",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Tartagal", 
+   "latitud": "-22.5000", 
+    "longitud": "-63.8333",
+    "nombreProvincia": "Salta"
+   
+  }, 
+  {
+    "nombreCiudad": "Sarandí", 
+   "latitud": "-34.6833", 
+    "longitud": "-58.3333",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Chajarí", 
+   "latitud": "-30.7667", 
+    "longitud": "-57.9833",
+    "nombreProvincia": "Entre Ríos"
+   
+  }, 
+  {
+    "nombreCiudad": "Viedma", 
+   "latitud": "-40.8000", 
+    "longitud": "-63.0000",
+    "nombreProvincia": "Río Negro"
+   
+  }, 
+  {
+    "nombreCiudad": "San Pedro", 
+   "latitud": "-24.2196", 
+    "longitud": "-64.8700",
+    "nombreProvincia": "Jujuy"
+   
+  }, 
+  {
+    "nombreCiudad": "Punta Alta", 
+   "latitud": "-38.8800", 
+    "longitud": "-62.0750",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Rafael Calzada", 
+   "latitud": "-34.7833", 
+    "longitud": "-58.3667",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "General Pico", 
+   "latitud": "-35.6587", 
+    "longitud": "-63.7577",
+    "nombreProvincia": "La Pampa"
+   
+  }, 
+  {
+    "nombreCiudad": "Ushuaia", 
+   "latitud": "-54.8072", 
+    "longitud": "-68.3044",
+    "nombreProvincia": "Tierra del Fuego, Antártida e Islas del Atlántico Sur"
+   
+  }, 
+  {
+    "nombreCiudad": "Azul", 
+   "latitud": "-36.7833", 
+    "longitud": "-59.8500",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Chivilcoy", 
+   "latitud": "-34.9000", 
+    "longitud": "-60.0167",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Mercedes", 
+   "latitud": "-34.6500", 
+    "longitud": "-59.4333",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Cruz del Eje", 
+   "latitud": "-30.7333", 
+    "longitud": "-64.8000",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "Caleta Olivia", 
+   "latitud": "-46.4333", 
+    "longitud": "-67.5333",
+    "nombreProvincia": "Santa Cruz"
+   
+  }, 
+  {
+    "nombreCiudad": "El Talar de Pacheco", 
+   "latitud": "-34.4719", 
+    "longitud": "-58.6550",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Villaguay", 
+   "latitud": "-31.8500", 
+    "longitud": "-59.0167",
+    "nombreProvincia": "Entre Ríos"
+   
+  }, 
+  {
+    "nombreCiudad": "Libertador General San Martín", 
+   "latitud": "-23.8000", 
+    "longitud": "-64.7833",
+    "nombreProvincia": "Jujuy"
+   
+  }, 
+  {
+    "nombreCiudad": "Alta Gracia", 
+   "latitud": "-31.6667", 
+    "longitud": "-64.4333",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "La Reja", 
+   "latitud": "-34.6394", 
+    "longitud": "-58.8283",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "San Lorenzo", 
+   "latitud": "-28.1200", 
+    "longitud": "-58.7700",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "Longchamps", 
+   "latitud": "-34.8596", 
+    "longitud": "-58.3870",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "San Pedro", 
+   "latitud": "-33.6794", 
+    "longitud": "-59.6669",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Constitución", 
+   "latitud": "-33.2333", 
+    "longitud": "-60.3333",
+    "nombreProvincia": "Santa Fe"
+   
+  }, 
+  {
+    "nombreCiudad": "Tres Arroyos", 
+   "latitud": "-38.3667", 
+    "longitud": "-60.2667",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Río Tercero", 
+   "latitud": "-32.1768", 
+    "longitud": "-64.1130",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "Pinamar", 
+   "latitud": "-37.1000", 
+    "longitud": "-56.8500",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "San Isidro", 
+   "latitud": "-34.4667", 
+    "longitud": "-58.5167",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Esperanza", 
+   "latitud": "-31.4167", 
+    "longitud": "-60.9333",
+    "nombreProvincia": "Santa Fe"
+   
+  }, 
+  {
+    "nombreCiudad": "Gualeguay", 
+   "latitud": "-33.1500", 
+    "longitud": "-59.3167",
+    "nombreProvincia": "Entre Ríos"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Alsina", 
+   "latitud": "-34.6667", 
+    "longitud": "-58.4167",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "José Mármol", 
+   "latitud": "-34.7833", 
+    "longitud": "-58.3667",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Balcarce", 
+   "latitud": "-37.8464", 
+    "longitud": "-58.2556",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Aristóbulo del Valle", 
+   "latitud": "-27.0952", 
+    "longitud": "-54.8970",
+    "nombreProvincia": "Misiones"
+   
+  }, 
+  {
+    "nombreCiudad": "Haedo", 
+   "latitud": "-34.6500", 
+    "longitud": "-58.6000",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Granadero Baigorria", 
+   "latitud": "-32.8500", 
+    "longitud": "-60.7000",
+    "nombreProvincia": "Santa Fe"
+   
+  }, 
+  {
+    "nombreCiudad": "Esquel", 
+   "latitud": "-42.9000", 
+    "longitud": "-71.3167",
+    "nombreProvincia": "Buenos Aires, Ciudad Autónoma de"
+   
+  }, 
+  {
+    "nombreCiudad": "Nueve de Julio", 
+   "latitud": "-35.4500", 
+    "longitud": "-60.8833",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Dock Sur", 
+   "latitud": "-34.6417", 
+    "longitud": "-58.3478",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Munro", 
+   "latitud": "-34.5333", 
+    "longitud": "-58.5167",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Cutral-Có", 
+   "latitud": "-38.9333", 
+    "longitud": "-69.2333",
+    "nombreProvincia": "Neuquén"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Adelina", 
+   "latitud": "-34.5175", 
+    "longitud": "-58.5475",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Casilda", 
+   "latitud": "-33.0442", 
+    "longitud": "-61.1681",
+    "nombreProvincia": "Santa Fe"
+   
+  }, 
+  {
+    "nombreCiudad": "Chacabuco", 
+   "latitud": "-34.6500", 
+    "longitud": "-60.4900",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Centenario", 
+   "latitud": "-38.8167", 
+    "longitud": "-68.1333",
+    "nombreProvincia": "Neuquén"
+   
+  }, 
+  {
+    "nombreCiudad": "Bell Ville", 
+   "latitud": "-32.6333", 
+    "longitud": "-62.6833",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "Chilecito", 
+   "latitud": "-29.1667", 
+    "longitud": "-67.5000",
+    "nombreProvincia": "La Rioja"
+   
+  }, 
+  {
+    "nombreCiudad": "Bragado", 
+   "latitud": "-35.1167", 
+    "longitud": "-60.5000",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Plottier", 
+   "latitud": "-38.9500", 
+    "longitud": "-68.2333",
+    "nombreProvincia": "Neuquén"
+   
+  }, 
+  {
+    "nombreCiudad": "La Calera", 
+   "latitud": "-31.3439", 
+    "longitud": "-64.3353",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "Zapala", 
+   "latitud": "-38.9028", 
+    "longitud": "-70.0650",
+    "nombreProvincia": "Neuquén"
+   
+  }, 
+  {
+    "nombreCiudad": "Rawson", 
+   "latitud": "-43.3000", 
+    "longitud": "-65.1000",
+    "nombreProvincia": "Chubut"
+   
+  }, 
+  {
+    "nombreCiudad": "Jesús María", 
+   "latitud": "-30.9817", 
+    "longitud": "-64.0942",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "Río Grande", 
+   "latitud": "-53.7914", 
+    "longitud": "-67.6990",
+    "nombreProvincia": "Tierra del Fuego, Antártida e Islas del Atlántico Sur"
+   
+  }, 
+  {
+    "nombreCiudad": "Mercedes", 
+   "latitud": "-29.2000", 
+    "longitud": "-58.0833",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "Victoria", 
+   "latitud": "-32.6167", 
+    "longitud": "-60.1667",
+    "nombreProvincia": "Entre Ríos"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Ángela", 
+   "latitud": "-27.5833", 
+    "longitud": "-60.7167",
+    "nombreProvincia": "Chaco"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Regina", 
+   "latitud": "-39.1000", 
+    "longitud": "-67.0667",
+    "nombreProvincia": "Río Negro"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Celina", 
+   "latitud": "-34.7006", 
+    "longitud": "-58.4825",
+    "nombreProvincia": "Buenos Aires, Ciudad Autónoma de"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Gesell", 
+   "latitud": "-37.2556", 
+    "longitud": "-56.9681",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Capitán Bermúdez", 
+   "latitud": "-32.8167", 
+    "longitud": "-60.7167",
+    "nombreProvincia": "Santa Fe"
+   
+  }, 
+  {
+    "nombreCiudad": "Cañada de Gómez", 
+   "latitud": "-32.8167", 
+    "longitud": "-61.4000",
+    "nombreProvincia": "Santa Fe"
+   
+  }, 
+  {
+    "nombreCiudad": "Baradero", 
+   "latitud": "-33.8000", 
+    "longitud": "-59.5167",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Allende", 
+   "latitud": "-31.2944", 
+    "longitud": "-64.2953",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "Adrogue", 
+   "latitud": "-34.8000", 
+    "longitud": "-58.3833",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "San Martín de los Andes", 
+   "latitud": "-40.1667", 
+    "longitud": "-71.3500",
+    "nombreProvincia": "Neuquén"
+   
+  }, 
+  {
+    "nombreCiudad": "Marcos Juárez", 
+   "latitud": "-32.7000", 
+    "longitud": "-62.1000",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "Dolores", 
+   "latitud": "-36.3132", 
+    "longitud": "-57.6792",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Firmat", 
+   "latitud": "-33.4500", 
+    "longitud": "-61.4833",
+    "nombreProvincia": "Santa Fe"
+   
+  }, 
+  {
+    "nombreCiudad": "Colón", 
+   "latitud": "-32.2241", 
+    "longitud": "-58.1419",
+    "nombreProvincia": "Entre Ríos"
+   
+  }, 
+  {
+    "nombreCiudad": "Lincoln", 
+   "latitud": "-34.8500", 
+    "longitud": "-61.5167",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Avellaneda", 
+   "latitud": "-34.6625", 
+    "longitud": "-58.3678",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Coronel Suárez", 
+   "latitud": "-37.4547", 
+    "longitud": "-61.9334",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Tapiales", 
+   "latitud": "-34.7058", 
+    "longitud": "-58.5047",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Veinticinco de Mayo", 
+   "latitud": "-35.4167", 
+    "longitud": "-60.1667",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Tunuyán", 
+   "latitud": "-33.5667", 
+    "longitud": "-69.0167",
+    "nombreProvincia": "Mendoza"
+   
+  }, 
+  {
+    "nombreCiudad": "San Justo", 
+   "latitud": "-30.7833", 
+    "longitud": "-60.5833",
+    "nombreProvincia": "Santa Fe"
+   
+  }, 
+  {
+    "nombreCiudad": "Deán Funes", 
+   "latitud": "-30.4333", 
+    "longitud": "-64.3500",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "El Calafate", 
+   "latitud": "-50.3395", 
+    "longitud": "-72.2649",
+    "nombreProvincia": "Santa Cruz"
+   
+  }, 
+  {
+    "nombreCiudad": "Chascomús", 
+   "latitud": "-35.5750", 
+    "longitud": "-58.0089",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Laboulaye", 
+   "latitud": "-34.1267", 
+    "longitud": "-63.3911",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "Brandsen", 
+   "latitud": "-35.1667", 
+    "longitud": "-58.2167",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "General Martín Miguel de Güemes", 
+   "latitud": "-24.6667", 
+    "longitud": "-65.0500",
+    "nombreProvincia": "Salta"
+   
+  }, 
+  {
+    "nombreCiudad": "Vera", 
+   "latitud": "-29.4667", 
+    "longitud": "-60.2167",
+    "nombreProvincia": "Santa Fe"
+   
+  }, 
+  {
+    "nombreCiudad": "Charata", 
+   "latitud": "-27.2144", 
+    "longitud": "-61.1881",
+    "nombreProvincia": "Chaco"
+   
+  }, 
+  {
+    "nombreCiudad": "Lobos", 
+   "latitud": "-35.1864", 
+    "longitud": "-59.0961",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Coronda", 
+   "latitud": "-31.9667", 
+    "longitud": "-60.9167",
+    "nombreProvincia": "Santa Fe"
+   
+  }, 
+  {
+    "nombreCiudad": "General Juan Madariaga", 
+   "latitud": "-37.0167", 
+    "longitud": "-57.1333",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Veinticinco de Mayo", 
+   "latitud": "-37.7710", 
+    "longitud": "-67.7173",
+    "nombreProvincia": "La Pampa"
+   
+  }, 
+  {
+    "nombreCiudad": "Eldorado", 
+   "latitud": "-26.4000", 
+    "longitud": "-54.6333",
+    "nombreProvincia": "Misiones"
+   
+  }, 
+  {
+    "nombreCiudad": "Ayacucho", 
+   "latitud": "-37.1525", 
+    "longitud": "-58.4882",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Santa María", 
+   "latitud": "-26.6833", 
+    "longitud": "-66.0333",
+    "nombreProvincia": "Catamarca"
+   
+  }, 
+  {
+    "nombreCiudad": "Federación", 
+   "latitud": "-30.9833", 
+    "longitud": "-57.9167",
+    "nombreProvincia": "Entre Ríos"
+   
+  }, 
+  {
+    "nombreCiudad": "San Antonio Oeste", 
+   "latitud": "-40.7333", 
+    "longitud": "-64.9500",
+    "nombreProvincia": "Río Negro"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa del Rosario", 
+   "latitud": "-31.5833", 
+    "longitud": "-63.5333",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Paranacito", 
+   "latitud": "-33.7000", 
+    "longitud": "-58.6833",
+    "nombreProvincia": "Entre Ríos"
+   
+  }, 
+  {
+    "nombreCiudad": "Carmen de Areco", 
+   "latitud": "-34.3833", 
+    "longitud": "-59.8167",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "San Cristóbal", 
+   "latitud": "-30.3105", 
+    "longitud": "-61.2372",
+    "nombreProvincia": "Santa Fe"
+   
+  }, 
+  {
+    "nombreCiudad": "Puerto Deseado", 
+   "latitud": "-47.7500", 
+    "longitud": "-65.9167",
+    "nombreProvincia": "Santa Cruz"
+   
+  }, 
+  {
+    "nombreCiudad": "Añatuya", 
+   "latitud": "-28.4667", 
+    "longitud": "-62.8333",
+    "nombreProvincia": "Santiago del Estero"
+   
+  }, 
+  {
+    "nombreCiudad": "La Quiaca", 
+   "latitud": "-22.1056", 
+    "longitud": "-65.6000",
+    "nombreProvincia": "Jujuy"
+   
+  }, 
+  {
+    "nombreCiudad": "San Javier", 
+   "latitud": "-30.5833", 
+    "longitud": "-59.9500",
+    "nombreProvincia": "Santa Fe"
+   
+  }, 
+  {
+    "nombreCiudad": "Frías", 
+   "latitud": "-28.6496", 
+    "longitud": "-65.1500",
+    "nombreProvincia": "Santiago del Estero"
+   
+  }, 
+  {
+    "nombreCiudad": "Joaquín V. González", 
+   "latitud": "-25.1171", 
+    "longitud": "-64.1247",
+    "nombreProvincia": "Salta"
+   
+  }, 
+  {
+    "nombreCiudad": "Chos Malal", 
+   "latitud": "-37.3833", 
+    "longitud": "-70.2667",
+    "nombreProvincia": "Neuquén"
+   
+  }, 
+  {
+    "nombreCiudad": "Rosario del Tala", 
+   "latitud": "-32.3008", 
+    "longitud": "-59.1389",
+    "nombreProvincia": "Entre Ríos"
+   
+  }, 
+  {
+    "nombreCiudad": "San Salvador", 
+   "latitud": "-31.6167", 
+    "longitud": "-58.5000",
+    "nombreProvincia": "Entre Ríos"
+   
+  }, 
+  {
+    "nombreCiudad": "Junín de los Andes", 
+   "latitud": "-39.9167", 
+    "longitud": "-71.0667",
+    "nombreProvincia": "Neuquén"
+   
+  }, 
+  {
+    "nombreCiudad": "La Carlota", 
+   "latitud": "-33.4179", 
+    "longitud": "-63.2935",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "Malargüe", 
+   "latitud": "-35.4745", 
+    "longitud": "-69.5853",
+    "nombreProvincia": "Mendoza"
+   
+  }, 
+  {
+    "nombreCiudad": "Cafayate", 
+   "latitud": "-26.0700", 
+    "longitud": "-65.9800",
+    "nombreProvincia": "Salta"
+   
+  }, 
+  {
+    "nombreCiudad": "Oliva", 
+   "latitud": "-32.0416", 
+    "longitud": "-63.5698",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "Coronel Dorrego", 
+   "latitud": "-38.7187", 
+    "longitud": "-61.2873",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Cerrillos", 
+   "latitud": "-24.9000", 
+    "longitud": "-65.4833",
+    "nombreProvincia": "Salta"
+   
+  }, 
+  {
+    "nombreCiudad": "Monte Quemado", 
+   "latitud": "-25.8072", 
+    "longitud": "-62.8278",
+    "nombreProvincia": "Santiago del Estero"
+   
+  }, 
+  {
+    "nombreCiudad": "Humahuaca", 
+   "latitud": "-23.2054", 
+    "longitud": "-65.3505",
+    "nombreProvincia": "Jujuy"
+   
+  }, 
+  {
+    "nombreCiudad": "Belén", 
+   "latitud": "-27.6496", 
+    "longitud": "-67.0333",
+    "nombreProvincia": "Catamarca"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa La Angostura", 
+   "latitud": "-40.7616", 
+    "longitud": "-71.6448",
+    "nombreProvincia": "Neuquén"
+   
+  }, 
+  {
+    "nombreCiudad": "Sarmiento", 
+   "latitud": "-45.6000", 
+    "longitud": "-69.0833",
+    "nombreProvincia": "Chubut"
+   
+  }, 
+  {
+    "nombreCiudad": "Benito Juárez", 
+   "latitud": "-37.6833", 
+    "longitud": "-59.8000",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "San José de Feliciano", 
+   "latitud": "-30.3833", 
+    "longitud": "-58.7500",
+    "nombreProvincia": "Entre Ríos"
+   
+  }, 
+  {
+    "nombreCiudad": "Choele Choel", 
+   "latitud": "-39.2858", 
+    "longitud": "-65.6542",
+    "nombreProvincia": "Río Negro"
+   
+  }, 
+  {
+    "nombreCiudad": "Castelli", 
+   "latitud": "-25.9500", 
+    "longitud": "-60.6167",
+    "nombreProvincia": "Chaco"
+   
+  }, 
+  {
+    "nombreCiudad": "Chamical", 
+   "latitud": "-30.3592", 
+    "longitud": "-66.3133",
+    "nombreProvincia": "La Rioja"
+   
+  }, 
+  {
+    "nombreCiudad": "Helvecia", 
+   "latitud": "-31.1000", 
+    "longitud": "-60.0833",
+    "nombreProvincia": "Santa Fe"
+   
+  }, 
+  {
+    "nombreCiudad": "San Julián", 
+   "latitud": "-49.3070", 
+    "longitud": "-67.7298",
+    "nombreProvincia": "Santa Cruz"
+   
+  }, 
+  {
+    "nombreCiudad": "Santa Rosa de Río Primero", 
+   "latitud": "-31.1500", 
+    "longitud": "-63.3833",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "Carhué", 
+   "latitud": "-37.1667", 
+    "longitud": "-62.7333",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Rinconada", 
+   "latitud": "-22.4403", 
+    "longitud": "-66.1672",
+    "nombreProvincia": "Jujuy"
+   
+  }, 
+  {
+    "nombreCiudad": "Ingeniero Guillermo N. Juárez", 
+   "latitud": "-23.9000", 
+    "longitud": "-61.8500",
+    "nombreProvincia": "Formosa"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Cura Brochero", 
+   "latitud": "-31.7100", 
+    "longitud": "-65.0200",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "Chepes", 
+   "latitud": "-31.3500", 
+    "longitud": "-66.6000",
+    "nombreProvincia": "La Rioja"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Huidobro", 
+   "latitud": "-34.8333", 
+    "longitud": "-64.5833",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "General Conesa", 
+   "latitud": "-40.1000", 
+    "longitud": "-64.4333",
+    "nombreProvincia": "Río Negro"
+   
+  }, 
+  {
+    "nombreCiudad": "San Antonio de los Cobres", 
+   "latitud": "-24.2256", 
+    "longitud": "-66.3192",
+    "nombreProvincia": "Salta"
+   
+  }, 
+  {
+    "nombreCiudad": "Macachín", 
+   "latitud": "-37.1377", 
+    "longitud": "-63.6620",
+    "nombreProvincia": "La Pampa"
+   
+  }, 
+  {
+    "nombreCiudad": "Loncopué", 
+   "latitud": "-38.0667", 
+    "longitud": "-70.6167",
+    "nombreProvincia": "Neuquén"
+   
+  }, 
+  {
+    "nombreCiudad": "Perito Moreno", 
+   "latitud": "-46.5900", 
+    "longitud": "-70.9297",
+    "nombreProvincia": "Santa Cruz"
+   
+  }, 
+  {
+    "nombreCiudad": "Aluminé", 
+   "latitud": "-39.2369", 
+    "longitud": "-70.9197",
+    "nombreProvincia": "Neuquén"
+   
+  }, 
+  {
+    "nombreCiudad": "Gobernador Gregores", 
+   "latitud": "-48.7509", 
+    "longitud": "-70.2485",
+    "nombreProvincia": "Santa Cruz"
+   
+  }, 
+  {
+    "nombreCiudad": "Abra Pampa", 
+   "latitud": "-22.7167", 
+    "longitud": "-65.7000",
+    "nombreProvincia": "Jujuy"
+   
+  }, 
+  {
+    "nombreCiudad": "Victorica", 
+   "latitud": "-36.2167", 
+    "longitud": "-65.4340",
+    "nombreProvincia": "La Pampa"
+   
+  }, 
+  {
+    "nombreCiudad": "Puerto Santa Cruz", 
+   "latitud": "-50.0192", 
+    "longitud": "-68.5231",
+    "nombreProvincia": "Santa Cruz"
+   
+  }, 
+  {
+    "nombreCiudad": "La Paz", 
+   "latitud": "-33.4661", 
+    "longitud": "-67.5500",
+    "nombreProvincia": "Mendoza"
+   
+  }, 
+  {
+    "nombreCiudad": "Comandante Fontana", 
+   "latitud": "-25.3333", 
+    "longitud": "-59.6833",
+    "nombreProvincia": "Formosa"
+   
+  }, 
+  {
+    "nombreCiudad": "Concepción", 
+   "latitud": "-28.3930", 
+    "longitud": "-57.8868",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "Valcheta", 
+   "latitud": "-40.7000", 
+    "longitud": "-66.1500",
+    "nombreProvincia": "Río Negro"
+   
+  }, 
+  {
+    "nombreCiudad": "Piedra del Águila", 
+   "latitud": "-40.0500", 
+    "longitud": "-70.0778",
+    "nombreProvincia": "Neuquén"
+   
+  }, 
+  {
+    "nombreCiudad": "Tafí del Valle", 
+   "latitud": "-26.8667", 
+    "longitud": "-65.6833",
+    "nombreProvincia": "Tucumán"
+   
+  }, 
+  {
+    "nombreCiudad": "San Agustín", 
+   "latitud": "-31.9833", 
+    "longitud": "-64.3833",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "Picún Leufú", 
+   "latitud": "-39.5235", 
+    "longitud": "-69.2797",
+    "nombreProvincia": "Neuquén"
+   
+  }, 
+  {
+    "nombreCiudad": "Pampa del Infierno", 
+   "latitud": "-26.5167", 
+    "longitud": "-61.1667",
+    "nombreProvincia": "Chaco"
+   
+  }, 
+  {
+    "nombreCiudad": "Chumbicha", 
+   "latitud": "-28.8666", 
+    "longitud": "-66.2333",
+    "nombreProvincia": "Catamarca"
+   
+  }, 
+  {
+    "nombreCiudad": "Maquinchao", 
+   "latitud": "-41.2500", 
+    "longitud": "-68.7020",
+    "nombreProvincia": "Río Negro"
+   
+  }, 
+  {
+    "nombreCiudad": "Añelo", 
+   "latitud": "-38.3500", 
+    "longitud": "-68.7833",
+    "nombreProvincia": "Neuquén"
+   
+  }, 
+  {
+    "nombreCiudad": "Buta Ranquil", 
+   "latitud": "-37.0515", 
+    "longitud": "-69.8779",
+    "nombreProvincia": "Neuquén"
+   
+  }, 
+  {
+    "nombreCiudad": "San Francisco del Chañar", 
+   "latitud": "-29.7873", 
+    "longitud": "-63.9423",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "Melincué", 
+   "latitud": "-33.6500", 
+    "longitud": "-61.4500",
+    "nombreProvincia": "Santa Fe"
+   
+  }, 
+  {
+    "nombreCiudad": "José de San Martín", 
+   "latitud": "-44.0167", 
+    "longitud": "-70.4667",
+    "nombreProvincia": "Chubut"
+   
+  }, 
+  {
+    "nombreCiudad": "Trancas", 
+   "latitud": "-26.2308", 
+    "longitud": "-65.2781",
+    "nombreProvincia": "Tucumán"
+   
+  }, 
+  {
+    "nombreCiudad": "Alto Río Senguer", 
+   "latitud": "-45.0419", 
+    "longitud": "-70.8234",
+    "nombreProvincia": "Chubut"
+   
+  }, 
+  {
+    "nombreCiudad": "Sierra Colorada", 
+   "latitud": "-40.5875", 
+    "longitud": "-67.7583",
+    "nombreProvincia": "Río Negro"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Tulumba", 
+   "latitud": "-30.4000", 
+    "longitud": "-64.1167",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "El Huecú", 
+   "latitud": "-37.6449", 
+    "longitud": "-70.5812",
+    "nombreProvincia": "Neuquén"
+   
+  }, 
+  {
+    "nombreCiudad": "San Carlos", 
+   "latitud": "-31.1775", 
+    "longitud": "-65.1025",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "Salsacate", 
+   "latitud": "-31.3167", 
+    "longitud": "-65.0667",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "Paso de Indios", 
+   "latitud": "-43.9000", 
+    "longitud": "-69.0667",
+    "nombreProvincia": "Chubut"
+   
+  }, 
+  {
+    "nombreCiudad": "Tecka", 
+   "latitud": "-43.4926", 
+    "longitud": "-70.8108",
+    "nombreProvincia": "Chubut"
+   
+  }, 
+  {
+    "nombreCiudad": "Las Lajas", 
+   "latitud": "-38.5208", 
+    "longitud": "-70.3667",
+    "nombreProvincia": "Neuquén"
+   
+  }, 
+  {
+    "nombreCiudad": "Susques", 
+   "latitud": "-23.4006", 
+    "longitud": "-66.3672",
+    "nombreProvincia": "Jujuy"
+   
+  }, 
+  {
+    "nombreCiudad": "Las Coloradas", 
+   "latitud": "-39.5500", 
+    "longitud": "-70.5833",
+    "nombreProvincia": "Neuquén"
+   
+  }, 
+  {
+    "nombreCiudad": "Pilcaniyeu", 
+   "latitud": "-41.1233", 
+    "longitud": "-70.7200",
+    "nombreProvincia": "Río Negro"
+   
+  }, 
+  {
+    "nombreCiudad": "Rodeo", 
+   "latitud": "-30.2156", 
+    "longitud": "-69.1400",
+    "nombreProvincia": "San Juan"
+   
+  }, 
+  {
+    "nombreCiudad": "Gastre", 
+   "latitud": "-42.2667", 
+    "longitud": "-69.2167",
+    "nombreProvincia": "Chubut"
+   
+  }, 
+  {
+    "nombreCiudad": "Tinogasta", 
+   "latitud": "-28.0667", 
+    "longitud": "-67.5667",
+    "nombreProvincia": "Catamarca"
+   
+  }, 
+  {
+    "nombreCiudad": "Telsen", 
+   "latitud": "-42.3833", 
+    "longitud": "-66.9500",
+    "nombreProvincia": "Chubut"
+   
+  }, 
+  {
+    "nombreCiudad": "Las Plumas", 
+   "latitud": "-43.7167", 
+    "longitud": "-67.2500",
+    "nombreProvincia": "Chubut"
+   
+  }, 
+  {
+    "nombreCiudad": "Olivos", 
+   "latitud": "-34.5075", 
+    "longitud": "-58.4870",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "General San Martín", 
+   "latitud": "-34.5667", 
+    "longitud": "-58.5333",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Hurlingham", 
+   "latitud": "-34.6000", 
+    "longitud": "-58.6333",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Banda del Río Salí", 
+   "latitud": "-26.8333", 
+    "longitud": "-65.1667",
+    "nombreProvincia": "Tucumán"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Nueva", 
+   "latitud": "-32.8972", 
+    "longitud": "-68.7804",
+    "nombreProvincia": "Mendoza"
+   
+  }, 
+  {
+    "nombreCiudad": "Chimbas", 
+   "latitud": "-31.4833", 
+    "longitud": "-68.5333",
+    "nombreProvincia": "San Juan"
+   
+  }, 
+  {
+    "nombreCiudad": "Tigre", 
+   "latitud": "-34.4204", 
+    "longitud": "-58.5876",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Santa Lucía", 
+   "latitud": "-31.5399", 
+    "longitud": "-68.4950",
+    "nombreProvincia": "San Juan"
+   
+  }, 
+  {
+    "nombreCiudad": "Belén de Escobar", 
+   "latitud": "-34.3333", 
+    "longitud": "-58.8167",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Guernica", 
+   "latitud": "-34.9167", 
+    "longitud": "-58.3833",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Rivadavia", 
+   "latitud": "-31.5539", 
+    "longitud": "-68.6525",
+    "nombreProvincia": "San Juan"
+   
+  }, 
+  {
+    "nombreCiudad": "Bernardo de Irigoyen", 
+   "latitud": "-26.2553", 
+    "longitud": "-53.6469",
+    "nombreProvincia": "Misiones"
+   
+  }, 
+  {
+    "nombreCiudad": "Yerba Buena", 
+   "latitud": "-26.8167", 
+    "longitud": "-65.3167",
+    "nombreProvincia": "Tucumán"
+   
+  }, 
+  {
+    "nombreCiudad": "Ensenada", 
+   "latitud": "-34.8619", 
+    "longitud": "-57.9113",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Krause", 
+   "latitud": "-31.5833", 
+    "longitud": "-68.5333",
+    "nombreProvincia": "San Juan"
+   
+  }, 
+  {
+    "nombreCiudad": "Mar del Tuyú", 
+   "latitud": "-36.5753", 
+    "longitud": "-56.6888",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "General Rodríguez", 
+   "latitud": "-34.6167", 
+    "longitud": "-58.9500",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Maipú", 
+   "latitud": "-32.9667", 
+    "longitud": "-68.7500",
+    "nombreProvincia": "Mendoza"
+   
+  }, 
+  {
+    "nombreCiudad": "San Fernando", 
+   "latitud": "-34.4500", 
+    "longitud": "-58.5667",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Junín", 
+   "latitud": "-33.1333", 
+    "longitud": "-68.4667",
+    "nombreProvincia": "Mendoza"
+   
+  }, 
+  {
+    "nombreCiudad": "Marcos Paz", 
+   "latitud": "-34.7667", 
+    "longitud": "-58.8333",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "San Isidro de Lules", 
+   "latitud": "-26.9228", 
+    "longitud": "-65.3375",
+    "nombreProvincia": "Tucumán"
+   
+  }, 
+  {
+    "nombreCiudad": "Tafí Viejo", 
+   "latitud": "-26.7333", 
+    "longitud": "-65.2667",
+    "nombreProvincia": "Tucumán"
+   
+  }, 
+  {
+    "nombreCiudad": "Palpalá", 
+   "latitud": "-24.2583", 
+    "longitud": "-65.2083",
+    "nombreProvincia": "Jujuy"
+   
+  }, 
+  {
+    "nombreCiudad": "El Carmen", 
+   "latitud": "-24.3875", 
+    "longitud": "-65.2592",
+    "nombreProvincia": "Jujuy"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Aberastain", 
+   "latitud": "-31.6500", 
+    "longitud": "-68.5833",
+    "nombreProvincia": "San Juan"
+   
+  }, 
+  {
+    "nombreCiudad": "San Vicente", 
+   "latitud": "-35.0167", 
+    "longitud": "-58.4167",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Aguilares", 
+   "latitud": "-27.4333", 
+    "longitud": "-65.6167",
+    "nombreProvincia": "Tucumán"
+   
+  }, 
+  {
+    "nombreCiudad": "Famaillá", 
+   "latitud": "-27.0500", 
+    "longitud": "-65.4000",
+    "nombreProvincia": "Tucumán"
+   
+  }, 
+  {
+    "nombreCiudad": "Cosquín", 
+   "latitud": "-31.2451", 
+    "longitud": "-64.4656",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "Dolores", 
+   "latitud": "-30.9060", 
+    "longitud": "-64.5358",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "San José", 
+   "latitud": "-28.3667", 
+    "longitud": "-65.7000",
+    "nombreProvincia": "Catamarca"
+   
+  }, 
+  {
+    "nombreCiudad": "Nueve de Julio", 
+   "latitud": "-31.6167", 
+    "longitud": "-68.3833",
+    "nombreProvincia": "San Juan"
+   
+  }, 
+  {
+    "nombreCiudad": "Concepción", 
+   "latitud": "-27.3428", 
+    "longitud": "-65.5973",
+    "nombreProvincia": "Tucumán"
+   
+  }, 
+  {
+    "nombreCiudad": "Monteros", 
+   "latitud": "-27.1667", 
+    "longitud": "-65.5000",
+    "nombreProvincia": "Tucumán"
+   
+  }, 
+  {
+    "nombreCiudad": "Capilla del Señor", 
+   "latitud": "-34.2921", 
+    "longitud": "-59.1018",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "San Isidro", 
+   "latitud": "-28.4333", 
+    "longitud": "-65.7167",
+    "nombreProvincia": "Catamarca"
+   
+  }, 
+  {
+    "nombreCiudad": "Monte Hermoso", 
+   "latitud": "-38.9167", 
+    "longitud": "-61.5500",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Cañuelas", 
+   "latitud": "-35.0518", 
+    "longitud": "-58.7606",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Puerto Rico", 
+   "latitud": "-26.8169", 
+    "longitud": "-55.0271",
+    "nombreProvincia": "Misiones"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Alberdi", 
+   "latitud": "-27.5859", 
+    "longitud": "-65.6204",
+    "nombreProvincia": "Tucumán"
+   
+  }, 
+  {
+    "nombreCiudad": "Leandro N. Alem", 
+   "latitud": "-27.6000", 
+    "longitud": "-55.3333",
+    "nombreProvincia": "Misiones"
+   
+  }, 
+  {
+    "nombreCiudad": "Apóstoles", 
+   "latitud": "-27.9167", 
+    "longitud": "-55.7667",
+    "nombreProvincia": "Misiones"
+   
+  }, 
+  {
+    "nombreCiudad": "Alba Posse", 
+   "latitud": "-27.5660", 
+    "longitud": "-54.6830",
+    "nombreProvincia": "Misiones"
+   
+  }, 
+  {
+    "nombreCiudad": "Campo Grande", 
+   "latitud": "-27.2079", 
+    "longitud": "-54.9797",
+    "nombreProvincia": "Misiones"
+   
+  }, 
+  {
+    "nombreCiudad": "San Ignacio", 
+   "latitud": "-27.2584", 
+    "longitud": "-55.5392",
+    "nombreProvincia": "Misiones"
+   
+  }, 
+  {
+    "nombreCiudad": "Ramallo", 
+   "latitud": "-33.4833", 
+    "longitud": "-60.0000",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Fernández", 
+   "latitud": "-27.9204", 
+    "longitud": "-63.8935",
+    "nombreProvincia": "Santiago del Estero"
+   
+  }, 
+  {
+    "nombreCiudad": "Puerto Esperanza", 
+   "latitud": "-26.0167", 
+    "longitud": "-54.6500",
+    "nombreProvincia": "Misiones"
+   
+  }, 
+  {
+    "nombreCiudad": "San Javier", 
+   "latitud": "-27.8739", 
+    "longitud": "-55.1348",
+    "nombreProvincia": "Misiones"
+   
+  }, 
+  {
+    "nombreCiudad": "Santa Ana", 
+   "latitud": "-27.3692", 
+    "longitud": "-55.5817",
+    "nombreProvincia": "Misiones"
+   
+  }, 
+  {
+    "nombreCiudad": "Termas de Río Hondo", 
+   "latitud": "-27.4833", 
+    "longitud": "-64.8667",
+    "nombreProvincia": "Santiago del Estero"
+   
+  }, 
+  {
+    "nombreCiudad": "Rivadavia", 
+   "latitud": "-33.1833", 
+    "longitud": "-68.4667",
+    "nombreProvincia": "Mendoza"
+   
+  }, 
+  {
+    "nombreCiudad": "Bella Vista", 
+   "latitud": "-27.0333", 
+    "longitud": "-65.3000",
+    "nombreProvincia": "Tucumán"
+   
+  }, 
+  {
+    "nombreCiudad": "Capitán Sarmiento", 
+   "latitud": "-34.1833", 
+    "longitud": "-59.7667",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "San Antonio de Areco", 
+   "latitud": "-34.2500", 
+    "longitud": "-59.4667",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "San Cosme", 
+   "latitud": "-27.3703", 
+    "longitud": "-58.5126",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "Luján de Cuyo", 
+   "latitud": "-33.0355", 
+    "longitud": "-68.8778",
+    "nombreProvincia": "Mendoza"
+   
+  }, 
+  {
+    "nombreCiudad": "Colón", 
+   "latitud": "-33.8951", 
+    "longitud": "-61.1011",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Miramar", 
+   "latitud": "-38.2667", 
+    "longitud": "-57.8333",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Simoca", 
+   "latitud": "-27.2667", 
+    "longitud": "-65.3333",
+    "nombreProvincia": "Tucumán"
+   
+  }, 
+  {
+    "nombreCiudad": "San Martín", 
+   "latitud": "-31.4296", 
+    "longitud": "-68.5006",
+    "nombreProvincia": "San Juan"
+   
+  }, 
+  {
+    "nombreCiudad": "Arrecifes", 
+   "latitud": "-34.0639", 
+    "longitud": "-60.1036",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Bella Vista", 
+   "latitud": "-28.5092", 
+    "longitud": "-59.0401",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "El Soberbio", 
+   "latitud": "-27.2955", 
+    "longitud": "-54.1963",
+    "nombreProvincia": "Misiones"
+   
+  }, 
+  {
+    "nombreCiudad": "Montecarlo", 
+   "latitud": "-26.5662", 
+    "longitud": "-54.7570",
+    "nombreProvincia": "Misiones"
+   
+  }, 
+  {
+    "nombreCiudad": "Quitilipi", 
+   "latitud": "-26.8667", 
+    "longitud": "-60.2167",
+    "nombreProvincia": "Chaco"
+   
+  }, 
+  {
+    "nombreCiudad": "Chicoana", 
+   "latitud": "-25.1000", 
+    "longitud": "-65.5500",
+    "nombreProvincia": "Salta"
+   
+  }, 
+  {
+    "nombreCiudad": "Salto", 
+   "latitud": "-34.2929", 
+    "longitud": "-60.2546",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "San Andrés de Giles", 
+   "latitud": "-34.4333", 
+    "longitud": "-59.4333",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Santa Lucía", 
+   "latitud": "-28.9875", 
+    "longitud": "-59.1029",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "General Las Heras", 
+   "latitud": "-34.9167", 
+    "longitud": "-58.9333",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "La Cocha", 
+   "latitud": "-27.7700", 
+    "longitud": "-65.5858",
+    "nombreProvincia": "Tucumán"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa San Isidro", 
+   "latitud": "-31.4868", 
+    "longitud": "-68.3254",
+    "nombreProvincia": "San Juan"
+   
+  }, 
+  {
+    "nombreCiudad": "San Antonio", 
+   "latitud": "-24.3675", 
+    "longitud": "-65.3347",
+    "nombreProvincia": "Jujuy"
+   
+  }, 
+  {
+    "nombreCiudad": "Las Rosas", 
+   "latitud": "-32.4766", 
+    "longitud": "-61.5804",
+    "nombreProvincia": "Santa Fe"
+   
+  }, 
+  {
+    "nombreCiudad": "Diamante", 
+   "latitud": "-32.0664", 
+    "longitud": "-60.6384",
+    "nombreProvincia": "Entre Ríos"
+   
+  }, 
+  {
+    "nombreCiudad": "Clorinda", 
+   "latitud": "-25.2848", 
+    "longitud": "-57.7185",
+    "nombreProvincia": "Formosa"
+   
+  }, 
+  {
+    "nombreCiudad": "Santa Rosa del Conlara", 
+   "latitud": "-32.3429", 
+    "longitud": "-65.2032",
+    "nombreProvincia": "San Luis"
+   
+  }, 
+  {
+    "nombreCiudad": "Monte Caseros", 
+   "latitud": "-30.2500", 
+    "longitud": "-57.6500",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "Tupungato", 
+   "latitud": "-33.3715", 
+    "longitud": "-69.1484",
+    "nombreProvincia": "Mendoza"
+   
+  }, 
+  {
+    "nombreCiudad": "San Bernardo", 
+   "latitud": "-27.2917", 
+    "longitud": "-60.7083",
+    "nombreProvincia": "Chaco"
+   
+  }, 
+  {
+    "nombreCiudad": "Sastre", 
+   "latitud": "-31.7676", 
+    "longitud": "-61.8289",
+    "nombreProvincia": "Santa Fe"
+   
+  }, 
+  {
+    "nombreCiudad": "Las Breñas", 
+   "latitud": "-27.0897", 
+    "longitud": "-61.0816",
+    "nombreProvincia": "Chaco"
+   
+  }, 
+  {
+    "nombreCiudad": "Concepción de la Sierra", 
+   "latitud": "-27.9833", 
+    "longitud": "-55.5167",
+    "nombreProvincia": "Misiones"
+   
+  }, 
+  {
+    "nombreCiudad": "San Miguel del Monte", 
+   "latitud": "-35.4396", 
+    "longitud": "-58.8067",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Machagai", 
+   "latitud": "-26.9167", 
+    "longitud": "-60.0333",
+    "nombreProvincia": "Chaco"
+   
+  }, 
+  {
+    "nombreCiudad": "Saladillo", 
+   "latitud": "-35.6371", 
+    "longitud": "-59.7779",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Puerto Tirol", 
+   "latitud": "-27.3667", 
+    "longitud": "-59.0667",
+    "nombreProvincia": "Chaco"
+   
+  }, 
+  {
+    "nombreCiudad": "Itatí", 
+   "latitud": "-27.2704", 
+    "longitud": "-58.2446",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "Campo Largo", 
+   "latitud": "-26.8008", 
+    "longitud": "-60.8422",
+    "nombreProvincia": "Chaco"
+   
+  }, 
+  {
+    "nombreCiudad": "Saladas", 
+   "latitud": "-28.2538", 
+    "longitud": "-58.6259",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "Rojas", 
+   "latitud": "-34.1953", 
+    "longitud": "-60.7350",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Suipacha", 
+   "latitud": "-34.7702", 
+    "longitud": "-59.6878",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Magdalena", 
+   "latitud": "-35.0806", 
+    "longitud": "-57.5130",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Navarro", 
+   "latitud": "-35.0056", 
+    "longitud": "-59.2770",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Vedia", 
+   "latitud": "-34.4956", 
+    "longitud": "-61.5414",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Burruyacú", 
+   "latitud": "-26.4981", 
+    "longitud": "-64.7411",
+    "nombreProvincia": "Tucumán"
+   
+  }, 
+  {
+    "nombreCiudad": "Salliqueló", 
+   "latitud": "-36.7522", 
+    "longitud": "-62.9605",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Colonia Elisa", 
+   "latitud": "-26.9167", 
+    "longitud": "-59.5167",
+    "nombreProvincia": "Chaco"
+   
+  }, 
+  {
+    "nombreCiudad": "La Paz", 
+   "latitud": "-30.7449", 
+    "longitud": "-59.6457",
+    "nombreProvincia": "Entre Ríos"
+   
+  }, 
+  {
+    "nombreCiudad": "Paso de los Libres", 
+   "latitud": "-29.7167", 
+    "longitud": "-57.0833",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "General Arenales", 
+   "latitud": "-34.3000", 
+    "longitud": "-61.3000",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "La Leonesa", 
+   "latitud": "-27.0500", 
+    "longitud": "-58.7167",
+    "nombreProvincia": "Chaco"
+   
+  }, 
+  {
+    "nombreCiudad": "General Belgrano", 
+   "latitud": "-35.7500", 
+    "longitud": "-58.5000",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Corzuela", 
+   "latitud": "-26.9333", 
+    "longitud": "-60.9667",
+    "nombreProvincia": "Chaco"
+   
+  }, 
+  {
+    "nombreCiudad": "San Pedro", 
+   "latitud": "-26.6292", 
+    "longitud": "-54.1133",
+    "nombreProvincia": "Misiones"
+   
+  }, 
+  {
+    "nombreCiudad": "Alberti", 
+   "latitud": "-35.0269", 
+    "longitud": "-60.2759",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Ranchos", 
+   "latitud": "-35.5333", 
+    "longitud": "-58.2833",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Mburucuyá", 
+   "latitud": "-28.0500", 
+    "longitud": "-58.2333",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "Pehuajó", 
+   "latitud": "-35.8000", 
+    "longitud": "-61.9000",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Santo Tomé", 
+   "latitud": "-28.5500", 
+    "longitud": "-56.0500",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "Gobernador Ingeniero Valentín Virasoro", 
+   "latitud": "-28.0500", 
+    "longitud": "-56.0333",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "Carlos Casares", 
+   "latitud": "-35.6167", 
+    "longitud": "-61.3667",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Makallé", 
+   "latitud": "-27.2000", 
+    "longitud": "-59.2833",
+    "nombreProvincia": "Chaco"
+   
+  }, 
+  {
+    "nombreCiudad": "Nogoyá", 
+   "latitud": "-32.3939", 
+    "longitud": "-59.7895",
+    "nombreProvincia": "Entre Ríos"
+   
+  }, 
+  {
+    "nombreCiudad": "Roque Pérez", 
+   "latitud": "-35.4167", 
+    "longitud": "-59.3167",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Trenque Lauquen", 
+   "latitud": "-35.9667", 
+    "longitud": "-62.7000",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Tres Isletas", 
+   "latitud": "-26.3500", 
+    "longitud": "-60.4167",
+    "nombreProvincia": "Chaco"
+   
+  }, 
+  {
+    "nombreCiudad": "General Viamonte", 
+   "latitud": "-35.0000", 
+    "longitud": "-61.0333",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "La Caldera", 
+   "latitud": "-24.6000", 
+    "longitud": "-65.3833",
+    "nombreProvincia": "Salta"
+   
+  }, 
+  {
+    "nombreCiudad": "Margarita Belén", 
+   "latitud": "-27.2667", 
+    "longitud": "-58.9667",
+    "nombreProvincia": "Chaco"
+   
+  }, 
+  {
+    "nombreCiudad": "General Pinedo", 
+   "latitud": "-27.3167", 
+    "longitud": "-61.2833",
+    "nombreProvincia": "Chaco"
+   
+  }, 
+  {
+    "nombreCiudad": "General José de San Martín", 
+   "latitud": "-26.5375", 
+    "longitud": "-59.3417",
+    "nombreProvincia": "Chaco"
+   
+  }, 
+  {
+    "nombreCiudad": "Rosario de Lerma", 
+   "latitud": "-24.9833", 
+    "longitud": "-65.5833",
+    "nombreProvincia": "Salta"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Media Agua", 
+   "latitud": "-31.9827", 
+    "longitud": "-68.4239",
+    "nombreProvincia": "San Juan"
+   
+  }, 
+  {
+    "nombreCiudad": "Empedrado", 
+   "latitud": "-27.9512", 
+    "longitud": "-58.8054",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "Bañado de Ovanta", 
+   "latitud": "-28.1000", 
+    "longitud": "-65.3167",
+    "nombreProvincia": "Catamarca"
+   
+  }, 
+  {
+    "nombreCiudad": "Graneros", 
+   "latitud": "-27.6483", 
+    "longitud": "-65.4394",
+    "nombreProvincia": "Tucumán"
+   
+  }, 
+  {
+    "nombreCiudad": "Concarán", 
+   "latitud": "-32.5583", 
+    "longitud": "-65.2444",
+    "nombreProvincia": "San Luis"
+   
+  }, 
+  {
+    "nombreCiudad": "Esquina", 
+   "latitud": "-30.0144", 
+    "longitud": "-59.5272",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "Metán", 
+   "latitud": "-25.4990", 
+    "longitud": "-64.9739",
+    "nombreProvincia": "Salta"
+   
+  }, 
+  {
+    "nombreCiudad": "San Roque", 
+   "latitud": "-28.5746", 
+    "longitud": "-58.7082",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "Coronel Vidal", 
+   "latitud": "-37.4460", 
+    "longitud": "-57.7287",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Tres Lomas", 
+   "latitud": "-36.4589", 
+    "longitud": "-62.8614",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Realicó", 
+   "latitud": "-35.0333", 
+    "longitud": "-64.2500",
+    "nombreProvincia": "La Pampa"
+   
+  }, 
+  {
+    "nombreCiudad": "Pirané", 
+   "latitud": "-25.7167", 
+    "longitud": "-59.1000",
+    "nombreProvincia": "Formosa"
+   
+  }, 
+  {
+    "nombreCiudad": "San Luis del Palmar", 
+   "latitud": "-27.5079", 
+    "longitud": "-58.5545",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "Las Flores", 
+   "latitud": "-36.0333", 
+    "longitud": "-59.1000",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "San Carlos de Bolívar", 
+   "latitud": "-36.2500", 
+    "longitud": "-61.1000",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Berthet", 
+   "latitud": "-27.2667", 
+    "longitud": "-60.4167",
+    "nombreProvincia": "Chaco"
+   
+  }, 
+  {
+    "nombreCiudad": "Arraga", 
+   "latitud": "-28.0498", 
+    "longitud": "-64.2225",
+    "nombreProvincia": "Santiago del Estero"
+   
+  }, 
+  {
+    "nombreCiudad": "Tilcara", 
+   "latitud": "-23.5768", 
+    "longitud": "-65.3934",
+    "nombreProvincia": "Jujuy"
+   
+  }, 
+  {
+    "nombreCiudad": "Aimogasta", 
+   "latitud": "-28.5609", 
+    "longitud": "-66.8059",
+    "nombreProvincia": "La Rioja"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa del Totoral", 
+   "latitud": "-30.8167", 
+    "longitud": "-63.7167",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "Verónica", 
+   "latitud": "-35.3880", 
+    "longitud": "-57.3369",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Henderson", 
+   "latitud": "-36.3000", 
+    "longitud": "-61.7167",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Pigüé", 
+   "latitud": "-37.6167", 
+    "longitud": "-62.4167",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Santa Sylvina", 
+   "latitud": "-27.7833", 
+    "longitud": "-61.1500",
+    "nombreProvincia": "Chaco"
+   
+  }, 
+  {
+    "nombreCiudad": "Nuestra Señora del Rosario de Caa Catí", 
+   "latitud": "-27.7500", 
+    "longitud": "-57.6161",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "Rosario de la Frontera", 
+   "latitud": "-25.8000", 
+    "longitud": "-64.9667",
+    "nombreProvincia": "Salta"
+   
+  }, 
+  {
+    "nombreCiudad": "Herrera", 
+   "latitud": "-28.4809", 
+    "longitud": "-63.0678",
+    "nombreProvincia": "Santiago del Estero"
+   
+  }, 
+  {
+    "nombreCiudad": "Brea Pozo", 
+   "latitud": "-28.2500", 
+    "longitud": "-63.9500",
+    "nombreProvincia": "Santiago del Estero"
+   
+  }, 
+  {
+    "nombreCiudad": "Presidencia de la Plaza", 
+   "latitud": "-26.9833", 
+    "longitud": "-59.8333",
+    "nombreProvincia": "Chaco"
+   
+  }, 
+  {
+    "nombreCiudad": "Caucete", 
+   "latitud": "-31.6500", 
+    "longitud": "-68.2833",
+    "nombreProvincia": "San Juan"
+   
+  }, 
+  {
+    "nombreCiudad": "Curuzú Cuatiá", 
+   "latitud": "-29.7833", 
+    "longitud": "-58.0833",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "Ameghino", 
+   "latitud": "-34.8440", 
+    "longitud": "-62.4670",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Espinillo", 
+   "latitud": "-24.9667", 
+    "longitud": "-58.5667",
+    "nombreProvincia": "Formosa"
+   
+  }, 
+  {
+    "nombreCiudad": "Intendente Alvear", 
+   "latitud": "-35.2333", 
+    "longitud": "-63.5833",
+    "nombreProvincia": "La Pampa"
+   
+  }, 
+  {
+    "nombreCiudad": "Federal", 
+   "latitud": "-30.9546", 
+    "longitud": "-58.7833",
+    "nombreProvincia": "Entre Ríos"
+   
+  }, 
+  {
+    "nombreCiudad": "San Francisco de Laishí", 
+   "latitud": "-26.2417", 
+    "longitud": "-58.6322",
+    "nombreProvincia": "Formosa"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Atamisqui", 
+   "latitud": "-28.4964", 
+    "longitud": "-63.8178",
+    "nombreProvincia": "Santiago del Estero"
+   
+  }, 
+  {
+    "nombreCiudad": "Daireaux", 
+   "latitud": "-36.6000", 
+    "longitud": "-61.7500",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "General Pinto", 
+   "latitud": "-34.7646", 
+    "longitud": "-61.8909",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Hermoso Campo", 
+   "latitud": "-27.6167", 
+    "longitud": "-61.3500",
+    "nombreProvincia": "Chaco"
+   
+  }, 
+  {
+    "nombreCiudad": "General Villegas", 
+   "latitud": "-35.0300", 
+    "longitud": "-63.0098",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Santa Rosa", 
+   "latitud": "-31.7443", 
+    "longitud": "-68.3141",
+    "nombreProvincia": "San Juan"
+   
+  }, 
+  {
+    "nombreCiudad": "Coronel Pringles", 
+   "latitud": "-37.9829", 
+    "longitud": "-61.3562",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Alvear", 
+   "latitud": "-29.0989", 
+    "longitud": "-56.5535",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "La Candelaria", 
+   "latitud": "-26.1000", 
+    "longitud": "-65.1000",
+    "nombreProvincia": "Salta"
+   
+  }, 
+  {
+    "nombreCiudad": "General Enrique Mosconi", 
+   "latitud": "-23.2167", 
+    "longitud": "-62.3000",
+    "nombreProvincia": "Formosa"
+   
+  }, 
+  {
+    "nombreCiudad": "La Merced", 
+   "latitud": "-28.1544", 
+    "longitud": "-65.6595",
+    "nombreProvincia": "Catamarca"
+   
+  }, 
+  {
+    "nombreCiudad": "Castelli", 
+   "latitud": "-36.0895", 
+    "longitud": "-57.8039",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Maipú", 
+   "latitud": "-36.8627", 
+    "longitud": "-57.8809",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Santa Clara", 
+   "latitud": "-24.2833", 
+    "longitud": "-64.6833",
+    "nombreProvincia": "Jujuy"
+   
+  }, 
+  {
+    "nombreCiudad": "Andalgalá", 
+   "latitud": "-27.6000", 
+    "longitud": "-66.3167",
+    "nombreProvincia": "Catamarca"
+   
+  }, 
+  {
+    "nombreCiudad": "General Lavalle", 
+   "latitud": "-32.7222", 
+    "longitud": "-68.5914",
+    "nombreProvincia": "Mendoza"
+   
+  }, 
+  {
+    "nombreCiudad": "Lobería", 
+   "latitud": "-38.1616", 
+    "longitud": "-58.7727",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Los Telares", 
+   "latitud": "-28.9850", 
+    "longitud": "-63.4483",
+    "nombreProvincia": "Santiago del Estero"
+   
+  }, 
+  {
+    "nombreCiudad": "La Viña", 
+   "latitud": "-25.4678", 
+    "longitud": "-65.5628",
+    "nombreProvincia": "Salta"
+   
+  }, 
+  {
+    "nombreCiudad": "San Miguel", 
+   "latitud": "-27.9983", 
+    "longitud": "-57.5873",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "Quemú Quemú", 
+   "latitud": "-36.0500", 
+    "longitud": "-63.5500",
+    "nombreProvincia": "La Pampa"
+   
+  }, 
+  {
+    "nombreCiudad": "Sauce", 
+   "latitud": "-30.0667", 
+    "longitud": "-58.7667",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "Rauch", 
+   "latitud": "-36.7745", 
+    "longitud": "-59.0897",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Ituzaingó", 
+   "latitud": "-27.5816", 
+    "longitud": "-56.6823",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "La Toma", 
+   "latitud": "-33.0526", 
+    "longitud": "-65.6239",
+    "nombreProvincia": "San Luis"
+   
+  }, 
+  {
+    "nombreCiudad": "Berón de Astrada", 
+   "latitud": "-27.5507", 
+    "longitud": "-57.5346",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "Pellegrini", 
+   "latitud": "-36.2667", 
+    "longitud": "-63.1667",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "General Alvear", 
+   "latitud": "-34.9667", 
+    "longitud": "-67.7000",
+    "nombreProvincia": "Mendoza"
+   
+  }, 
+  {
+    "nombreCiudad": "General Alvear", 
+   "latitud": "-36.0333", 
+    "longitud": "-60.0167",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Tornquist", 
+   "latitud": "-38.1000", 
+    "longitud": "-62.2167",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Médanos", 
+   "latitud": "-38.8280", 
+    "longitud": "-62.6936",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "González Chaves", 
+   "latitud": "-38.0330", 
+    "longitud": "-60.0984",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Aminga", 
+   "latitud": "-28.8477", 
+    "longitud": "-66.9304",
+    "nombreProvincia": "La Rioja"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa del Salvador", 
+   "latitud": "-31.4415", 
+    "longitud": "-68.3975",
+    "nombreProvincia": "San Juan"
+   
+  }, 
+  {
+    "nombreCiudad": "Carlos Tejedor", 
+   "latitud": "-35.3927", 
+    "longitud": "-62.4215",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Bandera", 
+   "latitud": "-28.9028", 
+    "longitud": "-62.2667",
+    "nombreProvincia": "Santiago del Estero"
+   
+  }, 
+  {
+    "nombreCiudad": "Catriló", 
+   "latitud": "-36.4083", 
+    "longitud": "-63.4160",
+    "nombreProvincia": "La Pampa"
+   
+  }, 
+  {
+    "nombreCiudad": "Laprida", 
+   "latitud": "-37.5500", 
+    "longitud": "-60.8000",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "La Consulta", 
+   "latitud": "-33.7358", 
+    "longitud": "-69.1218",
+    "nombreProvincia": "Mendoza"
+   
+  }, 
+  {
+    "nombreCiudad": "Nueva Esperanza", 
+   "latitud": "-26.1999", 
+    "longitud": "-64.2401",
+    "nombreProvincia": "Santiago del Estero"
+   
+  }, 
+  {
+    "nombreCiudad": "Toay", 
+   "latitud": "-36.6750", 
+    "longitud": "-64.3785",
+    "nombreProvincia": "La Pampa"
+   
+  }, 
+  {
+    "nombreCiudad": "San Cayetano", 
+   "latitud": "-38.3465", 
+    "longitud": "-59.6095",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Garza", 
+   "latitud": "-28.1532", 
+    "longitud": "-63.5393",
+    "nombreProvincia": "Santiago del Estero"
+   
+  }, 
+  {
+    "nombreCiudad": "Esquiú", 
+   "latitud": "-29.3833", 
+    "longitud": "-65.2833",
+    "nombreProvincia": "Catamarca"
+   
+  }, 
+  {
+    "nombreCiudad": "San Antonio", 
+   "latitud": "-28.9333", 
+    "longitud": "-65.1000",
+    "nombreProvincia": "Catamarca"
+   
+  }, 
+  {
+    "nombreCiudad": "San Pedro", 
+   "latitud": "-27.9539", 
+    "longitud": "-65.1664",
+    "nombreProvincia": "Santiago del Estero"
+   
+  }, 
+  {
+    "nombreCiudad": "Trenel", 
+   "latitud": "-35.7000", 
+    "longitud": "-64.1333",
+    "nombreProvincia": "La Pampa"
+   
+  }, 
+  {
+    "nombreCiudad": "La Cañada", 
+   "latitud": "-27.7083", 
+    "longitud": "-63.7737",
+    "nombreProvincia": "Santiago del Estero"
+   
+  }, 
+  {
+    "nombreCiudad": "Eduardo Castex", 
+   "latitud": "-35.9000", 
+    "longitud": "-64.3000",
+    "nombreProvincia": "La Pampa"
+   
+  }, 
+  {
+    "nombreCiudad": "Guaminí", 
+   "latitud": "-37.0333", 
+    "longitud": "-62.4167",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Winifreda", 
+   "latitud": "-36.2275", 
+    "longitud": "-64.2335",
+    "nombreProvincia": "La Pampa"
+   
+  }, 
+  {
+    "nombreCiudad": "San Blas de los Sauces", 
+   "latitud": "-28.4144", 
+    "longitud": "-67.0986",
+    "nombreProvincia": "La Rioja"
+   
+  }, 
+  {
+    "nombreCiudad": "Santa Victoria", 
+   "latitud": "-22.2500", 
+    "longitud": "-64.9667",
+    "nombreProvincia": "Salta"
+   
+  }, 
+  {
+    "nombreCiudad": "Sumampa", 
+   "latitud": "-29.3828", 
+    "longitud": "-63.4697",
+    "nombreProvincia": "Santiago del Estero"
+   
+  }, 
+  {
+    "nombreCiudad": "Pozo Hondo", 
+   "latitud": "-27.1667", 
+    "longitud": "-64.4833",
+    "nombreProvincia": "Santiago del Estero"
+   
+  }, 
+  {
+    "nombreCiudad": "Puan", 
+   "latitud": "-37.5458", 
+    "longitud": "-62.7672",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Olta", 
+   "latitud": "-30.6312", 
+    "longitud": "-66.2630",
+    "nombreProvincia": "La Rioja"
+   
+  }, 
+  {
+    "nombreCiudad": "Guatraché", 
+   "latitud": "-37.6670", 
+    "longitud": "-63.5378",
+    "nombreProvincia": "La Pampa"
+   
+  }, 
+  {
+    "nombreCiudad": "Cachí", 
+   "latitud": "-25.1203", 
+    "longitud": "-66.1652",
+    "nombreProvincia": "Salta"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Ojo de Agua", 
+   "latitud": "-29.5019", 
+    "longitud": "-63.6925",
+    "nombreProvincia": "Santiago del Estero"
+   
+  }, 
+  {
+    "nombreCiudad": "Carmen de Patagones", 
+   "latitud": "-40.8167", 
+    "longitud": "-63.0000",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Valle Grande", 
+   "latitud": "-23.4773", 
+    "longitud": "-64.9425",
+    "nombreProvincia": "Jujuy"
+   
+  }, 
+  {
+    "nombreCiudad": "Tapalqué", 
+   "latitud": "-36.3500", 
+    "longitud": "-60.0167",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "San Francisco del Monte de Oro", 
+   "latitud": "-32.6000", 
+    "longitud": "-66.1250",
+    "nombreProvincia": "San Luis"
+   
+  }, 
+  {
+    "nombreCiudad": "General La Madrid", 
+   "latitud": "-37.2500", 
+    "longitud": "-61.2500",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa de María", 
+   "latitud": "-29.9020", 
+    "longitud": "-63.7229",
+    "nombreProvincia": "Córdoba"
+   
+  }, 
+  {
+    "nombreCiudad": "La Puerta", 
+   "latitud": "-28.1667", 
+    "longitud": "-65.7833",
+    "nombreProvincia": "Catamarca"
+   
+  }, 
+  {
+    "nombreCiudad": "La Cruz", 
+   "latitud": "-29.1833", 
+    "longitud": "-56.6500",
+    "nombreProvincia": "Corrientes"
+   
+  }, 
+  {
+    "nombreCiudad": "Quimilí", 
+   "latitud": "-27.6333", 
+    "longitud": "-62.4167",
+    "nombreProvincia": "Santiago del Estero"
+   
+  }, 
+  {
+    "nombreCiudad": "Suncho Corral", 
+   "latitud": "-27.9372", 
+    "longitud": "-63.4303",
+    "nombreProvincia": "Santiago del Estero"
+   
+  }, 
+  {
+    "nombreCiudad": "Selva", 
+   "latitud": "-29.7667", 
+    "longitud": "-62.0333",
+    "nombreProvincia": "Santiago del Estero"
+   
+  }, 
+  {
+    "nombreCiudad": "Saujil", 
+   "latitud": "-28.1738", 
+    "longitud": "-66.2115",
+    "nombreProvincia": "Catamarca"
+   
+  }, 
+  {
+    "nombreCiudad": "Parera", 
+   "latitud": "-35.1466", 
+    "longitud": "-64.5020",
+    "nombreProvincia": "La Pampa"
+   
+  }, 
+  {
+    "nombreCiudad": "Milagro", 
+   "latitud": "-31.0033", 
+    "longitud": "-66.0010",
+    "nombreProvincia": "La Rioja"
+   
+  }, 
+  {
+    "nombreCiudad": "Sañogasta", 
+   "latitud": "-29.0952", 
+    "longitud": "-67.1159",
+    "nombreProvincia": "La Rioja"
+   
+  }, 
+  {
+    "nombreCiudad": "Santa Rosa", 
+   "latitud": "-33.2541", 
+    "longitud": "-68.1494",
+    "nombreProvincia": "Mendoza"
+   
+  }, 
+  {
+    "nombreCiudad": "Tostado", 
+   "latitud": "-29.2320", 
+    "longitud": "-61.7692",
+    "nombreProvincia": "Santa Fe"
+   
+  }, 
+  {
+    "nombreCiudad": "El Alto", 
+   "latitud": "-28.3000", 
+    "longitud": "-65.3667",
+    "nombreProvincia": "Catamarca"
+   
+  }, 
+  {
+    "nombreCiudad": "Molinos", 
+   "latitud": "-25.4167", 
+    "longitud": "-66.3167",
+    "nombreProvincia": "Salta"
+   
+  }, 
+  {
+    "nombreCiudad": "Iruya", 
+   "latitud": "-22.7914", 
+    "longitud": "-65.2163",
+    "nombreProvincia": "Salta"
+   
+  }, 
+  {
+    "nombreCiudad": "General Lavalle", 
+   "latitud": "-36.4167", 
+    "longitud": "-56.9500",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "San José de Jáchal", 
+   "latitud": "-30.2406", 
+    "longitud": "-68.7469",
+    "nombreProvincia": "San Juan"
+   
+  }, 
+  {
+    "nombreCiudad": "Leleque", 
+   "latitud": "-42.4125", 
+    "longitud": "-71.0717",
+    "nombreProvincia": "Chubut"
+   
+  }, 
+  {
+    "nombreCiudad": "Campo Gallo", 
+   "latitud": "-26.5833", 
+    "longitud": "-62.8500",
+    "nombreProvincia": "Santiago del Estero"
+   
+  }, 
+  {
+    "nombreCiudad": "Famatina", 
+   "latitud": "-28.9232", 
+    "longitud": "-67.5225",
+    "nombreProvincia": "La Rioja"
+   
+  }, 
+  {
+    "nombreCiudad": "San Agustín de Valle Fértil", 
+   "latitud": "-30.6335", 
+    "longitud": "-67.4682",
+    "nombreProvincia": "San Juan"
+   
+  }, 
+  {
+    "nombreCiudad": "Libertador General San Martín", 
+   "latitud": "-32.4107", 
+    "longitud": "-65.6759",
+    "nombreProvincia": "San Luis"
+   
+  }, 
+  {
+    "nombreCiudad": "Tumbaya", 
+   "latitud": "-23.8563", 
+    "longitud": "-65.4574",
+    "nombreProvincia": "Jujuy"
+   
+  }, 
+  {
+    "nombreCiudad": "Ancasti", 
+   "latitud": "-28.8000", 
+    "longitud": "-65.5000",
+    "nombreProvincia": "Catamarca"
+   
+  }, 
+  {
+    "nombreCiudad": "General Conesa", 
+   "latitud": "-36.5201", 
+    "longitud": "-57.3254",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "San Carlos", 
+   "latitud": "-25.9000", 
+    "longitud": "-65.9333",
+    "nombreProvincia": "Salta"
+   
+  }, 
+  {
+    "nombreCiudad": "Rivadavia", 
+   "latitud": "-24.1833", 
+    "longitud": "-62.8833",
+    "nombreProvincia": "Salta"
+   
+  }, 
+  {
+    "nombreCiudad": "Bernasconi", 
+   "latitud": "-37.9000", 
+    "longitud": "-63.7167",
+    "nombreProvincia": "La Pampa"
+   
+  }, 
+  {
+    "nombreCiudad": "General Guido", 
+   "latitud": "-36.6406", 
+    "longitud": "-57.7921",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Andacollo", 
+   "latitud": "-37.1795", 
+    "longitud": "-70.6691",
+    "nombreProvincia": "Neuquén"
+   
+  }, 
+  {
+    "nombreCiudad": "General Acha", 
+   "latitud": "-37.3833", 
+    "longitud": "-64.6000",
+    "nombreProvincia": "La Pampa"
+   
+  }, 
+  {
+    "nombreCiudad": "Guachipas", 
+   "latitud": "-25.5167", 
+    "longitud": "-65.5333",
+    "nombreProvincia": "Salta"
+   
+  }, 
+  {
+    "nombreCiudad": "Malanzán", 
+   "latitud": "-30.8000", 
+    "longitud": "-66.6160",
+    "nombreProvincia": "La Rioja"
+   
+  }, 
+  {
+    "nombreCiudad": "Laguna Yema", 
+   "latitud": "-24.2500", 
+    "longitud": "-61.2500",
+    "nombreProvincia": "Formosa"
+   
+  }, 
+  {
+    "nombreCiudad": "Pila", 
+   "latitud": "-36.0006", 
+    "longitud": "-58.1439",
+    "nombreProvincia": "Buenos Aires"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Unión", 
+   "latitud": "-29.3159", 
+    "longitud": "-68.2266",
+    "nombreProvincia": "La Rioja"
+   
+  }, 
+  {
+    "nombreCiudad": "Ulapes", 
+   "latitud": "-31.5736", 
+    "longitud": "-66.2365",
+    "nombreProvincia": "La Rioja"
+   
+  }, 
+  {
+    "nombreCiudad": "Gaimán", 
+   "latitud": "-43.2897", 
+    "longitud": "-65.4929",
+    "nombreProvincia": "Chubut"
+   
+  }, 
+  {
+    "nombreCiudad": "Santa Catalina", 
+   "latitud": "-21.9447", 
+    "longitud": "-66.0522",
+    "nombreProvincia": "Jujuy"
+   
+  }, 
+  {
+    "nombreCiudad": "Río Colorado", 
+   "latitud": "-38.9940", 
+    "longitud": "-64.0929",
+    "nombreProvincia": "Río Negro"
+   
+  }, 
+  {
+    "nombreCiudad": "Tama", 
+   "latitud": "-30.5078", 
+    "longitud": "-66.5453",
+    "nombreProvincia": "La Rioja"
+   
+  }, 
+  {
+    "nombreCiudad": "Patquía", 
+   "latitud": "-30.0500", 
+    "longitud": "-66.8830",
+    "nombreProvincia": "La Rioja"
+   
+  }, 
+  {
+    "nombreCiudad": "Charadai", 
+   "latitud": "-27.6546", 
+    "longitud": "-59.8629",
+    "nombreProvincia": "Chaco"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Unión", 
+   "latitud": "-29.4128", 
+    "longitud": "-62.7872",
+    "nombreProvincia": "Santiago del Estero"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa General Roca", 
+   "latitud": "-32.6662", 
+    "longitud": "-66.4518",
+    "nombreProvincia": "San Luis"
+   
+  }, 
+  {
+    "nombreCiudad": "Buena Esperanza", 
+   "latitud": "-34.7500", 
+    "longitud": "-65.2500",
+    "nombreProvincia": "San Luis"
+   
+  }, 
+  {
+    "nombreCiudad": "Santa Isabel", 
+   "latitud": "-36.2500", 
+    "longitud": "-66.9333",
+    "nombreProvincia": "La Pampa"
+   
+  }, 
+  {
+    "nombreCiudad": "La Poma", 
+   "latitud": "-24.7167", 
+    "longitud": "-66.2167",
+    "nombreProvincia": "Salta"
+   
+  }, 
+  {
+    "nombreCiudad": "Tamberías", 
+   "latitud": "-31.4581", 
+    "longitud": "-69.4222",
+    "nombreProvincia": "San Juan"
+   
+  }, 
+  {
+    "nombreCiudad": "Villa Castelli", 
+   "latitud": "-29.0180", 
+    "longitud": "-68.2270",
+    "nombreProvincia": "La Rioja"
+   
+  }, 
+  {
+    "nombreCiudad": "El Cuy", 
+   "latitud": "-39.9269", 
+    "longitud": "-68.3421",
+    "nombreProvincia": "Río Negro"
+   
+  }, 
+  {
+    "nombreCiudad": "Vinchina", 
+   "latitud": "-28.7596", 
+    "longitud": "-68.2069",
+    "nombreProvincia": "La Rioja"
+   
+  }, 
+  {
+    "nombreCiudad": "Algarrobo del Águila", 
+   "latitud": "-36.4010", 
+    "longitud": "-67.1452",
+    "nombreProvincia": "La Pampa"
+   
+  }, 
+  {
+    "nombreCiudad": "Ñorquinco", 
+   "latitud": "-41.8507", 
+    "longitud": "-70.9017",
+    "nombreProvincia": "Río Negro"
+   
+  }, 
+  {
+    "nombreCiudad": "Camarones", 
+   "latitud": "-44.7971", 
+    "longitud": "-65.7099",
+    "nombreProvincia": "Chubut"
+   
+  }, 
+  {
+    "nombreCiudad": "Puelches", 
+   "latitud": "-38.1456", 
+    "longitud": "-65.9143",
+    "nombreProvincia": "La Pampa"
+   
+  }, 
+  {
+    "nombreCiudad": "Limay Mahuida", 
+   "latitud": "-37.1592", 
+    "longitud": "-66.6751",
+    "nombreProvincia": "La Pampa"
+   
+  }, 
+  {
+    "nombreCiudad": "Antofagasta de la Sierra", 
+   "latitud": "-26.0594", 
+    "longitud": "-67.4064",
+    "nombreProvincia": "Catamarca"
+   
+  }, 
+  {
+    "nombreCiudad": "Cuchillo Có", 
+   "latitud": "-38.3333", 
+    "longitud": "-64.6167",
+    "nombreProvincia": "La Pampa"
+   
+  }
+]
