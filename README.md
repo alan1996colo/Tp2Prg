@@ -42,3 +42,7 @@ Consideraciones: Dada la explicacion de la ultima clase, quiza sea pertinente qu
 dento del paquete Negocio, y que solo la clase Negocio tenga metodos "public", de esta manera a la clase interfaz le es  
 imposible acceder a metodos del paquete negocio que no sean de la clase negocio en si. Revisar si este planteo es correcto  
 , y hacer lo mismo del lado del paquete "Interfaz".
+
+----Update 27/4-----
+Notas clase GestorArchivo :
+Deje un metodo util para cargar una lista de nodos en GrafoLista de forma que si se quiere buscar una "ciudadNombre" se puede cargar un objeto GrafoLista auxiliar y desde ahi usar algun metodo que busque el nodo, y desde ahi agregarlo al GrafoLista principal si es necesario.
