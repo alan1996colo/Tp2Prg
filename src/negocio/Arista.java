@@ -1,7 +1,13 @@
 package negocio;
 
-public class Arista {
-    private Nodo nodoDestino;
+import java.io.Serializable;
+
+public class Arista implements Serializable {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Nodo nodoDestino;
     private double peso;
 
     public Arista(Nodo nodoDestino, double peso) {

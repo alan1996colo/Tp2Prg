@@ -1,11 +1,16 @@
 package negocio;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
 
-public class BFS
+public class BFS implements Serializable
 {	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private static ArrayList<Integer> L;
 	private static boolean [] marcados;
 	//modificar la clase para que funcione con "GrafoLista" y "Nodo"

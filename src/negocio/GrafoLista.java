@@ -1,8 +1,13 @@
 package negocio;
+import java.io.Serializable;
 import java.util.*;
 
-public class GrafoLista {	
-    private List<Nodo> nodos;//lista de nodos
+public class GrafoLista implements Serializable{	
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private List<Nodo> nodos;//lista de nodos
     
     public GrafoLista() {
         this.nodos = new ArrayList<>();

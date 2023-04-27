@@ -25,7 +25,7 @@ public class GestorArchivosTest {
 	}
 	@Test(expected=FileNotFoundException.class)
 	public void leerArchivoXmlINexistente() throws FileNotFoundException {
-		gestor.leerArchivoXml(name);
+		gestor.leerArchivoXml("nada.xml");//-->[Fatal Error] test.txt:1:1: Final de archivo prematuro.
 	}
 	@Test
 	public void testCrear() {
@@ -59,10 +59,35 @@ public class GestorArchivosTest {
 		gestor.crearArchivo(name);
 		assertTrue(gestor.borrarArchivo(name));
 	}
+	 
+	 @Test
+	 public void serializarObjeto() {
+		 Nodo nodo= new Nodo("san miguel","bsas",5432,2345);
+		 assertTrue(gestor.serializarObjeto(nodo));
+	 }
+	 @Test
+	 public void serializarObjetoNulo() {
+		  assertFalse(gestor.serializarObjeto(null));
+	 }
+	 @Test
+	 public void cargarSerializado() {
+		 Nodo nodo= new Nodo("san miguel","bsas",5432,2345);
+		 gestor.serializarObjeto(nodo);
+		 Nodo nodo2=(Nodo) gestor.dameObjetoSerializado("Nodo");
+		 assertEquals(nodo2.getNombreCiudad(),"san miguel");
+		 
+	 }
+	 @Test (expected= NullPointerException.class)
+	 public void cargarSerializadoNoExiste() {
+		 Nodo nodo2=(Nodo) gestor.dameObjetoSerializado("nada");
+		 assertEquals(nodo2.getNombreCiudad(),null);
+	 }
+	 
+	 
 	@After public void cleanUp() {
 		//System.out.print("cleanUp_");
 		gestor.borrarArchivo(name);
-		
+		gestor.borrarArchivo("Nodo.txt");
 	
 	}
 

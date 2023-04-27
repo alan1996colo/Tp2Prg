@@ -1,9 +1,14 @@
 package negocio;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Nodo {
-    private String nombreCiudad;
+public class Nodo implements Serializable {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String nombreCiudad;
     private String nombreProvincia;
     private double latitud;
     private double longitud;

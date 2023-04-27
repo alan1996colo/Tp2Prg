@@ -1,6 +1,9 @@
 package negocio;
 
-public class Negocio {
+import java.io.Serializable;
+
+public class Negocio implements Serializable{
+	private static final long serialVersionUID = 1L;
 	int aumentoPesosPorcentaje;
 	int costoFijoprovDistancia;
 	int costoPesos;
