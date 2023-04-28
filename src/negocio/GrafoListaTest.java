@@ -54,6 +54,32 @@ public class GrafoListaTest {
 		System.out.println("La distancia entre Escobar y Misiones es: "+grafo.distanciaEntrePuntos(Escobar,Misiones));
 	}
 
+	@Test
+	public void buscarNodo() {
+		GrafoLista grafo = new GrafoLista();
+		Nodo Escobar = new Nodo("Escobar","BSAS",-34.34428257177653, -58.778214488840106);
+		Nodo Garin = new Nodo("Garin","BSAS",-34.42979805864225, -58.724099137999104);
+		grafo.agregarNodo(Garin);
+		grafo.agregarNodo(Escobar);
+		assertEquals(Escobar,grafo.buscarNodoCiudad("Es cO bAr"));
+	}
+	@Test
+	public void buscarNodoNoExiste() {
+		GrafoLista grafo = new GrafoLista();
+		Nodo Escobar = new Nodo("Escobar","BSAS",-34.34428257177653, -58.778214488840106);
+		Nodo Garin = new Nodo("Garin","BSAS",-34.42979805864225, -58.724099137999104);
+		grafo.agregarNodo(Garin);
+		grafo.agregarNodo(Escobar);
+		assertNotEquals(Escobar,grafo.buscarNodoCiudad("nada"));
+		
+	}
+	@Test
+	public void buscarNodoSinLista() {
+		GrafoLista grafo1 = new GrafoLista();
+		assertEquals(grafo1.buscarNodoCiudad("Es cO bAr"),null);
+		
+	}
+	
 	}
 
 

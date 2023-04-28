@@ -45,6 +45,21 @@ public class GrafoLista implements Serializable {
 	public List<Arista> getVecinos(int i) {
 		return this.nodos.get(i).getVecinos();
 
+	}/**
+	Busca el nodo por nombre de ciudad, si lo encuentra retorna el nodo,sino nada.
+	*/
+	public Nodo buscarNodoCiudad(String name) {
+		if(this.nodos==null||this.nodos.equals(null)) {
+			throw new NullPointerException("La lista de nodos esta vacia");
+
+		}
+		for(Nodo iter:this.nodos) {
+			if(iter.getNombreCiudad().toLowerCase().replaceAll("\\s", "").equals(name.toLowerCase().replaceAll("\\s", ""))) {
+				return iter;
+			}
+		}
+		return null;
+		
 	}
 
 	public static double distanciaEntrePuntos(Nodo ciudad1, Nodo ciudad2) {
