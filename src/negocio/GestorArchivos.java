@@ -180,9 +180,42 @@ public class GestorArchivos implements Serializable {
 		}
 
 	}
+/**
+ * Serializa una lista de objetos (NODO) en formato JSON**/
+	public boolean generarJSONdesdeLista(String fname,List<Nodo> list) {
+		if (list == null || list.equals(null)) {
+			return false;
+		}
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+		String json = gson.toJson(list);
 
+		try {
+			FileWriter writer = new FileWriter(fname, true);
+			FileInputStream temp = new FileInputStream(fname);
+			Scanner scan = new Scanner(temp);
+
+			if (scan.hasNext()) {// Si el archivo tiene siguiente significa que no esta vacio.
+				writer.write("," + json);
+				writer.close();
+
+			} else { // si no tiene siguiente quiere decir que esta vacio, no ponemos la ","
+				writer.write(json);
+				writer.close();
+
+			}
+			scan.close(); // legado a este punto se escribio el archivo de alguna manera y devolvemos
+							// true.
+			return true;
+		} catch (Exception e) {
+			return false;
+			// System.out.println("Algo salio mal al crear el archivo Json.");
+		}
+	}
+
+
+	
 	/**
-	 * Serializa el objeto(o) en un archivo(fname) estilo json preety
+	 * Serializa el (UN) objeto(o) en un archivo(fname) estilo json preety
 	 **/
 	public boolean generarJSON(String fname, Object o) {
 		if (o == null || o.equals(null)) {
@@ -217,7 +250,7 @@ public class GestorArchivos implements Serializable {
 	/**
 	 * Retorna el objeto serializado en el archivo "fname"
 	 **/
-	public Object leerJSON(String fname) {
+	public Object cargarJSON(String fname) {
 		Gson gson = new Gson();
 		Object ret = null;
 
@@ -235,7 +268,7 @@ public class GestorArchivos implements Serializable {
 	 * para que la clase GrafoList lo use, tomando ese arrayList busque la ciudad
 	 * que necesite.--
 	 **/
-	public ArrayList<Nodo> cargarJson(String fname) {// cargamos el archivo json en una lista de nodos
+	public ArrayList<Nodo> cargarJsonLista(String fname) {// cargamos el archivo json en una lista de nodos
 		Gson gson = new Gson();
 		try {
 

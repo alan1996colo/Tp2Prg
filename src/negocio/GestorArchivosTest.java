@@ -95,7 +95,7 @@ public class GestorArchivosTest {
 
 	@Test
 	public void generarJsonNULL() {
-		assertFalse(gestor.generarJSON("archivojason", null));
+		assertFalse(gestor.generarJSON("archivaso", null));
 	}
 
 	@Test
@@ -108,8 +108,26 @@ public class GestorArchivosTest {
 
 	@Test
 	public void cargarJsonEnGrafoLista() {
-		GrafoLista temp = new GrafoLista(gestor.cargarJson("src/negocio/argentinaCitys.json"));
+		GrafoLista temp = new GrafoLista(gestor.cargarJsonLista("src/negocio/argentinaCitys.json"));
 		System.out.println(temp.getNodoNum(8).getNombreCiudad());
+	}
+	@Test
+	public void cargarJsonEnGrafoListaGetNumber() {
+		GrafoLista temp = new GrafoLista(gestor.cargarJsonLista("src/negocio/argentinaCitys.json"));
+		System.out.println(temp.getNodoNum(9).getNombreCiudad());
+		System.out.println(temp.getNodoNum(9).getLatitud());
+		
+	}
+	@Test
+	public void SerializarListaEnJSON() {
+		GrafoLista temp=new GrafoLista();
+		Nodo nodo = new Nodo("muz", "Tucuan", 523432, 2345);
+		Nodo nodo2 = new Nodo("muiz", "Tuuman", 51432, -2345);
+		Nodo nodo3 = new Nodo("mz", "Tucuan", -5432, 2345);
+		temp.agregarNodo(nodo3);
+		temp.agregarNodo(nodo2);
+		temp.agregarNodo(nodo);
+		gestor.generarJSONdesdeLista("jasonlista.json",temp.getNodos());
 	}
 
 	@After

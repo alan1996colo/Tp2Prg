@@ -61,6 +61,20 @@ public class GrafoLista implements Serializable {
 		return null;
 		
 	}
+	/**
+	 * True =contiene al nodo en su lista
+	 * False= el nodo no está
+	 * **/
+	public boolean contains(Nodo nodo) {
+		for(Nodo iter:this.nodos) {
+			if(iter.equals(nodo)) {
+				return true;
+			}
+		}
+		return false;
+		
+	}
+	
 
 	public static double distanciaEntrePuntos(Nodo ciudad1, Nodo ciudad2) {
 		double latitud1 = ciudad1.getLatitud();
@@ -76,6 +90,14 @@ public class GrafoLista implements Serializable {
 		double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 		double distancia = radioTierra * c;
 		return distancia;
+	}
+
+	public void mostrarGrafo() {
+		// TODO Auto-generated method stub
+		for(Nodo iter:this.nodos) {
+			System.out.println(iter.toString());
+		}
+		
 	}
 
 }

@@ -12,7 +12,7 @@ public class Nodo implements Serializable {
 	private double latitud;
 	private double longitud;
 	private String nombreProvincia;
-	transient private List<Arista> vecinos;
+	transient private List<Arista> vecinos= new ArrayList<Arista>();
 
 	public Nodo(String nombreCiudad, String nombreProvincia, double latitud, double longitud) {
 		this.nombreCiudad = nombreCiudad;
@@ -51,5 +51,25 @@ public class Nodo implements Serializable {
 	public double getLongitud() {
 		return this.longitud;
 	}
+	public String toString() {
+		return "ciudad :"+this.nombreCiudad.toString()+" Provincia: "+this.nombreProvincia.toString()+" Latitud:"+Double.toString(this.latitud)+" Longitud:"+Double.toString(this.longitud);
+	}
+	
+	 @Override
+	    public boolean equals(Object obj) {
+	        if (this == obj) return true;
+	        if (obj == null) return false;
+	        if (getClass() != obj.getClass()) return false;
+	        final Nodo other = (Nodo)obj;
+	        if (latitud != other.latitud) return false;
+	        if (longitud != other.longitud) return false;
+	        if (nombreCiudad == null) {
+	            if (other.nombreCiudad != null) return false;
+	        } else if (!nombreCiudad.equals(other.nombreCiudad)) return false;
+	        if (nombreProvincia == null) {
+	            if (other.nombreProvincia != null) return false;
+	        } else if (!nombreProvincia.equals(other.nombreProvincia)) return false;
+	        return true;
+	    }
 
 }
