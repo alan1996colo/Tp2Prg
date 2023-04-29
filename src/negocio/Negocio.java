@@ -57,6 +57,13 @@ public class Negocio implements Serializable{
 			
 			
 		}
+	/**
+	 * Muestra las aristas del nodo indice pasado.
+	 * **/
+	public void mostrarConexionNodoNumero(int i){
+		this.grafo.mostrarVecinosNodoNumero(i);
+		
+	}
 		
 	
 

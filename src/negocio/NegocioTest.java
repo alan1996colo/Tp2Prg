@@ -28,11 +28,18 @@ public class NegocioTest {
 	public void agregarConexionConNodos() {
 		neg.agregarNodoConNombreDesdeArchivoJson("Lanús","src/negocio/argentinaCitys.json");
 		neg.agregarNodoConNombreDesdeArchivoJson("Rosario","src/negocio/argentinaCitys.json");
-		Nodo alg=new Nodo("asda","asdgg",213,123);
-		Nodo alg2=new Nodo("per","asdgg",2,123);
-		neg.grafo.agregarNodo(alg2);
-		neg.grafo.agregarNodo(alg);
-		assertTrue(neg.agregarConexion("per","asda"));
+		neg.grafo.incializarVecinosNodos();
+		assertTrue(neg.agregarConexion("Lanús","Rosario"));
+		
+	}
+	@Test
+	public void mostrarConexionNodoTest() {
+		neg.agregarNodoConNombreDesdeArchivoJson("Lanús","src/negocio/argentinaCitys.json");
+		neg.agregarNodoConNombreDesdeArchivoJson("Rosario","src/negocio/argentinaCitys.json");
+		neg.grafo.incializarVecinosNodos();
+		neg.agregarConexion("Lanús","Rosario");
+		neg.mostrarConexionNodoNumero(0);
+		
 		
 	}
 }

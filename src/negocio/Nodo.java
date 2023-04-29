@@ -12,7 +12,7 @@ public class Nodo implements Serializable {
 	private double latitud;
 	private double longitud;
 	private String nombreProvincia;
-	transient private List<Arista> vecinos= new ArrayList<Arista>();
+	transient private List<Arista> vecinos;
 
 	public Nodo(String nombreCiudad, String nombreProvincia, double latitud, double longitud) {
 		this.nombreCiudad = nombreCiudad;
@@ -20,6 +20,9 @@ public class Nodo implements Serializable {
 		this.latitud = latitud;
 		this.longitud = longitud;
 		this.vecinos = new ArrayList<>();
+	}
+	public void inicializarVecinos() {
+		this.vecinos= new ArrayList<Arista>();
 	}
 
 	public void agregarVecino(Nodo nodo, double peso) {
@@ -34,6 +37,11 @@ public class Nodo implements Serializable {
 	// devuelvo los vecinos de un nodo
 	public List<Arista> getVecinos() {
 		return vecinos;
+	}
+	public void mostrarVecinos() {
+		for (Arista iter:this.vecinos) {
+			System.out.println(iter.getNodoDestino().toString());
+		}
 	}
 
 	public String getNombreCiudad() {

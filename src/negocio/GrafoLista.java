@@ -26,7 +26,16 @@ public class GrafoLista implements Serializable {
 	public void agregarNodo(Nodo nodo) {
 		nodos.add(nodo);
 	}
-
+	public void incializarVecinosNodos() {
+		for(Nodo iter:this.nodos) {
+			if(iter.getVecinos()==null)
+			iter.inicializarVecinos();
+		}
+	}
+	public void mostrarVecinosNodoNumero(int i) {
+		this.nodos.get(i).mostrarVecinos();
+	}
+	
 	public void agregarArista(Nodo nodo1, Nodo nodo2, double peso) {
 		nodo1.agregarVecino(nodo2, peso);
 		nodo2.agregarVecino(nodo1, peso);
