@@ -22,5 +22,17 @@ public class Arista implements Serializable {
     public double getPeso() {
         return peso;
     }   
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (getClass() != obj.getClass()) return false;
+        final Arista other = (Arista)obj;
+        if (!nodoDestino.equals(other.nodoDestino)) return false;
+       
+        return true;
+    }
+
+    
     
 }

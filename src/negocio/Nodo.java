@@ -21,11 +21,15 @@ public class Nodo implements Serializable {
 		this.longitud = longitud;
 		this.vecinos = new ArrayList<>();
 	}
+
 	public void inicializarVecinos() {
 		this.vecinos= new ArrayList<Arista>();
 	}
 
 	public void agregarVecino(Nodo nodo, double peso) {
+		if(this.vecinos.contains(new Arista(nodo,peso))) {
+			throw new IllegalArgumentException("La arista ya existe");
+		}
 		vecinos.add(new Arista(nodo, peso));
 
 	}
@@ -35,7 +39,7 @@ public class Nodo implements Serializable {
 	}
 
 	// devuelvo los vecinos de un nodo
-	public List<Arista> getVecinos() {
+	public List<Arista> getArista() {
 		return vecinos;
 	}
 	public void mostrarVecinos() {

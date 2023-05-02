@@ -36,7 +36,7 @@ public class Negocio implements Serializable{
 		Nodo origen=this.grafo.buscarNodoCiudad(ciudadOrigen);
 		Nodo destino=this.grafo.buscarNodoCiudad(ciudadDestino);
 		if(origen!=null&&destino!=null) {
-			origen.agregarVecino(destino,GrafoLista.distanciaEntrePuntos(origen, destino));
+			origen.agregarVecino(destino,GrafoLista.distanciaEntreNodos(origen, destino));
 			return true;
 		}
 		else {

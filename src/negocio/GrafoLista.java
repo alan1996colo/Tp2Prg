@@ -24,11 +24,12 @@ public class GrafoLista implements Serializable {
 	}
 
 	public void agregarNodo(Nodo nodo) {
-		nodos.add(nodo);
-	}
+		if(this.nodos.contains(nodo)) {throw new IllegalArgumentException("El nodo ya estaba incluido en el grafo");}
+		else{nodos.add(nodo);
+	}}
 	public void incializarVecinosNodos() {
 		for(Nodo iter:this.nodos) {
-			if(iter.getVecinos()==null)
+			if(iter.getArista()==null)
 			iter.inicializarVecinos();
 		}
 	}
@@ -37,6 +38,7 @@ public class GrafoLista implements Serializable {
 	}
 	
 	public void agregarArista(Nodo nodo1, Nodo nodo2, double peso) {
+		if(nodo1.equals(nodo2)) {throw new IllegalArgumentException("No se permiten bucles");}
 		nodo1.agregarVecino(nodo2, peso);
 		nodo2.agregarVecino(nodo1, peso);
 	}
@@ -52,7 +54,7 @@ public class GrafoLista implements Serializable {
 
 	// cambiar nombre a getVecinos mas tarde
 	public List<Arista> getVecinos(int i) {
-		return this.nodos.get(i).getVecinos();
+		return this.nodos.get(i).getArista();
 
 	}/**
 	Busca el nodo por nombre de ciudad, si lo encuentra retorna el nodo,sino nada.
@@ -85,7 +87,7 @@ public class GrafoLista implements Serializable {
 	}
 	
 
-	public static double distanciaEntrePuntos(Nodo ciudad1, Nodo ciudad2) {
+	public static double distanciaEntreNodos(Nodo ciudad1, Nodo ciudad2) {
 		double latitud1 = ciudad1.getLatitud();
 		double latitud2 = ciudad2.getLatitud();
 		double longitud1 = ciudad1.getLongitud();

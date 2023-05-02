@@ -59,9 +59,9 @@ public class BFSTest {
 	@Test
 	public void conexoTest()
 	{
-		grafo.agregarArista(SanJuan, SantaCruz, grafo.distanciaEntrePuntos(SanJuan, SantaCruz));			
-		grafo.agregarArista(Escobar, Garin,grafo.distanciaEntrePuntos(Escobar, Garin));
-		grafo.agregarArista(Escobar, Misiones,grafo.distanciaEntrePuntos(Escobar, Misiones));
+		grafo.agregarArista(SanJuan, SantaCruz, grafo.distanciaEntreNodos(SanJuan, SantaCruz));			
+		grafo.agregarArista(Escobar, Garin,grafo.distanciaEntreNodos(Escobar, Garin));
+		grafo.agregarArista(Escobar, Misiones,grafo.distanciaEntreNodos(Escobar, Misiones));
 		assertTrue(BFS.esConexo(grafo));
 	}
 	

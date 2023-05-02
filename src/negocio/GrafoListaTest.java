@@ -30,9 +30,9 @@ public class GrafoListaTest {
 		grafo.agregarNodo(SanJuan);
 		grafo.agregarNodo(SantaCruz);
 		
-		grafo.agregarArista(SanJuan, SantaCruz, grafo.distanciaEntrePuntos(SanJuan, SantaCruz));			
-		grafo.agregarArista(Escobar, Garin,grafo.distanciaEntrePuntos(Escobar, Garin));
-		grafo.agregarArista(Escobar, Misiones,grafo.distanciaEntrePuntos(Escobar, Misiones));
+		grafo.agregarArista(SanJuan, SantaCruz, grafo.distanciaEntreNodos(SanJuan, SantaCruz));			
+		grafo.agregarArista(Escobar, Garin,grafo.distanciaEntreNodos(Escobar, Garin));
+		grafo.agregarArista(Escobar, Misiones,grafo.distanciaEntreNodos(Escobar, Misiones));
 		
 		System.out.println("*****Muestro los nodos cargados****");
 		for (Nodo nodo : grafo.getNodos()) {
@@ -41,7 +41,7 @@ public class GrafoListaTest {
 		
 		
 		System.out.println("*****Muestro los vecinos de Escobar****");
-		List<Arista> vecinosDeEscobar =Escobar.getVecinos();
+		List<Arista> vecinosDeEscobar =Escobar.getArista();
 		
 		for (Arista arista : vecinosDeEscobar) {
 			Nodo nodoVecinoEscobar= arista.getNodoDestino();
@@ -50,8 +50,8 @@ public class GrafoListaTest {
 		}
 //		
 		System.out.println("*****Muestro las distancia entre los dos vecinos de Escobar que agregue ****");
-		System.out.println("La distancia entre Escobar y Garin es : "+grafo.distanciaEntrePuntos(Escobar,Garin));
-		System.out.println("La distancia entre Escobar y Misiones es: "+grafo.distanciaEntrePuntos(Escobar,Misiones));
+		System.out.println("La distancia entre Escobar y Garin es : "+grafo.distanciaEntreNodos(Escobar,Garin));
+		System.out.println("La distancia entre Escobar y Misiones es: "+grafo.distanciaEntreNodos(Escobar,Misiones));
 	}
 
 	@Test
@@ -77,6 +77,13 @@ public class GrafoListaTest {
 	public void buscarNodoSinLista() {
 		GrafoLista grafo1 = new GrafoLista();
 		assertEquals(grafo1.buscarNodoCiudad("Es cO bAr"),null);
+		
+	}
+	@Test (expected=IllegalArgumentException.class)
+	public void noSePermitenBucles() {
+		GrafoLista grafo = new GrafoLista();
+		Nodo Escobar = new Nodo("Escobar","BSAS",-34.34428257177653, -58.778214488840106);
+		grafo.agregarArista(Escobar, Escobar, 0);
 		
 	}
 	
