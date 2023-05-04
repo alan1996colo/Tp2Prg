@@ -13,6 +13,11 @@ import org.openstreetmap.gui.jmapviewer.MapPolygonImpl;
 import org.openstreetmap.gui.jmapviewer.interfaces.MapMarker;
 import org.openstreetmap.gui.jmapviewer.interfaces.MapPolygon;
 
+
+import negocio.GestorArchivos;
+import negocio.GrafoLista;
+import negocio.Nodo;
+
 import java.awt.Canvas;
 import java.awt.Color;
 import javax.swing.JPanel;
@@ -24,6 +29,13 @@ public class Presentacion {
 	private JMapViewer mapa;
 	private JPanel panelMapa;
 	private JTextField textField;
+	private ArrayList<Nodo>ciudad = new ArrayList<Nodo>();
+	
+	
+	
+	
+	
+	
 
 	/**
 	 * Launch the application.
@@ -67,11 +79,46 @@ public class Presentacion {
 	 * **/
 	public void ModificarSolucion() {}
 	
-	private void Sysout() {
-		// TODO Auto-generated method stub
+	
+	
+	
+    private void ObtenerCiudadDeArchivo( GrafoLista ciudades ,String provincia) {
+    	
+		for( int i=0; i<ciudades.getTamanio();i++) {
+			if(ciudades.getNodoNum(i).getNombreProvincia().equals(provincia)) {
+				this.ciudad.add(ciudades.getNodoNum(i));
+			}
+			
+		}
+	}
+  
+	private void dibujarPuntosEnMapa() {
 
+		ArrayList<Nodo> nodo= GestorArchivos.cargarJsonLista("src/negocio/argentinaCitys.json");
+		GrafoLista ciudades = new GrafoLista(nodo);
+		ObtenerCiudadDeArchivo(ciudades,"Buenos Aires");
+		System.out.println(nodo);
+		
+		for(Nodo coordenadas :ciudad ) {
+			double latitud = coordenadas.getLatitud();
+			double longitud = coordenadas.getLongitud();
+			System.out.println(latitud);
+			String NombreCiudad = coordenadas.getNombreCiudad();
+			Coordinate coordinate = new Coordinate (latitud, longitud);
+			
+			MapMarker punto = new MapMarkerDot(NombreCiudad,coordinate);	
+			punto.getStyle().setBackColor(Color.black);
+			punto.getStyle().setColor(Color.yellow);
+			mapa.addMapMarker(punto);
+			
+			
+		}
+		
 	}
 	
+
+	
+
 	private void initialize() {
 		
 		frame = new JFrame();
@@ -127,6 +174,7 @@ public class Presentacion {
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
+		dibujarPuntosEnMapa();
 		
 	}
 }

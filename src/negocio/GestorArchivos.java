@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStreamWriter;
@@ -33,6 +34,7 @@ import java.io.FileReader;
 public class GestorArchivos implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+
 
 	// Recibe la ruta del archivo xml
 	public void leerArchivoXml(String path) throws FileNotFoundException {
@@ -257,7 +259,8 @@ public class GestorArchivos implements Serializable {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(fname));
 			ret = gson.fromJson(br, Object.class);
-		} catch (Exception e) {
+		} catch (IOException e) {
+			e.printStackTrace();
 			System.out.println("ALgo salio mal al cargar el archivo JSON a objeto");
 		}
 		return ret;
@@ -268,7 +271,7 @@ public class GestorArchivos implements Serializable {
 	 * para que la clase GrafoList lo use, tomando ese arrayList busque la ciudad
 	 * que necesite.--
 	 **/
-	public ArrayList<Nodo> cargarJsonLista(String fname) {// cargamos el archivo json en una lista de nodos
+	public static  ArrayList<Nodo> cargarJsonLista(String fname) {// cargamos el archivo json en una lista de nodos
 		Gson gson = new Gson();
 		try {
 
