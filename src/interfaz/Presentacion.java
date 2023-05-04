@@ -13,8 +13,7 @@ import org.openstreetmap.gui.jmapviewer.MapPolygonImpl;
 import org.openstreetmap.gui.jmapviewer.interfaces.MapMarker;
 import org.openstreetmap.gui.jmapviewer.interfaces.MapPolygon;
 
-
-import negocio.GestorArchivos;
+import fileManager.GestorArchivos;
 import negocio.GrafoLista;
 import negocio.Nodo;
 
@@ -93,8 +92,8 @@ public class Presentacion {
 	}
   
 	private void dibujarPuntosEnMapa() {
-
-		ArrayList<Nodo> nodo= GestorArchivos.cargarJsonLista("src/negocio/argentinaCitys.json");
+		GestorArchivos gestor = new GestorArchivos();
+		ArrayList<Nodo> nodo= gestor.cargarJsonLista("argentinaCitys.json");
 		GrafoLista ciudades = new GrafoLista(nodo);
 		ObtenerCiudadDeArchivo(ciudades,"Buenos Aires");
 		System.out.println(nodo);

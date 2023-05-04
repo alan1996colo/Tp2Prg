@@ -1,4 +1,4 @@
-package negocio;
+package fileManager;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -28,19 +28,32 @@ import org.w3c.dom.Element;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-
-import java.io.FileReader;
+import negocio.Nodo;
+//import java.io.FileReader;
 
 public class GestorArchivos implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	String path = "src/fileManager/";
 
+	/* Constructor vacio, usa el path predeterminado "src/fileManager/ */
+	public GestorArchivos() {
+	}
 
-	// Recibe la ruta del archivo xml
-	public void leerArchivoXml(String path) throws FileNotFoundException {
+	/**
+	 * Desde Ahora version 4.5.2023, GestorArchivos tiene constructor y puede
+	 * recibir un path como parametro, para que use ese path en todas las demas
+	 * operaciones.
+	 */
+	public GestorArchivos(String path) {
+		this.path = path;
+	}
+
+	// Recibe nombre archivo xml y lo muestra por terminal
+	public void leerArchivoXml(String fname) throws FileNotFoundException {
 		try {
 			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-			File f = new File(path);
+			File f = new File(this.path + fname);
 			Document documento = builder.parse(f);
 			recorrerXml(documento);
 		} catch (Exception e) {
@@ -48,39 +61,6 @@ public class GestorArchivos implements Serializable {
 
 		}
 
-	}
-
-	public boolean serializarObjeto(Object o) {
-		if (o == null) {
-			return false;
-		} else {
-			String name = o.getClass().getSimpleName();
-			try {
-				FileOutputStream fos = new FileOutputStream(name + ".txt");
-				ObjectOutputStream out = new ObjectOutputStream(fos);
-				out.writeObject(o);
-				out.close();
-				return true;
-			} catch (Exception e) {
-				e.printStackTrace();
-				return false;
-			}
-		}
-	}
-
-	public Object dameObjetoSerializado(String name) {
-		try // Debe estar en un try/catch
-		{
-			FileInputStream fis = new FileInputStream(name + ".txt");
-			ObjectInputStream in = new ObjectInputStream(fis);
-
-			Object ret = (Object) in.readObject();
-			in.close();
-			return ret;
-		} catch (Exception ex) {
-			System.out.println("Hubo un problema al cargar el objeto a memoria");
-			return null;
-		}
 	}
 
 	public void recorrerXml(Node node) {
@@ -111,12 +91,46 @@ public class GestorArchivos implements Serializable {
 		}
 	}
 
+	public boolean serializarObjeto(Object o) {
+		if (o == null) {
+			return false;
+		} else {
+			String name = o.getClass().getSimpleName();
+			try {
+				FileOutputStream fos = new FileOutputStream(this.path + name);
+				ObjectOutputStream out = new ObjectOutputStream(fos);
+				out.writeObject(o);
+				out.close();
+				return true;
+			} catch (Exception e) {
+				e.printStackTrace();
+				return false;
+			}
+		}
+	}
+
+	/**Retorna el objeto serializado.*/
+	public Object dameObjetoSerializado(String fname) {
+		try // Debe estar en un try/catch
+		{
+			FileInputStream fis = new FileInputStream(this.path + fname);
+			ObjectInputStream in = new ObjectInputStream(fis);
+
+			Object ret = (Object) in.readObject();
+			in.close();
+			return ret;
+		} catch (Exception ex) {
+			System.out.println("Hubo un problema al cargar el objeto a memoria");
+			return null;
+		}
+	}
+
 	/*
-	 * Crea un archivo txt, con el nombre pasado, true-> se logro, false->algo fallo
+	 * Crea un archivo , con el nombre pasado, true-> se logro, false->algo fallo
 	 */
 	public boolean crearArchivo(String fname) {
 		try {
-			FileOutputStream fos = new FileOutputStream(fname);
+			FileOutputStream fos = new FileOutputStream(this.path + fname);
 			OutputStreamWriter out = new OutputStreamWriter(fos);
 
 			out.close();
@@ -133,7 +147,7 @@ public class GestorArchivos implements Serializable {
 	 **/
 	public boolean escribirArchivo(String fname, String palabra) {
 		try {
-			FileOutputStream fos = new FileOutputStream(fname, true);
+			FileOutputStream fos = new FileOutputStream(this.path + fname, true);
 			OutputStreamWriter out = new OutputStreamWriter(fos);
 			out.write(palabra + "\r\n");
 
@@ -150,7 +164,7 @@ public class GestorArchivos implements Serializable {
 	 * Elimina el archivo pasado por parametro.
 	 **/
 	public boolean borrarArchivo(String fname) {
-		File fichero = new File(fname);
+		File fichero = new File(this.path + fname);
 		if (fichero.delete()) {
 			// System.out.println("El fichero ha sido borrado satisfactoriamente");
 			return true;
@@ -166,7 +180,7 @@ public class GestorArchivos implements Serializable {
 	 **/
 	public boolean leerArchivo(String fname) {
 		try {
-			FileInputStream fis = new FileInputStream(fname);
+			FileInputStream fis = new FileInputStream(this.path + fname);
 			Scanner scan = new Scanner(fis);
 			while (scan.hasNextLine()) {
 				String s1 = scan.nextLine();
@@ -182,9 +196,11 @@ public class GestorArchivos implements Serializable {
 		}
 
 	}
-/**
- * Serializa una lista de objetos (NODO) en formato JSON**/
-	public boolean generarJSONdesdeLista(String fname,List<Nodo> list) {
+
+	/**
+	 * Serializa una lista de objetos (NODO) en formato JSON
+	 **/
+	public boolean generarJSONdesdeLista(String fname, List<Nodo> list) {
 		if (list == null || list.equals(null)) {
 			return false;
 		}
@@ -192,8 +208,8 @@ public class GestorArchivos implements Serializable {
 		String json = gson.toJson(list);
 
 		try {
-			FileWriter writer = new FileWriter(fname, true);
-			FileInputStream temp = new FileInputStream(fname);
+			FileWriter writer = new FileWriter(this.path + fname, true);
+			FileInputStream temp = new FileInputStream(this.path + fname);
 			Scanner scan = new Scanner(temp);
 
 			if (scan.hasNext()) {// Si el archivo tiene siguiente significa que no esta vacio.
@@ -214,8 +230,6 @@ public class GestorArchivos implements Serializable {
 		}
 	}
 
-
-	
 	/**
 	 * Serializa el (UN) objeto(o) en un archivo(fname) estilo json preety
 	 **/
@@ -227,8 +241,8 @@ public class GestorArchivos implements Serializable {
 		String json = gson.toJson(o);
 
 		try {
-			FileWriter writer = new FileWriter(fname, true);
-			FileInputStream temp = new FileInputStream(fname);
+			FileWriter writer = new FileWriter(this.path + fname, true);
+			FileInputStream temp = new FileInputStream(this.path + fname);
 			Scanner scan = new Scanner(temp);
 
 			if (scan.hasNext()) {// Si el archivo tiene siguiente significa que no esta vacio.
@@ -250,14 +264,14 @@ public class GestorArchivos implements Serializable {
 	}
 
 	/**
-	 * Retorna el objeto serializado en el archivo "fname"
+	 * Retorna el objeto que fue serializado en el archivo "fname" del tipo json
 	 **/
 	public Object cargarJSON(String fname) {
 		Gson gson = new Gson();
 		Object ret = null;
 
 		try {
-			BufferedReader br = new BufferedReader(new FileReader(fname));
+			BufferedReader br = new BufferedReader(new FileReader(this.path + fname));
 			ret = gson.fromJson(br, Object.class);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -267,15 +281,15 @@ public class GestorArchivos implements Serializable {
 	}
 
 	/**
-	 * Recibe el path al archivo json, y devuelve un ArrayList de Nodos --Pensado
+	 * Recibe el nombre del archivo json, y devuelve un ArrayList de Nodos --Pensado
 	 * para que la clase GrafoList lo use, tomando ese arrayList busque la ciudad
 	 * que necesite.--
 	 **/
-	public static  ArrayList<Nodo> cargarJsonLista(String fname) {// cargamos el archivo json en una lista de nodos
+	public ArrayList<Nodo> cargarJsonLista(String fname) {// cargamos el archivo json en una lista de nodos
 		Gson gson = new Gson();
 		try {
 
-			ArrayList<Nodo> nodos = gson.fromJson(new FileReader(fname), new TypeToken<ArrayList<Nodo>>() {
+			ArrayList<Nodo> nodos = gson.fromJson(new FileReader(this.path + fname), new TypeToken<ArrayList<Nodo>>() {
 			}.getType());
 
 			return nodos;
@@ -284,6 +298,19 @@ public class GestorArchivos implements Serializable {
 			return null;
 
 		}
+	}
+	/*Cambia el path con el que se está trabajando al pasado por parametro.
+	 * Por defecto el path con el que se trabaja es "src/fileManager/"
+	 * */
+	public void cambiarPath(String path) {
+		if (path.equals(null) || path.equals("")) {
+			throw new IllegalArgumentException("estas ingresando un path vacio");
+		}
+		this.path = path;
+	}
+/*Retorna el patho con el que se esta trabajando actualmente.**/
+	public String getPath() {
+		return this.path;
 	}
 
 }

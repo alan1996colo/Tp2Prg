@@ -1,4 +1,4 @@
-package negocio;
+package fileManager;
 
 import static org.junit.Assert.*;
 
@@ -8,16 +8,20 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+import negocio.GrafoLista;
+import negocio.Nodo;
 
 public class GestorArchivosTest {
 	GestorArchivos gestor;
 	String name, texto;
+	String path;
 
 	@Before
 	public void setUp() {
 		gestor = new GestorArchivos();
 		name = "test.txt";
 		texto = "1234";
+		path="src/fileManager/";
 	}
 
 	@Test
@@ -108,12 +112,12 @@ public class GestorArchivosTest {
 
 	@Test
 	public void cargarJsonEnGrafoLista() {
-		GrafoLista temp = new GrafoLista(gestor.cargarJsonLista("src/negocio/argentinaCitys.json"));
+		GrafoLista temp = new GrafoLista(gestor.cargarJsonLista("argentinaCitys.json"));
 		System.out.println(temp.getNodoNum(8).getNombreCiudad());
 	}
 	@Test
 	public void cargarJsonEnGrafoListaGetNumber() {
-		GrafoLista temp = new GrafoLista(gestor.cargarJsonLista("src/negocio/argentinaCitys.json"));
+		GrafoLista temp = new GrafoLista(gestor.cargarJsonLista("argentinaCitys.json"));
 		System.out.println(temp.getNodoNum(9).getNombreCiudad());
 		System.out.println(temp.getNodoNum(9).getLatitud());
 		
@@ -127,16 +131,20 @@ public class GestorArchivosTest {
 		temp.agregarNodo(nodo3);
 		temp.agregarNodo(nodo2);
 		temp.agregarNodo(nodo);
-		gestor.generarJSONdesdeLista("jasonlista.json",temp.getNodos());
+		gestor.generarJSONdesdeLista(path+"jasonlista.json",temp.getNodos());
 	}
 
 	@After
 	public void cleanUp() {
 		// System.out.print("cleanUp_");
 		gestor.borrarArchivo(name);
-		gestor.borrarArchivo("Nodo.txt");
+		gestor.borrarArchivo("Nodo");
 		gestor.borrarArchivo("archivojason");
 		gestor.borrarArchivo("archivojason.json");
+		gestor.borrarArchivo("jasonlista.json");
+		
 	}
+	@Ignore
+	public void testNull() {}
 
 }

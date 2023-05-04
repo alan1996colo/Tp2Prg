@@ -2,6 +2,8 @@ package negocio;
 
 import java.io.Serializable;
 
+import fileManager.GestorArchivos;
+
 public class Negocio implements Serializable{
 	private static final long serialVersionUID = 1L;
 	int aumentoPesosPorcentaje;
