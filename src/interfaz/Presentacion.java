@@ -67,7 +67,10 @@ public class Presentacion {
 	 * **/
 	public void ModificarSolucion() {}
 	
-	
+	private void Sysout() {
+		// TODO Auto-generated method stub
+
+	}
 	
 	private void initialize() {
 		
