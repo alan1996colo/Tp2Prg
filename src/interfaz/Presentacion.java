@@ -28,7 +28,8 @@ public class Presentacion {
 	private JMapViewer mapa;
 	private JPanel panelMapa;
 	private JTextField textField;
-	private ArrayList<Nodo>ciudad = new ArrayList<Nodo>();
+	private ArrayList<Nodo>ciudad = new ArrayList<Nodo>(); // puntos de las ciudades
+	private ArrayList<Coordinate> coordenadas = new  ArrayList<Coordinate>(); // coordenadas de poligonos
 	
 	
 	
@@ -79,8 +80,25 @@ public class Presentacion {
 	public void ModificarSolucion() {}
 	
 	
-	
-	
+	private void dibujarPuntos() {
+		for(Nodo coordenadas :ciudad ) {
+			double latitud = coordenadas.getLatitud();
+			double longitud = coordenadas.getLongitud();
+			System.out.println(latitud);
+			String NombreCiudad = coordenadas.getNombreCiudad();
+			Coordinate coordinate = new Coordinate (latitud, longitud);
+			MapMarker punto = new MapMarkerDot(coordinate);	
+			punto.getStyle().setBackColor(Color.black);
+			punto.getStyle().setColor(Color.yellow);
+			mapa.addMapMarker(punto);
+		}
+	}
+	private void obtenerCoordenadasDeCiudades() {
+		for(int i=0;i<ciudad.size();i++) {
+			coordenadas.add(new Coordinate(ciudad.get(i).getLatitud(),ciudad.get(i).getLongitud()));
+		}
+		
+	}
     private void ObtenerCiudadDeArchivo( GrafoLista ciudades ,String provincia) {
     	
 		for( int i=0; i<ciudades.getTamanio();i++) {
@@ -95,25 +113,17 @@ public class Presentacion {
 		GestorArchivos gestor = new GestorArchivos();
 		ArrayList<Nodo> nodo= gestor.cargarJsonLista("argentinaCitys.json");
 		GrafoLista ciudades = new GrafoLista(nodo);
-		ObtenerCiudadDeArchivo(ciudades,"Buenos Aires");
+		ObtenerCiudadDeArchivo(ciudades,"Entre Ríos");
+		obtenerCoordenadasDeCiudades();
 		System.out.println(nodo);
-		
-		for(Nodo coordenadas :ciudad ) {
-			double latitud = coordenadas.getLatitud();
-			double longitud = coordenadas.getLongitud();
-			System.out.println(latitud);
-			String NombreCiudad = coordenadas.getNombreCiudad();
-			Coordinate coordinate = new Coordinate (latitud, longitud);
-			
-			MapMarker punto = new MapMarkerDot(NombreCiudad,coordinate);	
-			punto.getStyle().setBackColor(Color.black);
-			punto.getStyle().setColor(Color.yellow);
-			mapa.addMapMarker(punto);
-			
-			
-		}
-		
+		dibujarPuntos();
+//		MapPolygon poligono = new MapPolygonImpl(coordenadas);
+//		mapa.addMapPolygon(poligono);
 	}
+
+
+	
+
 	
 
 	
@@ -131,25 +141,9 @@ public class Presentacion {
 		
 		
 		
-		Coordinate coordinate = new Coordinate (-38.416097, -63.616672);
 		
-		MapMarker punto = new MapMarkerDot("Aqui",coordinate);
-		punto.getStyle().setBackColor(Color.red);
+		Coordinate coordinate = new Coordinate (-32.27696543467173, -59.13746600525774); // posicion del mapa
 		
-		
-		
-		
-		// agrego poligono "lineas"
-		ArrayList<Coordinate> coordenadas = new  ArrayList<Coordinate>();
-		ArrayList<Coordinate> puntos = new  ArrayList<Coordinate>();
-//		coordenadas.add(new Coordinate(-34.521,-58.7008));
-//		coordenadas.add(new Coordinate(-34.546,-58.719));
-//		coordenadas.add(new Coordinate(-34.521,-58.737));
-//		coordenadas.add(new Coordinate(-34.559,-58.725));
-//		coordenadas.add(new Coordinate(-34.521,-58.7008));
-//		
-		
-		MapPolygon poligono = new MapPolygonImpl(coordenadas);
 		
 		
 		// llamamos al mapa
@@ -159,10 +153,10 @@ public class Presentacion {
 		panelMapa.add(mapa);
 		mapa.setDisplayPosition(coordinate, 5);
 		//punto.getStyle().setColor(Color.yellow);
-		mapa.addMapMarker(punto);
+		
 		//punto.getStyle().setColor(Color.yellow);
 		
-		
+
 		
 		JLabel lblNewLabel = new JLabel("Agregar ciudad:");
 		lblNewLabel.setBounds(10, 44, 103, 31);

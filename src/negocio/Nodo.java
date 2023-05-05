@@ -3,6 +3,8 @@ package negocio;
 import java.io.Serializable;
 import java.util.*;
 
+import org.openstreetmap.gui.jmapviewer.Coordinate;
+
 public class Nodo implements Serializable {
 	/**
 	 * 
@@ -83,5 +85,7 @@ public class Nodo implements Serializable {
 	        } else if (!nombreProvincia.equals(other.nombreProvincia)) return false;
 	        return true;
 	    }
+
+	
 
 }
