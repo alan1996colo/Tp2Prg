@@ -35,6 +35,17 @@ public class Nodo implements Serializable {
 		vecinos.add(new Arista(nodo, peso));
 
 	}
+	/*Recorre los vecinos y elimina la arista con el nombre pasado.*/
+	public void quitarArista(String name) {
+	    Iterator<Arista> iter = this.vecinos.iterator();
+	    while (iter.hasNext()) {
+	        Arista a = iter.next();
+	        if (a.getNodoDestino().getNombreCiudad().equals(name)) {
+	            iter.remove();
+	        }
+	    }
+	}
+
 
 	public String getId() {
 		return nombreCiudad;
@@ -47,6 +58,11 @@ public class Nodo implements Serializable {
 	public void mostrarVecinos() {
 		for (Arista iter:this.vecinos) {
 			System.out.println(iter.getNodoDestino().toString());
+		}
+	}
+	public void mostrarAristas() {
+		for(Arista ar:this.vecinos) {
+			System.out.println(ar.toString());
 		}
 	}
 
@@ -68,6 +84,7 @@ public class Nodo implements Serializable {
 	public String toString() {
 		return "ciudad :"+this.nombreCiudad.toString()+" Provincia: "+this.nombreProvincia.toString()+" Latitud:"+Double.toString(this.latitud)+" Longitud:"+Double.toString(this.longitud);
 	}
+
 	
 	 @Override
 	    public boolean equals(Object obj) {
@@ -85,6 +102,10 @@ public class Nodo implements Serializable {
 	        } else if (!nombreProvincia.equals(other.nombreProvincia)) return false;
 	        return true;
 	    }
+	 
+	 public boolean equalsProv(Nodo n) {		 
+		 return this.getNombreProvincia().equals(n.getNombreProvincia());
+	 }
 
 	
 

@@ -22,6 +22,9 @@ public class Arista implements Serializable {
     public double getPeso() {
         return peso;
     }   
+    public String toString() {
+    	return "-->"+getNodoDestino().getNombreCiudad()+" "+getPeso();
+    }
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;

@@ -1,23 +1,38 @@
 package negocio;
 
 import java.io.Serializable;
+import java.util.List;
 
 import fileManager.GestorArchivos;
 
 public class Negocio implements Serializable{
 	private static final long serialVersionUID = 1L;
 	int aumentoPesosPorcentaje;
-	int costoFijoprovDistancia;
-	int costoPesos;
+	int costoFijoprovDistinta;
+	int costoPesosxKM;
 	GrafoLista grafo;
 	public Negocio(int aumentoPesosPorcentaje,int costoFijoprovDistancia,int costoPesos) {
-		this.costoPesos=costoPesos;
+		this.costoPesosxKM=costoPesos;
 		this.aumentoPesosPorcentaje=aumentoPesosPorcentaje;
-		this.costoFijoprovDistancia=costoFijoprovDistancia;
+		this.costoFijoprovDistinta=costoFijoprovDistancia;
 		
 	}
 	public void inicializarGrafo() {
 		this.grafo=new GrafoLista();
+	}
+	
+	
+	
+	/**Inteta registrar la localidad, true-> se logro , false->algo fallo.*/
+	public boolean registrarLocalidad(String nombreCiudad, String nombreProvincia, double latitud, double longitud) {
+		Nodo nodo=new Nodo(nombreCiudad,  nombreProvincia, latitud, longitud);
+		try{this.grafo.agregarNodo(nodo);
+		return true;
+		}
+		catch(IllegalArgumentException i){
+			System.out.println("No se pudo registrar la localidad, porque ya se encuentra registrada.");
+		}
+		return false;
 	}
 	
 	/**
@@ -38,7 +53,7 @@ public class Negocio implements Serializable{
 		Nodo origen=this.grafo.buscarNodoCiudad(ciudadOrigen);
 		Nodo destino=this.grafo.buscarNodoCiudad(ciudadDestino);
 		if(origen!=null&&destino!=null) {
-			origen.agregarVecino(destino,GrafoLista.distanciaEntreNodos(origen, destino));
+			this.grafo.agregarArista(origen, destino, GrafoLista.distanciaEntreNodos(origen, destino));
 			return true;
 		}
 		else {
@@ -52,13 +67,31 @@ public class Negocio implements Serializable{
 	public /*Grafo*/void  CrearArbolGeneradorMinimo() {};
 	public int CostoPesos(int localidad_1, int localidad_2) {return 0;};
 	private int PorcentajeDeAumentoConexion() {return 0;}
-	public boolean IsProvinciasDistintas() {return false;}
-	public int DarCostoEnpesos() {return 0;}
-	public void MostrarGrafos() {
-		this.grafo.mostrarGrafo();
+	public boolean IsProvinciasDistintas(String ciudad1,String ciudad2) {
+		 return this.grafo.isProvDiff(this.grafo.buscarNodoCiudad(ciudad1),this.grafo.buscarNodoCiudad(ciudad2));
+		}
+	
+	/*Una primera version para dar costo en pesos*/
+	public double darCostoEnpesos() {
+		double ret=0;
+		List<Arista> arbol=AGMPrim.AGMPrim(this.grafo);
+		for(Arista a:arbol) {ret=ret+(a.getPeso()*costoPesosxKM);
 			
 			
 		}
+		
+		return ret;}
+	public void MostrarGrafos() {
+		this.grafo.mostrarGrafoConAristas();
+			}
+	
+	/*Intenta borrar la ciudad pasada , true se logro, false no se pudo(quiza no estaba en el grafo)*/
+	public boolean quitarCiudad(String ciudadN) {
+		return this.grafo.eliminarNodoCiudad(ciudadN);
+		
+	}
+	
+	
 	/**
 	 * Muestra las aristas del nodo indice pasado.
 	 * **/

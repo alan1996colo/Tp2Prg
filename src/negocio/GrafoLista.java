@@ -37,10 +37,16 @@ public class GrafoLista implements Serializable {
 		this.nodos.get(i).mostrarVecinos();
 	}
 	
+	/*
+	 * Intenta agreagar la arista entre dos nodos
+	 * */
 	public void agregarArista(Nodo nodo1, Nodo nodo2, double peso) {
 		if(nodo1.equals(nodo2)) {throw new IllegalArgumentException("No se permiten bucles");}
-		nodo1.agregarVecino(nodo2, peso);
-		nodo2.agregarVecino(nodo1, peso);
+		else {
+			nodo1.agregarVecino(nodo2, peso);
+			nodo2.agregarVecino(nodo1, peso);
+		}
+		
 	}
 
 	// devuelvo los nodos del grafo
@@ -55,8 +61,30 @@ public class GrafoLista implements Serializable {
 	// cambiar nombre a getVecinos mas tarde
 	public List<Arista> getVecinos(int i) {
 		return this.nodos.get(i).getArista();
-
-	}/**
+	
+	}
+	
+	
+	/**Busca la ciudad pasada en la lista de nodos y la elimina de la lista, por ahora no actualiza ninguna arista ni referencia*/
+	public boolean eliminarNodoCiudad(String name) {
+		
+		Nodo borrar=buscarNodoCiudad(name);
+		if(borrar==null||borrar.equals(null)) {throw new IllegalArgumentException("No se puede quitar una ciudad que no existe en el grafo");}
+		//Primero revisa las aristas, luego borra todas las aristas involucradas con el nodo, y luego quita el nodo
+		for(Arista ar:borrar.getArista()) {
+		buscarNodoCiudad(ar.getNodoDestino().getNombreCiudad()).quitarArista(borrar.getNombreCiudad());
+		
+		}
+		
+		if(this.nodos.remove(borrar)) {
+				return true;
+			
+		}
+	
+		return false;
+		
+	}
+	/**
 	Busca el nodo por nombre de ciudad, si lo encuentra retorna el nodo,sino nada.
 	*/
 	public Nodo buscarNodoCiudad(String name) {
@@ -72,6 +100,7 @@ public class GrafoLista implements Serializable {
 		return null;
 		
 	}
+
 	/**
 	 * True =contiene al nodo en su lista
 	 * False= el nodo no está
@@ -102,13 +131,22 @@ public class GrafoLista implements Serializable {
 		double distancia = radioTierra * c;
 		return distancia;
 	}
-
+	public boolean isProvDiff(Nodo n1, Nodo n2) {
+		return !n1.equalsProv(n2);
+	}
+	
 	public void mostrarGrafo() {
 		// TODO Auto-generated method stub
 		for(Nodo iter:this.nodos) {
 			System.out.println(iter.toString());
 		}
 		
+	}
+	public void mostrarGrafoConAristas() {
+		for(Nodo iter:this.nodos) {
+			System.out.println(iter.getNombreCiudad()+" :");
+			iter.mostrarAristas();
+		}
 	}
 
 }
