@@ -66,3 +66,12 @@ Por consejo del profesor Gabriel Carrillo, decidi mover todo lo relacionado a ge
 - Se quitó la forma de llamar estaticamente a funciones de GestorArchivos  
 _Recordemos que estamos trabajando con programacion orientada a objetos y usar metodos estaticos no es lo mas conveniente._
 
+## CheckList antes de entregar  
+- [ ] Modificar la estructura de GrafoLista para que las operaciones de recorrido se hagan en otra clase como en bfs.  
+- [ ] Revisar metodos publicos que no necesitan ser publicos, pasarlos a privados o modificador de acceso por defecto.  
+- [ ] Agregar estructura heap a prim para mejorar su rendimiento y su orden de complejidad  
+- [ ] Agregar opciones en la interfaz visual para guardar el archivo que se estuvo trabajando y cargarlo mas tarde.  
+- [ ] Revisar todas las funciones y aplicar las buenas practicas de programacion de las lecturas del inicio de las clases.
+- [ ] Agregar todos los tests que se hayan omitido de la capa de negocio.
+- [ ] Dessarrollar una herramienta para permitir que el usuario modifique la soluci´on, cambiando una conexion por otra y
+mostrando el costo de esta modificacion
