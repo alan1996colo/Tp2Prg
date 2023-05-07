@@ -28,11 +28,11 @@ public class Nodo implements Serializable {
 		this.vecinos= new ArrayList<Arista>();
 	}
 
-	public void agregarVecino(Nodo nodo, double peso) {
-		if(this.vecinos.contains(new Arista(nodo,peso))) {
+	public void agregarVecino(Nodo nodoOrigen, Nodo nodoDestino, double peso) {
+		if(this.vecinos.contains(new Arista(nodoOrigen,nodoDestino,peso))) {
 			throw new IllegalArgumentException("La arista ya existe");
 		}
-		vecinos.add(new Arista(nodo, peso));
+		vecinos.add(new Arista(nodoOrigen, nodoDestino, peso));
 
 	}
 	/*Recorre los vecinos y elimina la arista con el nombre pasado.*/

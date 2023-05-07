@@ -2,8 +2,9 @@
     "nombreCiudad": "Buenos Aires", 
    "latitud": "-34.5997", 
     "longitud": "-58.3819",
-    "nombreProvincia": "Buenos Aires, Ciudad Autónoma de"}, {
-    "nombreCiudad": "Córdoba", 
+    "nombreProvincia": "Buenos Aires, Ciudad Autónoma de"}, 
+    {
+    "nombreCiudad": " ", 
    "latitud": "-31.4167", 
     "longitud": "-64.1833",
     "nombreProvincia": "Córdoba" 

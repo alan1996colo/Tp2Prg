@@ -40,14 +40,17 @@ public class GrafoLista implements Serializable {
 	/*
 	 * Intenta agreagar la arista entre dos nodos
 	 * */
-	public void agregarArista(Nodo nodo1, Nodo nodo2, double peso) {
-		if(nodo1.equals(nodo2)) {throw new IllegalArgumentException("No se permiten bucles");}
+	public void agregarArista(Nodo nodoOrigen, Nodo nodoDestino) {
+		if(nodoOrigen.equals(nodoDestino)) {throw new IllegalArgumentException("No se permiten bucles");}
 		else {
-			nodo1.agregarVecino(nodo2, peso);
-			nodo2.agregarVecino(nodo1, peso);
+			double peso=this.distanciaEntreNodos(nodoOrigen, nodoDestino);
+			nodoOrigen.agregarVecino(nodoOrigen, nodoDestino, peso);
+			nodoDestino.agregarVecino(nodoDestino, nodoOrigen, peso);
 		}
 		
 	}
+	
+	
 
 	// devuelvo los nodos del grafo
 	public List<Nodo> getNodos() {
@@ -116,7 +119,7 @@ public class GrafoLista implements Serializable {
 	}
 	
 
-	public static double distanciaEntreNodos(Nodo ciudad1, Nodo ciudad2) {
+	private static double distanciaEntreNodos(Nodo ciudad1, Nodo ciudad2) {
 		double latitud1 = ciudad1.getLatitud();
 		double latitud2 = ciudad2.getLatitud();
 		double longitud1 = ciudad1.getLongitud();

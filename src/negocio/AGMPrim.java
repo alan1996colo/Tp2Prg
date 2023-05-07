@@ -6,7 +6,7 @@ public class AGMPrim {
 	public static List<Arista> AGMPrim(GrafoLista grafo){
 		List<Arista> arbol=new ArrayList<>();
 		Set<Nodo> visitados= new HashSet<>();
-				
+						
 		Nodo actual=grafo.getNodos().get(0);
 		visitados.add(actual);
 		

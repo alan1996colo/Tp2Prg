@@ -7,12 +7,17 @@ public class Arista implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	private Nodo nodoOrigen;
 	private Nodo nodoDestino;
     private double peso;
 
-    public Arista(Nodo nodoDestino, double peso) {
+    public Arista(Nodo nodoOrigen, Nodo nodoDestino, double peso) {
+    	this.nodoOrigen=nodoOrigen;
         this.nodoDestino = nodoDestino;
         this.peso = peso;
+    }
+    public Nodo getNodoOrigen() {
+        return nodoOrigen;
     }
 
     public Nodo getNodoDestino() {
@@ -22,8 +27,9 @@ public class Arista implements Serializable {
     public double getPeso() {
         return peso;
     }   
+   
     public String toString() {
-    	return "-->"+getNodoDestino().getNombreCiudad()+" "+getPeso();
+    	return "-->"+getNodoOrigen().getNombreCiudad()+ "--> " + getNodoDestino().getNombreCiudad()+" "+getPeso();
     }
     @Override
     public boolean equals(Object obj) {

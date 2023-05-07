@@ -32,20 +32,20 @@ public class AGMPrimTest {
 	grafo.agregarNodo(Cordoba);
 	grafo.agregarNodo(Mendoza);
 	
-	grafo.agregarArista(CABA, Salta, grafo.distanciaEntreNodos(CABA, Salta));	
-	grafo.agregarArista(CABA, Neuquen, grafo.distanciaEntreNodos(CABA, Neuquen));		
-	grafo.agregarArista(Salta, Neuquen, grafo.distanciaEntreNodos(Salta, Neuquen));
-	grafo.agregarArista(Neuquen, SanJuan,grafo.distanciaEntreNodos(Neuquen, SanJuan));
-	grafo.agregarArista(Neuquen,SanLuis, grafo.distanciaEntreNodos(Neuquen, SanLuis));		
-	grafo.agregarArista(Salta, Misiones, grafo.distanciaEntreNodos(Salta, Misiones));
-	grafo.agregarArista(Misiones, SanLuis, grafo.distanciaEntreNodos(Misiones, SanLuis));		
-	grafo.agregarArista(SanLuis,SanJuan, grafo.distanciaEntreNodos(SanLuis, SanJuan));
-	grafo.agregarArista(Misiones, EntreRios, grafo.distanciaEntreNodos(Misiones, EntreRios));				
-	grafo.agregarArista(SanJuan,Cordoba, grafo.distanciaEntreNodos(SanJuan, Cordoba));		
-	grafo.agregarArista(Misiones, Cordoba, grafo.distanciaEntreNodos(Misiones, Cordoba));
-	grafo.agregarArista(EntreRios, Cordoba, grafo.distanciaEntreNodos(EntreRios, Cordoba));
-	grafo.agregarArista(EntreRios,Mendoza, grafo.distanciaEntreNodos(EntreRios, Mendoza));
-	grafo.agregarArista(Cordoba, Mendoza, grafo.distanciaEntreNodos(Cordoba, Mendoza));
+	grafo.agregarArista(CABA, Salta);	
+	grafo.agregarArista(CABA, Neuquen);		
+	grafo.agregarArista(Salta, Neuquen);
+	grafo.agregarArista(Neuquen, SanJuan);
+	grafo.agregarArista(Neuquen,SanLuis);		
+	grafo.agregarArista(Salta, Misiones);
+	grafo.agregarArista(Misiones, SanLuis);		
+	grafo.agregarArista(SanLuis,SanJuan);
+	grafo.agregarArista(Misiones, EntreRios);				
+	grafo.agregarArista(SanJuan,Cordoba);		
+	grafo.agregarArista(Misiones, Cordoba);
+	grafo.agregarArista(EntreRios, Cordoba);
+	grafo.agregarArista(EntreRios,Mendoza);
+	grafo.agregarArista(Cordoba, Mendoza);
 	
 	AGMPrim conexiones= new AGMPrim();
 	List<Arista> todasLasAristas =conexiones.AGMPrim(grafo);
