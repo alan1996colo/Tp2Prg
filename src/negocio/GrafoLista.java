@@ -119,7 +119,7 @@ public class GrafoLista implements Serializable {
 	}
 	
 
-	private static double distanciaEntreNodos(Nodo ciudad1, Nodo ciudad2) {
+	public static double distanciaEntreNodos(Nodo ciudad1, Nodo ciudad2) {
 		double latitud1 = ciudad1.getLatitud();
 		double latitud2 = ciudad2.getLatitud();
 		double longitud1 = ciudad1.getLongitud();

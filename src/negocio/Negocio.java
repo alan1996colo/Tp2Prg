@@ -53,7 +53,7 @@ public class Negocio implements Serializable{
 		Nodo origen=this.grafo.buscarNodoCiudad(ciudadOrigen);
 		Nodo destino=this.grafo.buscarNodoCiudad(ciudadDestino);
 		if(origen!=null&&destino!=null) {
-			this.grafo.agregarArista(origen, destino, GrafoLista.distanciaEntreNodos(origen, destino));
+			this.grafo.agregarArista(origen, destino);
 			return true;
 		}
 		else {
@@ -97,6 +97,27 @@ public class Negocio implements Serializable{
 	 * **/
 	public void mostrarConexionNodoNumero(int i){
 		this.grafo.mostrarVecinosNodoNumero(i);
+		
+	}
+	public void generarGrafoCompleto(GrafoLista grafo) {
+		
+		for(int j=0;j<grafo.getTamanio();j++) {
+			Nodo origen = grafo.getNodoNum(j);
+			origen.inicializarVecinos();
+			System.out.println(origen);
+			for(int i=1;i<grafo.getTamanio();i++) {
+				
+				if(i!=j) {
+					Nodo destino = grafo.getNodoNum(i);
+					
+					origen.agregarVecino(origen,destino,GrafoLista.distanciaEntreNodos(origen, destino) );
+					System.out.println("La    "+origen+ "   con:   "+destino + "el peso es:"+ GrafoLista.distanciaEntreNodos(origen, destino));
+				}
+			}
+			
+		}
+	
+		
 		
 	}
 		

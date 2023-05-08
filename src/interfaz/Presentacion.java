@@ -2,6 +2,7 @@ package interfaz;
 
 import java.awt.EventQueue;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -14,7 +15,10 @@ import org.openstreetmap.gui.jmapviewer.interfaces.MapMarker;
 import org.openstreetmap.gui.jmapviewer.interfaces.MapPolygon;
 
 import fileManager.GestorArchivos;
+import negocio.AGMPrim;
+import negocio.Arista;
 import negocio.GrafoLista;
+import negocio.Negocio;
 import negocio.Nodo;
 
 import java.awt.Canvas;
@@ -23,13 +27,15 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class Presentacion {
-
+	
+	private Negocio negocio= new Negocio(2,3,4);
 	private JFrame frame;
 	private JMapViewer mapa;
 	private JPanel panelMapa;
 	private JTextField textField;
-	private ArrayList<Nodo>ciudad = new ArrayList<Nodo>(); // puntos de las ciudades
+	private ArrayList<Nodo> ciudad = new ArrayList<Nodo>(); // puntos de las ciudades
 	private ArrayList<Coordinate> coordenadas = new  ArrayList<Coordinate>(); // coordenadas de poligonos
+	private GrafoLista ciudadesSeleccionadas = new GrafoLista();
 	
 	
 	
@@ -57,8 +63,10 @@ public class Presentacion {
 	 * Create the application.
 	 */
 	public Presentacion() {
+		
 		initialize();
 	}
+	
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -84,7 +92,7 @@ public class Presentacion {
 		for(Nodo coordenadas :ciudad ) {
 			double latitud = coordenadas.getLatitud();
 			double longitud = coordenadas.getLongitud();
-			System.out.println(latitud);
+			//System.out.println(latitud);
 			String NombreCiudad = coordenadas.getNombreCiudad();
 			Coordinate coordinate = new Coordinate (latitud, longitud);
 			MapMarker punto = new MapMarkerDot(coordinate);	
@@ -99,26 +107,64 @@ public class Presentacion {
 		}
 		
 	}
-    private void ObtenerCiudadDeArchivo( GrafoLista ciudades ,String provincia) {
+    private ArrayList<Nodo> ObtenerCiudadDeArchivo( GrafoLista ciudades ,String provincia) {
     	
 		for( int i=0; i<ciudades.getTamanio();i++) {
 			if(ciudades.getNodoNum(i).getNombreProvincia().equals(provincia)) {
 				this.ciudad.add(ciudades.getNodoNum(i));
+				
 			}
 			
 		}
+		return ciudad;
 	}
+	private void generarConexionGrafoCompleto(GrafoLista ciudadesSeleccionadas) {
+		
+		negocio.generarGrafoCompleto(ciudadesSeleccionadas);
+	}
+	
+	private void dibujarAristas(List<Arista> aristas) {
+		
+		List<Coordinate> coordenadas1 = new ArrayList<>();
+		for (Arista arista : aristas) {
+			
+			
+			double latitudOrigen = arista.getNodoOrigen().getLatitud();
+	        double longitudOrigen = arista.getNodoOrigen().getLongitud();
+	        coordenadas1.add(new Coordinate(latitudOrigen, longitudOrigen));
+	        
+	        double latitudDestino = arista.getNodoDestino().getLatitud();
+	        double longitudDestino = arista.getNodoDestino().getLongitud();
+	        coordenadas1.add(new Coordinate(latitudDestino, longitudDestino));
+
+	    }
+		MapPolygon poligono = new MapPolygonImpl(coordenadas1);
+        mapa.addMapPolygon(poligono);
+	     
+		 
+		
+	}
+
   
 	private void dibujarPuntosEnMapa() {
 		GestorArchivos gestor = new GestorArchivos();
 		ArrayList<Nodo> nodo= gestor.cargarJsonLista("argentinaCitys.json");
-		GrafoLista ciudades = new GrafoLista(nodo);
-		ObtenerCiudadDeArchivo(ciudades,"Entre Ríos");
-		obtenerCoordenadasDeCiudades();
-		System.out.println(nodo);
+		GrafoLista TodasLasciudades = new GrafoLista(nodo);
+		GrafoLista ciudadesSeleccionadas = new GrafoLista(ObtenerCiudadDeArchivo(TodasLasciudades,"Entre Ríos"));
+		//obtenerCoordenadasDeCiudades();
+		generarConexionGrafoCompleto(ciudadesSeleccionadas);
 		dibujarPuntos();
-//		MapPolygon poligono = new MapPolygonImpl(coordenadas);
-//		mapa.addMapPolygon(poligono);
+	
+		
+		AGMPrim calcular= new AGMPrim();
+		List<Arista> AristasMinimas = calcular.AGMPrim(ciudadesSeleccionadas);
+		System.out.println(AristasMinimas);
+		dibujarAristas(AristasMinimas);
+		
+		System.out.println("Las ciudades seleccionadas son:" + ciudadesSeleccionadas.getNodos());
+		//System.out.println(nodo);
+	
+
 	}
 
 
@@ -128,9 +174,13 @@ public class Presentacion {
 
 	
 
+
+
+
 	private void initialize() {
 		
 		frame = new JFrame();
+		
 		frame.setBounds(100, 100, 1019, 673);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -171,3 +221,4 @@ public class Presentacion {
 		
 	}
 }
+
