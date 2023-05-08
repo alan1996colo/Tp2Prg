@@ -16,7 +16,6 @@ public class GrafoLista implements Serializable {
 
 	public GrafoLista(ArrayList<Nodo> nodos) {// construir grafo lista con una lista de nodos ya creada.
 		this.nodos = nodos;
-
 	}
 
 	public Nodo getNodoNum(int n) {
@@ -46,11 +45,8 @@ public class GrafoLista implements Serializable {
 			double peso=this.distanciaEntreNodos(nodoOrigen, nodoDestino);
 			nodoOrigen.agregarVecino(nodoOrigen, nodoDestino, peso);
 			nodoDestino.agregarVecino(nodoDestino, nodoOrigen, peso);
-		}
-		
-	}
-	
-	
+		}		
+	}	
 
 	// devuelvo los nodos del grafo
 	public List<Nodo> getNodos() {
@@ -67,25 +63,19 @@ public class GrafoLista implements Serializable {
 	
 	}
 	
-	
 	/**Busca la ciudad pasada en la lista de nodos y la elimina de la lista, por ahora no actualiza ninguna arista ni referencia*/
-	public boolean eliminarNodoCiudad(String name) {
-		
+	public boolean eliminarNodoCiudad(String name) {		
 		Nodo borrar=buscarNodoCiudad(name);
 		if(borrar==null||borrar.equals(null)) {throw new IllegalArgumentException("No se puede quitar una ciudad que no existe en el grafo");}
 		//Primero revisa las aristas, luego borra todas las aristas involucradas con el nodo, y luego quita el nodo
 		for(Arista ar:borrar.getArista()) {
-		buscarNodoCiudad(ar.getNodoDestino().getNombreCiudad()).quitarArista(borrar.getNombreCiudad());
-		
-		}
-		
+		buscarNodoCiudad(ar.getNodoDestino().getNombreCiudad()).quitarArista(borrar.getNombreCiudad());		
+		}		
 		if(this.nodos.remove(borrar)) {
 				return true;
 			
-		}
-	
+		}	
 		return false;
-		
 	}
 	/**
 	Busca el nodo por nombre de ciudad, si lo encuentra retorna el nodo,sino nada.
@@ -114,10 +104,8 @@ public class GrafoLista implements Serializable {
 				return true;
 			}
 		}
-		return false;
-		
-	}
-	
+		return false;		
+	}	
 
 	public static double distanciaEntreNodos(Nodo ciudad1, Nodo ciudad2) {
 		double latitud1 = ciudad1.getLatitud();
