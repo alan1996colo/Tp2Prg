@@ -34,8 +34,9 @@ public class Presentacion {
 	private JPanel panelMapa;
 	private JTextField textField;
 	private ArrayList<Nodo> ciudad = new ArrayList<Nodo>(); // puntos de las ciudades
-	private ArrayList<Coordinate> coordenadas = new  ArrayList<Coordinate>(); // coordenadas de poligonos
+	
 	private GrafoLista ciudadesSeleccionadas = new GrafoLista();
+	private List<Arista> aristasDibujadas = new ArrayList<>();
 	
 	
 	
@@ -101,12 +102,12 @@ public class Presentacion {
 			mapa.addMapMarker(punto);
 		}
 	}
-	private void obtenerCoordenadasDeCiudades() {
-		for(int i=0;i<ciudad.size();i++) {
-			coordenadas.add(new Coordinate(ciudad.get(i).getLatitud(),ciudad.get(i).getLongitud()));
-		}
-		
-	}
+//	private void obtenerCoordenadasDeCiudades() {
+//		for(int i=0;i<ciudad.size();i++) {
+//			coordenadas.add(new Coordinate(ciudad.get(i).getLatitud(),ciudad.get(i).getLongitud()));
+//		}
+//		
+//	}
     private ArrayList<Nodo> ObtenerCiudadDeArchivo( GrafoLista ciudades ,String provincia) {
     	
 		for( int i=0; i<ciudades.getTamanio();i++) {
@@ -123,29 +124,61 @@ public class Presentacion {
 		negocio.generarGrafoCompleto(ciudadesSeleccionadas);
 	}
 	
+	
+	
 	private void dibujarAristas(List<Arista> aristas) {
 		
-		List<Coordinate> coordenadas1 = new ArrayList<>();
-		for (Arista arista : aristas) {
-			
-			
-			double latitudOrigen = arista.getNodoOrigen().getLatitud();
-	        double longitudOrigen = arista.getNodoOrigen().getLongitud();
-	        coordenadas1.add(new Coordinate(latitudOrigen, longitudOrigen));
-	        
-	        double latitudDestino = arista.getNodoDestino().getLatitud();
-	        double longitudDestino = arista.getNodoDestino().getLongitud();
-	        coordenadas1.add(new Coordinate(latitudDestino, longitudDestino));
+		    ArrayList<Coordinate> coordenadas = new  ArrayList<Coordinate>();
+		    Nodo nodoOrigen = null;
+		    Nodo nodoDestino = null; 
+		    for (Arista arista : aristas) {
+		         nodoOrigen = arista.getNodoOrigen();
+		        nodoDestino = arista.getNodoDestino();
+		        
+		        if (yaSeDibujaronLosNodos(nodoOrigen, nodoDestino, aristasDibujadas)) {
+		            continue; // No se dibuja la arista para evitar triángulos
+		        }
+		        
+		       
+			   
+		        aristasDibujadas.add(arista);
+		    }
+		    coordenadas.add(new Coordinate(nodoOrigen.getLatitud(), nodoOrigen.getLongitud()));
+		    coordenadas.add(new Coordinate(nodoDestino.getLatitud(), nodoDestino.getLongitud()));
+		    MapPolygon poligono = new MapPolygonImpl(coordenadas);
+		    System.out.println(coordenadas);
+		    
+		    mapa.addMapPolygon(poligono);
+		    
 
+	}
+	
+	private boolean yaSeDibujaronLosNodos(Nodo nodo1, Nodo nodo2, List<Arista> aristasDibujadas) {
+	    for (Arista arista : aristasDibujadas) {
+	        Nodo aristaNodo1 = arista.getNodoOrigen();
+	        Nodo aristaNodo2 = arista.getNodoDestino();
+	        
+	        if ((nodo1.equals(aristaNodo1) && nodo2.equals(aristaNodo2))
+	                || (nodo1.equals(aristaNodo2) && nodo2.equals(aristaNodo1))) {
+	            return true; // Ya se dibujó una arista que conecta estos nodos
+	        }
 	    }
-		MapPolygon poligono = new MapPolygonImpl(coordenadas1);
-        mapa.addMapPolygon(poligono);
-	     
-		 
-		
+	    return false;
+	}
+
+	private void dibujarArista(Nodo nodoOrigen, Nodo nodoDestino) {
+		ArrayList<Coordinate> coordenadas = new  ArrayList<Coordinate>();
+	    coordenadas.add(new Coordinate(nodoOrigen.getLatitud(), nodoOrigen.getLongitud()));
+	    coordenadas.add(new Coordinate(nodoDestino.getLatitud(), nodoDestino.getLongitud()));
+	    MapPolygon poligono = new MapPolygonImpl(coordenadas);
+	    System.out.println(coordenadas);
+	    
+	    mapa.addMapPolygon(poligono);
 	}
 
   
+
+
 	private void dibujarPuntosEnMapa() {
 		GestorArchivos gestor = new GestorArchivos();
 		ArrayList<Nodo> nodo= gestor.cargarJsonLista("argentinaCitys.json");
@@ -161,11 +194,12 @@ public class Presentacion {
 		System.out.println(AristasMinimas);
 		dibujarAristas(AristasMinimas);
 		
-		System.out.println("Las ciudades seleccionadas son:" + ciudadesSeleccionadas.getNodos());
+		//System.out.println("Las ciudades seleccionadas son:" + ciudadesSeleccionadas.getNodos());
 		//System.out.println(nodo);
 	
 
 	}
+	
 
 
 	

@@ -1,6 +1,7 @@
 package negocio;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import fileManager.GestorArchivos;
@@ -99,25 +100,26 @@ public class Negocio implements Serializable{
 		this.grafo.mostrarVecinosNodoNumero(i);
 		
 	}
-	public void generarGrafoCompleto(GrafoLista grafo) {
-		
+	public ArrayList<Nodo> generarGrafoCompleto(GrafoLista grafo) {
+		ArrayList<Nodo> nodo = new ArrayList<Nodo>();
 		for(int j=0;j<grafo.getTamanio();j++) {
 			Nodo origen = grafo.getNodoNum(j);
 			origen.inicializarVecinos();
-			System.out.println(origen);
-			for(int i=1;i<grafo.getTamanio();i++) {
+			//System.out.println(origen);
+			for(int i=0;i<grafo.getTamanio();i++) {
 				
 				if(i!=j) {
 					Nodo destino = grafo.getNodoNum(i);
 					
 					origen.agregarVecino(origen,destino,GrafoLista.distanciaEntreNodos(origen, destino) );
-					System.out.println("La    "+origen+ "   con:   "+destino + "el peso es:"+ GrafoLista.distanciaEntreNodos(origen, destino));
+					nodo.add(origen);
+					//System.out.println("La    "+origen+ "   con:   "+destino + "el peso es:"+ GrafoLista.distanciaEntreNodos(origen, destino));
 				}
 			}
 			
 		}
 	
-		
+		return nodo;
 		
 	}
 		
