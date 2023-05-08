@@ -198,39 +198,6 @@ public class GestorArchivos implements Serializable {
 	}
 
 	/**
-	 * Serializa una lista de objetos (NODO) en formato JSON
-	 **/
-	public boolean generarJSONdesdeLista(String fname, List<Nodo> list) {
-		if (list == null || list.equals(null)) {
-			return false;
-		}
-		Gson gson = new GsonBuilder().setPrettyPrinting().create();
-		String json = gson.toJson(list);
-
-		try {
-			FileWriter writer = new FileWriter(this.path + fname, true);
-			FileInputStream temp = new FileInputStream(this.path + fname);
-			Scanner scan = new Scanner(temp);
-
-			if (scan.hasNext()) {// Si el archivo tiene siguiente significa que no esta vacio.
-				writer.write("," + json);
-				writer.close();
-
-			} else { // si no tiene siguiente quiere decir que esta vacio, no ponemos la ","
-				writer.write(json);
-				writer.close();
-
-			}
-			scan.close(); // legado a este punto se escribio el archivo de alguna manera y devolvemos
-							// true.
-			return true;
-		} catch (Exception e) {
-			return false;
-			// System.out.println("Algo salio mal al crear el archivo Json.");
-		}
-	}
-
-	/**
 	 * Serializa el (UN) objeto(o) en un archivo(fname) estilo json preety
 	 **/
 	public boolean generarJSON(String fname, Object o) {
@@ -258,6 +225,7 @@ public class GestorArchivos implements Serializable {
 							// true.
 			return true;
 		} catch (Exception e) {
+			System.out.println(e);
 			return false;
 			// System.out.println("Algo salio mal al crear el archivo Json.");
 		}

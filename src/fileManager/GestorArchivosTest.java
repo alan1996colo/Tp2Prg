@@ -131,7 +131,20 @@ public class GestorArchivosTest {
 		temp.agregarNodo(nodo3);
 		temp.agregarNodo(nodo2);
 		temp.agregarNodo(nodo);
-		gestor.generarJSONdesdeLista(path+"jasonlista.json",temp.getNodos());
+		assertTrue(gestor.generarJSON("jasonlista.json",temp.getNodos()));
+	}
+	
+	@Test 
+	public void generarJsonListaCongenerarJson() {
+		GrafoLista temp=new GrafoLista();
+		Nodo nodo = new Nodo("muz", "Tucuan", 523432, 2345);
+		Nodo nodo2 = new Nodo("muiz", "Tuuman", 51432, -2345);
+		Nodo nodo3 = new Nodo("mz", "Tucuan", -5432, 2345);
+		temp.agregarNodo(nodo3);
+		temp.agregarNodo(nodo2);
+		temp.agregarNodo(nodo);
+		assertTrue(gestor.generarJSON("generado.json", temp.getNodos()));
+		
 	}
 
 	@After
@@ -141,7 +154,7 @@ public class GestorArchivosTest {
 		gestor.borrarArchivo("Nodo");
 		gestor.borrarArchivo("archivojason");
 		gestor.borrarArchivo("archivojason.json");
-		gestor.borrarArchivo("jasonlista.json");
+		//gestor.borrarArchivo("jasonlista.json");
 		
 	}
 	@Ignore

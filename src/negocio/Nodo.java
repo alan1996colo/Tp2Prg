@@ -14,18 +14,18 @@ public class Nodo implements Serializable {
 	private double latitud;
 	private double longitud;
 	private String nombreProvincia;
-	transient private List<Arista> vecinos;
+	transient private HashSet<Arista> vecinos = new HashSet<>();
 
 	public Nodo(String nombreCiudad, String nombreProvincia, double latitud, double longitud) {
 		this.nombreCiudad = nombreCiudad;
 		this.nombreProvincia = nombreProvincia;
 		this.latitud = latitud;
 		this.longitud = longitud;
-		this.vecinos = new ArrayList<>();
+		this.vecinos  = new HashSet<>();
 	}
 
 	public void inicializarVecinos() {
-		this.vecinos= new ArrayList<Arista>();
+		this.vecinos= new HashSet<Arista>();
 	}
 
 	public void agregarVecino(Nodo nodoOrigen, Nodo nodoDestino, double peso) {
@@ -35,23 +35,19 @@ public class Nodo implements Serializable {
 		vecinos.add(new Arista(nodoOrigen, nodoDestino, peso));
 
 	}
-	/*Recorre los vecinos y elimina la arista con el nombre pasado.*/
+	/* elimina la arista con el nombre pasado en O(1).*/
 	public void quitarArista(String name) {
-	    Iterator<Arista> iter = this.vecinos.iterator();
-	    while (iter.hasNext()) {
-	        Arista a = iter.next();
-	        if (a.getNodoDestino().getNombreCiudad().equals(name)) {
-	            iter.remove();
-	        }
-	    }
+	    vecinos.removeIf(a -> a.getNodoDestino().getNombreCiudad().equals(name));
+	    vecinos.removeIf(b -> b.getNodoOrigen().getNombreCiudad().equals(name));
 	}
+
 
 	public String getId() {
 		return nombreCiudad;
 	}
 
 	// devuelvo los vecinos de un nodo
-	public List<Arista> getArista() {
+	public Set<Arista> getAristas() {
 		return vecinos;
 	}
 	public void mostrarVecinos() {

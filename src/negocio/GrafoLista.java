@@ -28,7 +28,7 @@ public class GrafoLista implements Serializable {
 	}}
 	public void incializarVecinosNodos() {
 		for(Nodo iter:this.nodos) {
-			if(iter.getArista()==null)
+			if(iter.getAristas()==null)
 			iter.inicializarVecinos();
 		}
 	}
@@ -58,25 +58,28 @@ public class GrafoLista implements Serializable {
 	}
 
 	// cambiar nombre a getVecinos mas tarde
-	public List<Arista> getVecinos(int i) {
-		return this.nodos.get(i).getArista();
+	public Set<Arista> getVecinos(int i) {
+		return this.nodos.get(i).getAristas();
 	
 	}
 	
-	/**Busca la ciudad pasada en la lista de nodos y la elimina de la lista, por ahora no actualiza ninguna arista ni referencia*/
+	/**Busca la ciudad pasada en la lista de nodos y la elimina de la lista, devuelve true si se elimino el nodo*/
 	public boolean eliminarNodoCiudad(String name) {		
-		Nodo borrar=buscarNodoCiudad(name);
-		if(borrar==null||borrar.equals(null)) {throw new IllegalArgumentException("No se puede quitar una ciudad que no existe en el grafo");}
-		//Primero revisa las aristas, luego borra todas las aristas involucradas con el nodo, y luego quita el nodo
-		for(Arista ar:borrar.getArista()) {
-		buscarNodoCiudad(ar.getNodoDestino().getNombreCiudad()).quitarArista(borrar.getNombreCiudad());		
-		}		
-		if(this.nodos.remove(borrar)) {
-				return true;
-			
-		}	
-		return false;
+	    Nodo borrar = buscarNodoCiudad(name);
+	    if (borrar == null || borrar.equals(null)) {
+	        throw new IllegalArgumentException("No se puede quitar una ciudad que no existe en el grafo");
+	    }
+
+	    // Eliminar todas las aristas que conectan con el nodo a eliminar
+	   
+	    for (Nodo n : nodos) {
+	        n.quitarArista(borrar.getNombreCiudad());
+	    }
+
+	    // Eliminar el nodo a eliminar del grafo
+	    return nodos.remove(borrar);
 	}
+
 	/**
 	Busca el nodo por nombre de ciudad, si lo encuentra retorna el nodo,sino nada.
 	*/

@@ -32,12 +32,23 @@ public class Arista implements Serializable {
     	return "-->"+getNodoOrigen().getNombreCiudad()+ "--> " + getNodoDestino().getNombreCiudad()+" "+getPeso();
     }
     @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((nodoDestino == null) ? 0 : nodoDestino.hashCode());
+        result = prime * result + ((nodoOrigen == null) ? 0 : nodoOrigen.hashCode());
+        result = prime * result +(int) peso;
+        return result;
+    }
+    
+    @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
         if (getClass() != obj.getClass()) return false;
         final Arista other = (Arista)obj;
         if (!nodoDestino.equals(other.nodoDestino)) return false;
+        if(!nodoOrigen.equals(other.nodoOrigen)) return false;
        
         return true;
     }

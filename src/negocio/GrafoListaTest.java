@@ -73,11 +73,54 @@ public class GrafoListaTest {
 		GrafoLista grafo = new GrafoLista();
 		Nodo Escobar = new Nodo("Escobar","BSAS",-34.34428257177653, -58.778214488840106);
 		Nodo Garin = new Nodo("Garin","BSAS",-34.42979805864225, -58.724099137999104);
+		Nodo bb = new Nodo("ss","ss",-34.42979805864225, -58.724099137999104);
+		grafo.agregarNodo(Garin);
+		grafo.agregarNodo(Escobar);
+		Garin.inicializarVecinos();
+		Escobar.inicializarVecinos();
+		grafo.agregarArista(Escobar, Garin);
+		grafo.agregarArista(Escobar, bb);
+		Arista eg=new Arista(Escobar,Garin,grafo.distanciaEntreNodos(Garin, Escobar));
+		assertTrue(Escobar.getAristas().contains(eg));
+	
+	}
+	@Test
+	public void eliminarNodoCiudadCiudadExiste() {
+		GrafoLista grafo = new GrafoLista();
+		Nodo Escobar = new Nodo("Escobar","BSAS",-34.34428257177653, -58.778214488840106);
+		Nodo Garin = new Nodo("Garin","BSAS",-34.42979805864225, -58.724099137999104);
+		grafo.agregarNodo(Garin);
+		grafo.agregarNodo(Escobar);
+		assertTrue(grafo.eliminarNodoCiudad("escobar"));
+	}
+	
+	@Test (expected=IllegalArgumentException.class)
+	public void eliminarNodoCiudadQueNoExiste() {
+		GrafoLista grafo = new GrafoLista();
+		Nodo Escobar = new Nodo("Escobar","BSAS",-34.34428257177653, -58.778214488840106);
+		Nodo Garin = new Nodo("Garin","BSAS",-34.42979805864225, -58.724099137999104);
+		grafo.agregarNodo(Garin);
+		grafo.agregarNodo(Escobar);
+		assertFalse(grafo.eliminarNodoCiudad("pichincha"));
+		
+	}
+	@Test
+	public void eliminarNodoCiudadAristasCambiaTamaño() {
+		GrafoLista grafo = new GrafoLista();
+		Nodo Escobar = new Nodo("Escobar","BSAS",-34.34428257177653, -58.778214488840106);
+		Nodo Garin = new Nodo("Garin","BSAS",-34.42979805864225, -58.724099137999104);
+		Nodo bb = new Nodo("ss","ss",-34.42979805864225, -58.724099137999104);
+		grafo.agregarNodo(bb);
 		grafo.agregarNodo(Garin);
 		grafo.agregarNodo(Escobar);
 		grafo.agregarArista(Escobar, Garin);
-		assertEquals(Escobar.getArista().get(0).getNodoDestino(),Garin);
-		assertEquals(Garin.getArista().get(0).getNodoDestino(),Escobar);		
+		
+		grafo.agregarArista(bb, Garin);
+		grafo.agregarArista(Escobar, bb);
+		grafo.eliminarNodoCiudad("escobar");
+		Garin.mostrarAristas();
+		assertEquals(Garin.getAristas().size(),1);
+		
 	}
 	
 }

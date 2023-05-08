@@ -66,13 +66,29 @@ public class Negocio implements Serializable{
 	
 	
 	public /*Grafo*/void  CrearArbolGeneradorMinimo() {};
-	public int CostoPesos(int localidad_1, int localidad_2) {return 0;};
-	private int PorcentajeDeAumentoConexion() {return 0;}
+	
+	
+	/**Si las dos localidades pasadas pertenecen a provincias distintas devuelve el costo fijo, sino 0*/
+	public int CostoFijoPesosProvDiff(String localidad_1, String localidad_2) {
+		if(IsProvinciasDistintas(localidad_1,localidad_2)){
+			return costoFijoprovDistinta;
+		}
+		
+		return 0;};
+		
+		/*Devuelve el porcentaje adicional del precio de  la conexion*/
+	public double PorcentajeDeAumentoConexion() {
+		if(darCostoEnpesos()/costoPesosxKM>300) {
+			return darCostoEnpesos()*aumentoPesosPorcentaje/100;
+		}
+		return 0;}
+	
+	
 	public boolean IsProvinciasDistintas(String ciudad1,String ciudad2) {
 		 return this.grafo.isProvDiff(this.grafo.buscarNodoCiudad(ciudad1),this.grafo.buscarNodoCiudad(ciudad2));
 		}
 	
-	/*Una primera version para dar costo en pesos*/
+	/*Devuelve el costo en pesos total de la conexion*/
 	public double darCostoEnpesos() {
 		double ret=0;
 		List<Arista> arbol=AGMPrim.AGMPrim(this.grafo);
@@ -82,6 +98,9 @@ public class Negocio implements Serializable{
 		}
 		
 		return ret;}
+	
+	
+	
 	public void MostrarGrafos() {
 		this.grafo.mostrarGrafoConAristas();
 			}
