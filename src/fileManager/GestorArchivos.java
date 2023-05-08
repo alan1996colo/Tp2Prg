@@ -109,7 +109,7 @@ public class GestorArchivos implements Serializable {
 		}
 	}
 
-	/**Retorna el objeto serializado.*/
+	/** Retorna el objeto serializado. */
 	public Object dameObjetoSerializado(String fname) {
 		try // Debe estar en un try/catch
 		{
@@ -267,16 +267,19 @@ public class GestorArchivos implements Serializable {
 
 		}
 	}
-	/*Cambia el path con el que se está trabajando al pasado por parametro.
-	 * Por defecto el path con el que se trabaja es "src/fileManager/"
-	 * */
+
+	/*
+	 * Cambia el path con el que se está trabajando al pasado por parametro. Por
+	 * defecto el path con el que se trabaja es "src/fileManager/"
+	 */
 	public void cambiarPath(String path) {
 		if (path.equals(null) || path.equals("")) {
 			throw new IllegalArgumentException("estas ingresando un path vacio");
 		}
 		this.path = path;
 	}
-/*Retorna el patho con el que se esta trabajando actualmente.**/
+
+	/* Retorna el patho con el que se esta trabajando actualmente. **/
 	public String getPath() {
 		return this.path;
 	}

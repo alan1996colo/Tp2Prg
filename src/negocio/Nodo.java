@@ -21,26 +21,26 @@ public class Nodo implements Serializable {
 		this.nombreProvincia = nombreProvincia;
 		this.latitud = latitud;
 		this.longitud = longitud;
-		this.vecinos  = new HashSet<>();
+		this.vecinos = new HashSet<>();
 	}
 
 	public void inicializarVecinos() {
-		this.vecinos= new HashSet<Arista>();
+		this.vecinos = new HashSet<Arista>();
 	}
 
 	public void agregarVecino(Nodo nodoOrigen, Nodo nodoDestino, double peso) {
-		if(this.vecinos.contains(new Arista(nodoOrigen,nodoDestino,peso))) {
+		if (this.vecinos.contains(new Arista(nodoOrigen, nodoDestino, peso))) {
 			throw new IllegalArgumentException("La arista ya existe");
 		}
 		vecinos.add(new Arista(nodoOrigen, nodoDestino, peso));
 
 	}
-	/* elimina la arista con el nombre pasado en O(1).*/
-	public void quitarArista(String name) {
-	    vecinos.removeIf(a -> a.getNodoDestino().getNombreCiudad().equals(name));
-	    vecinos.removeIf(b -> b.getNodoOrigen().getNombreCiudad().equals(name));
-	}
 
+	/* elimina la arista con el nombre pasado en O(1). */
+	public void quitarArista(String name) {
+		vecinos.removeIf(a -> a.getNodoDestino().getNombreCiudad().equals(name));
+		vecinos.removeIf(b -> b.getNodoOrigen().getNombreCiudad().equals(name));
+	}
 
 	public String getId() {
 		return nombreCiudad;
@@ -50,13 +50,15 @@ public class Nodo implements Serializable {
 	public Set<Arista> getAristas() {
 		return vecinos;
 	}
+
 	public void mostrarVecinos() {
-		for (Arista iter:this.vecinos) {
+		for (Arista iter : this.vecinos) {
 			System.out.println(iter.getNodoDestino().toString());
 		}
 	}
+
 	public void mostrarAristas() {
-		for(Arista ar:this.vecinos) {
+		for (Arista ar : this.vecinos) {
 			System.out.println(ar.toString());
 		}
 	}
@@ -76,32 +78,40 @@ public class Nodo implements Serializable {
 	public double getLongitud() {
 		return this.longitud;
 	}
+
 	public String toString() {
-		return "ciudad :"+this.nombreCiudad.toString()+" Provincia: "+this.nombreProvincia.toString()+" Latitud:"+Double.toString(this.latitud)+" Longitud:"+Double.toString(this.longitud);
+		return "ciudad :" + this.nombreCiudad.toString() + " Provincia: " + this.nombreProvincia.toString()
+				+ " Latitud:" + Double.toString(this.latitud) + " Longitud:" + Double.toString(this.longitud);
 	}
 
-	
-	 @Override
-	    public boolean equals(Object obj) {
-	        if (this == obj) return true;
-	        if (obj == null) return false;
-	        if (getClass() != obj.getClass()) return false;
-	        final Nodo other = (Nodo)obj;
-	        if (latitud != other.latitud) return false;
-	        if (longitud != other.longitud) return false;
-	        if (nombreCiudad == null) {
-	            if (other.nombreCiudad != null) return false;
-	        } else if (!nombreCiudad.equals(other.nombreCiudad)) return false;
-	        if (nombreProvincia == null) {
-	            if (other.nombreProvincia != null) return false;
-	        } else if (!nombreProvincia.equals(other.nombreProvincia)) return false;
-	        return true;
-	    }
-	 
-	 public boolean equalsProv(Nodo n) {		 
-		 return this.getNombreProvincia().equals(n.getNombreProvincia());
-	 }
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		final Nodo other = (Nodo) obj;
+		if (latitud != other.latitud)
+			return false;
+		if (longitud != other.longitud)
+			return false;
+		if (nombreCiudad == null) {
+			if (other.nombreCiudad != null)
+				return false;
+		} else if (!nombreCiudad.equals(other.nombreCiudad))
+			return false;
+		if (nombreProvincia == null) {
+			if (other.nombreProvincia != null)
+				return false;
+		} else if (!nombreProvincia.equals(other.nombreProvincia))
+			return false;
+		return true;
+	}
 
-	
+	public boolean equalsProv(Nodo n) {
+		return this.getNombreProvincia().equals(n.getNombreProvincia());
+	}
 
 }

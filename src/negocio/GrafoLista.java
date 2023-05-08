@@ -18,35 +18,45 @@ public class GrafoLista implements Serializable {
 		this.nodos = nodos;
 	}
 
+	public void setNodos(ArrayList<Nodo> nodos) {
+		this.nodos = nodos;
+	}
+
 	public Nodo getNodoNum(int n) {
 		return this.nodos.get(n);
 	}
 
 	public void agregarNodo(Nodo nodo) {
-		if(this.nodos.contains(nodo)) {throw new IllegalArgumentException("El nodo ya estaba incluido en el grafo");}
-		else{nodos.add(nodo);
-	}}
-	public void incializarVecinosNodos() {
-		for(Nodo iter:this.nodos) {
-			if(iter.getAristas()==null)
-			iter.inicializarVecinos();
+		if (this.nodos.contains(nodo)) {
+			throw new IllegalArgumentException("El nodo ya estaba incluido en el grafo");
+		} else {
+			nodos.add(nodo);
 		}
 	}
+
+	public void incializarVecinosNodos() {
+		for (Nodo iter : this.nodos) {
+			if (iter.getAristas() == null)
+				iter.inicializarVecinos();
+		}
+	}
+
 	public void mostrarVecinosNodoNumero(int i) {
 		this.nodos.get(i).mostrarVecinos();
 	}
-	
+
 	/*
 	 * Intenta agreagar la arista entre dos nodos
-	 * */
+	 */
 	public void agregarArista(Nodo nodoOrigen, Nodo nodoDestino) {
-		if(nodoOrigen.equals(nodoDestino)) {throw new IllegalArgumentException("No se permiten bucles");}
-		else {
-			double peso=this.distanciaEntreNodos(nodoOrigen, nodoDestino);
+		if (nodoOrigen.equals(nodoDestino)) {
+			throw new IllegalArgumentException("No se permiten bucles");
+		} else {
+			double peso = this.distanciaEntreNodos(nodoOrigen, nodoDestino);
 			nodoOrigen.agregarVecino(nodoOrigen, nodoDestino, peso);
 			nodoDestino.agregarVecino(nodoDestino, nodoOrigen, peso);
-		}		
-	}	
+		}
+	}
 
 	// devuelvo los nodos del grafo
 	public List<Nodo> getNodos() {
@@ -60,55 +70,59 @@ public class GrafoLista implements Serializable {
 	// cambiar nombre a getVecinos mas tarde
 	public Set<Arista> getVecinos(int i) {
 		return this.nodos.get(i).getAristas();
-	
-	}
-	
-	/**Busca la ciudad pasada en la lista de nodos y la elimina de la lista, devuelve true si se elimino el nodo*/
-	public boolean eliminarNodoCiudad(String name) {		
-	    Nodo borrar = buscarNodoCiudad(name);
-	    if (borrar == null || borrar.equals(null)) {
-	        throw new IllegalArgumentException("No se puede quitar una ciudad que no existe en el grafo");
-	    }
 
-	    // Eliminar todas las aristas que conectan con el nodo a eliminar
-	   
-	    for (Nodo n : nodos) {
-	        n.quitarArista(borrar.getNombreCiudad());
-	    }
-
-	    // Eliminar el nodo a eliminar del grafo
-	    return nodos.remove(borrar);
 	}
 
 	/**
-	Busca el nodo por nombre de ciudad, si lo encuentra retorna el nodo,sino nada.
-	*/
+	 * Busca la ciudad pasada en la lista de nodos y la elimina de la lista,
+	 * devuelve true si se elimino el nodo
+	 */
+	public boolean eliminarNodoCiudad(String name) {
+		Nodo borrar = buscarNodoCiudad(name);
+		if (borrar == null || borrar.equals(null)) {
+			throw new IllegalArgumentException("No se puede quitar una ciudad que no existe en el grafo");
+		}
+
+		// Eliminar todas las aristas que conectan con el nodo a eliminar
+
+		for (Nodo n : nodos) {
+			n.quitarArista(borrar.getNombreCiudad());
+		}
+
+		// Eliminar el nodo a eliminar del grafo
+		return nodos.remove(borrar);
+	}
+
+	/**
+	 * Busca el nodo por nombre de ciudad, si lo encuentra retorna el nodo,sino
+	 * nada.
+	 */
 	public Nodo buscarNodoCiudad(String name) {
-		if(this.nodos==null||this.nodos.equals(null)) {
+		if (this.nodos == null || this.nodos.equals(null)) {
 			throw new NullPointerException("La lista de nodos esta vacia");
 
 		}
-		for(Nodo iter:this.nodos) {
-			if(iter.getNombreCiudad().toLowerCase().replaceAll("\\s", "").equals(name.toLowerCase().replaceAll("\\s", ""))) {
+		for (Nodo iter : this.nodos) {
+			if (iter.getNombreCiudad().toLowerCase().replaceAll("\\s", "")
+					.equals(name.toLowerCase().replaceAll("\\s", ""))) {
 				return iter;
 			}
 		}
-		return null;
-		
+		throw new RuntimeException("no se encontro el nodo: " + name);
+
 	}
 
 	/**
-	 * True =contiene al nodo en su lista
-	 * False= el nodo no está
-	 * **/
+	 * True =contiene al nodo en su lista False= el nodo no está
+	 **/
 	public boolean contains(Nodo nodo) {
-		for(Nodo iter:this.nodos) {
-			if(iter.equals(nodo)) {
+		for (Nodo iter : this.nodos) {
+			if (iter.equals(nodo)) {
 				return true;
 			}
 		}
-		return false;		
-	}	
+		return false;
+	}
 
 	public static double distanciaEntreNodos(Nodo ciudad1, Nodo ciudad2) {
 		double latitud1 = ciudad1.getLatitud();
@@ -125,20 +139,22 @@ public class GrafoLista implements Serializable {
 		double distancia = radioTierra * c;
 		return distancia;
 	}
+
 	public boolean isProvDiff(Nodo n1, Nodo n2) {
 		return !n1.equalsProv(n2);
 	}
-	
+
 	public void mostrarGrafo() {
 		// TODO Auto-generated method stub
-		for(Nodo iter:this.nodos) {
+		for (Nodo iter : this.nodos) {
 			System.out.println(iter.toString());
 		}
-		
+
 	}
+
 	public void mostrarGrafoConAristas() {
-		for(Nodo iter:this.nodos) {
-			System.out.println(iter.getNombreCiudad()+" :");
+		for (Nodo iter : this.nodos) {
+			System.out.println(iter.getNombreCiudad() + " :");
 			iter.mostrarAristas();
 		}
 	}
