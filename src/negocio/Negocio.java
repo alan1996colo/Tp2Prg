@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.openstreetmap.gui.jmapviewer.Coordinate;
+
 import fileManager.GestorArchivos;
 
 public class Negocio implements Serializable{
@@ -21,6 +23,19 @@ public class Negocio implements Serializable{
 	public void inicializarGrafo() {
 		this.grafo=new GrafoLista();
 	}
+	
+	/*
+	 * Dado el nombre de ciudad pasadas, revisa si esta y devuelve las coordenadas*/
+	public Coordinate getCoordenadasFrom(String localidad){
+	    Nodo n = this.grafo.buscarNodoCiudad(localidad);
+	    if (n != null) {
+	        Coordinate ret = new Coordinate(n.getLatitud(), n.getLongitud());
+	        return ret;
+	    } else {throw new RuntimeException("No se encontro la ciudad en la lista, revise clase NEgocio.");
+	       
+	    }
+	}
+
 	
 	
 	
