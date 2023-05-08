@@ -32,14 +32,33 @@ public class otraPrueba {
 		grafo.agregarArista(CABA, Rosario);
 		grafo.agregarArista(CABA,Cordoba);
 		grafo.agregarArista(CABA,Parana);
+		grafo.agregarArista(CABA,Quilmes);
 		grafo.agregarArista(Rosario,Parana);
 		grafo.agregarArista(Rosario,Chepes);
+		grafo.agregarArista(Rosario, Merlo);
 		grafo.agregarArista(Cordoba,Parana);
 		grafo.agregarArista(Cordoba,Cafayate);
 		grafo.agregarArista(Cordoba,Merlo);
-	
-	
+		grafo.agregarArista(Concordia, Parana);
+		grafo.agregarArista(Concordia, Rosario);
+		grafo.agregarArista(Parana,Cafayate);
+		grafo.agregarArista(Parana, Chepes);
+		grafo.agregarArista(Cafayate,Chepes);		
+		grafo.agregarArista(Merlo, Banfield);
+		grafo.agregarArista(Merlo, Quilmes);
+		grafo.agregarArista(Banfield, CABA);
+		grafo.agregarArista(Chepes, Concordia);
+		grafo.agregarArista(Quilmes, Banfield);
+		grafo.agregarArista(Merlo, Concordia);
 		
+		for (Nodo nodo : grafo.getNodos()) {
+			for(Arista arista : nodo.getArista()) {
+				System.out.println("De " + arista.getNodoOrigen().getNombreCiudad() + " a " + arista.getNodoDestino().getNombreCiudad() + " hay " + arista.getPeso() + " km");
+			}				
+		}
+				
+		System.out.println("****************************************************");
+				
 		AGMPrim conexiones= new AGMPrim();
 		List<Arista> todasLasAristas =conexiones.AGMPrim(grafo);
 		
