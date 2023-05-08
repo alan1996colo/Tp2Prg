@@ -16,5 +16,4 @@ public class NodoTest {
 		Escobar.agregarVecino(Escobar, Polvorines,5);	
 		assertEquals(Escobar.getArista().get(0).getNodoDestino(),Polvorines);
 	}
-
 }

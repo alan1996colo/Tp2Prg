@@ -46,7 +46,6 @@ public class Nodo implements Serializable {
 	    }
 	}
 
-
 	public String getId() {
 		return nombreCiudad;
 	}

@@ -47,14 +47,21 @@ public class AGMPrimTest {
 	grafo.agregarArista(EntreRios,Mendoza);
 	grafo.agregarArista(Cordoba, Mendoza);
 	
+	System.out.println("*********Todas las aristas del grafo******");
+	for (Nodo nodo : grafo.getNodos()) {
+		for(Arista arista : nodo.getArista()) {
+			System.out.println(arista.getNodoOrigen().getNombreCiudad() + " ---> " + arista.getNodoDestino().getNombreCiudad() + " : " + Math.round(arista.getPeso()) + " km");
+		}				
+	}
+	
 	AGMPrim conexiones= new AGMPrim();
 	List<Arista> todasLasAristas =conexiones.AGMPrim(grafo);
+	System.out.println("*********Aristas del Arbol generador minimo******");
 	
 	int pesoDelArbolMinimo=0;
-	for (Arista arista : todasLasAristas) {
-		
-		System.out.println(arista.getNodoDestino()+ " Peso : "+ arista.getPeso());
-		pesoDelArbolMinimo+=arista.getPeso();
+	for (Arista arista : todasLasAristas) {		
+		System.out.println(arista.getNodoOrigen().getNombreCiudad() +" ---> " +arista.getNodoDestino().getNombreCiudad()+ " : "+ Math.round(arista.getPeso()) + "km");
+		pesoDelArbolMinimo+=Math.round(arista.getPeso());
 	}
 	System.out.println("***********");
 	System.out.println("Peso total del arbol minimo: " + pesoDelArbolMinimo);
