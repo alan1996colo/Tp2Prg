@@ -149,6 +149,7 @@ public class Presentacion {
 		    System.out.println(coordenadas);
 		    
 		    mapa.addMapPolygon(poligono);
+		    mapa.addMapPolygon(poligono);
 		    
 
 	}
