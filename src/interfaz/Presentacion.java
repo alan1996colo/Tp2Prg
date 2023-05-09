@@ -4,12 +4,18 @@ import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.text.NumberFormat;
+import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -38,6 +44,7 @@ import javax.swing.JPanel;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
+import javax.swing.SwingUtilities;
 
 import java.awt.Color;
 import java.util.Random;
@@ -56,9 +63,14 @@ public class Presentacion {
 	private JTextField tfConexion2;
 	private JTextField tfProv;
 	private JButton botonAgregar;
+	private JLabel labelcosto;
+	private JLabel labelporcen;
+	private JLabel labelfijo;
 	private JButton botonPlanificar;
 	private JButton botonUnir;
 	private JButton conectar;
+	JMenuItem openMenuItem;
+	private double costoenPesos=0;
 	private ArrayList<Nodo> ciudad = new ArrayList<Nodo>(); // puntos de las ciudades
 
 	private GrafoLista ciudadesSeleccionadas = new GrafoLista();
@@ -80,25 +92,12 @@ public class Presentacion {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public Presentacion() {
 
 		initialize();
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-
-	private void eliminarVisualmenteLasConexiones() {
-		List<MapPolygon> polygons = mapa.getMapPolygonList();
-
-		// Eliminar cada polígono de la lista
-		for (MapPolygon polygon : polygons) {
-			mapa.removeMapPolygon(polygon);
-		}
+		negocio.inicializarGrafo();
+		
+		eventos();
 	}
 
 	private void crearMenuDesplegable() {
@@ -107,10 +106,10 @@ public class Presentacion {
 		JMenuBar menuBar = new JMenuBar();
 
 		// Crear el menú "File"
-		JMenu fileMenu = new JMenu("File");
+		JMenu fileMenu = new JMenu("Archivo");
 
 		// Crear la opción "Open" y agregarla al menú "File"
-		JMenuItem openMenuItem = new JMenuItem("Open");
+		 openMenuItem = new JMenuItem("Abrir archivo");
 		fileMenu.add(openMenuItem);
 
 		// Crear la opción "Exit" y agregarla al menú "File"
@@ -125,6 +124,7 @@ public class Presentacion {
 
 	}
 
+	// --------------Botones y secciones de interfaz grafica---------------
 	private void crearBotonAgregarPunto() {
 		botonAgregar = new JButton("Haz click aquí");
 		botonAgregar.setName("Botón de ejemplo");
@@ -211,6 +211,17 @@ public class Presentacion {
 		frame.getContentPane().add(tfName);
 		tfName.setColumns(10);
 	}
+	private void crearSeccionPrecios() {
+		 labelcosto = new JLabel("Precio de la conexion: "+costoenPesos);
+		labelcosto.setBounds(400, 44, 300, 31);
+		labelporcen= new JLabel("Porcentaje aumento: "+negocio.PorcentajeDeAumentoConexion());
+		labelporcen.setBounds(400, 24, 300, 31);
+		labelfijo= new JLabel("Costo fijo provincias distintas: "+negocio.CostoFijoPesosProvDiff());
+		labelfijo.setBounds(400, 64, 300, 31);
+		frame.getContentPane().add(labelcosto);
+		frame.getContentPane().add(labelporcen);
+		frame.getContentPane().add(labelfijo);
+	}
 
 	private void crearSeccionConexion() {
 		JLabel lblNewLabel = new JLabel("Conexion desde:");
@@ -276,6 +287,8 @@ public class Presentacion {
 
 	}
 
+	// ------------metodos y funcionalidades--------------------------------
+
 	/****
 	 * Ingresa la localidad, devuelve true o false si se pudo o no
 	 ***/
@@ -283,10 +296,14 @@ public class Presentacion {
 		return false;
 	}
 
-	/**
-	 * Funcion que utiliza la herrramienta map viewer para visualizar los puntos
-	 **/
-	public void llamarMapViewer() {
+	/** Quita del mapa las lineas creadas anteriormente. */
+	private void eliminarVisualmenteLasConexiones() {
+		List<MapPolygon> polygons = new ArrayList<>(mapa.getMapPolygonList());
+
+		// Eliminar cada polígono de la lista
+		for (MapPolygon polygon : polygons) {
+			mapa.removeMapPolygon(polygon);
+		}
 	}
 
 	/***
@@ -301,6 +318,20 @@ public class Presentacion {
 	 * clase negocio
 	 **/
 	public void ModificarSolucion() {
+	}
+
+	private void actualizarPRecio() {	SwingUtilities.invokeLater(() -> {
+	    // Actualizar el texto del JLabel
+		labelcosto.setText("El precio es"+negocio.darCostoEnpesos());
+		labelporcen.setText("El porcentaje de aumento es"+negocio.PorcentajeDeAumentoConexion());
+		labelfijo.setText("El costo fijo es es"+negocio.CostoFijoPesosProvDiff());
+		
+	});
+	}
+	public void planificar() {
+		for (AbstractMap.SimpleEntry<String, String> entrada : negocio.CrearArbolGeneradorMinimo()) {
+			dibujarConexion(entrada.getKey(), entrada.getValue());
+		}
 	}
 
 	private void dibujarUnPunto(double longitud, double latitud, String name) {
@@ -326,12 +357,6 @@ public class Presentacion {
 		}
 	}
 
-//	private void obtenerCoordenadasDeCiudades() {
-//		for(int i=0;i<ciudad.size();i++) {
-//			coordenadas.add(new Coordinate(ciudad.get(i).getLatitud(),ciudad.get(i).getLongitud()));
-//		}
-//		
-//	}
 	private ArrayList<Nodo> ObtenerCiudadDeArchivo(GrafoLista ciudades, String provincia) {
 
 		for (int i = 0; i < ciudades.getTamanio(); i++) {
@@ -382,24 +407,6 @@ public class Presentacion {
 		return false;
 	}
 
-	private void dibujarConexion(String localidadOrigen, String localidadDestino) {
-		ArrayList<Coordinate> coordenadas = new ArrayList<Coordinate>();
-		coordenadas.add(getCoord(localidadOrigen));
-		coordenadas.add(getCoord(localidadDestino));
-		coordenadas.add(coordenadaIntermedia(getCoord(localidadOrigen), getCoord(localidadDestino)));
-		MapPolygon poligono = new MapPolygonImpl(coordenadas);
-
-		// System.out.println(coordenadas);
-
-		mapa.addMapPolygon(poligono);
-
-	}
-
-	/* Dado el nombre de ciudad devuelve las coordenadas correspondientes. */
-	private Coordinate getCoord(String localidad) {
-		return negocio.getCoordenadasFrom(localidad);
-	}
-
 	private void dibujarTodasLasConexiones() {
 
 		for (String origen : negocio.todasLasLocalidades()) {
@@ -410,6 +417,21 @@ public class Presentacion {
 			}
 		}
 
+	}
+
+	private void dibujarConexion(String localidadOrigen, String localidadDestino) {
+		ArrayList<Coordinate> coordenadas = new ArrayList<Coordinate>();
+		coordenadas.add(getCoord(localidadOrigen));
+		coordenadas.add(getCoord(localidadDestino));
+		coordenadas.add(coordenadaIntermedia(getCoord(localidadOrigen), getCoord(localidadDestino)));
+		MapPolygon poligono = new MapPolygonImpl(coordenadas);
+		mapa.addMapPolygon(poligono);
+
+	}
+
+	/* Dado el nombre de ciudad devuelve las coordenadas correspondientes. */
+	private Coordinate getCoord(String localidad) {
+		return negocio.getCoordenadasFrom(localidad);
 	}
 
 	public static Coordinate coordenadaIntermedia(Coordinate coordenada1, Coordinate coordenada2) {
@@ -438,21 +460,34 @@ public class Presentacion {
 
 	}
 
-	private void initialize() {
+	/* Todos los eventos , acciones del usuario en un solo lugar. */
+	private void eventos() {JFileChooser fc = new JFileChooser();
+	GestorArchivos gestor=new GestorArchivos();
+	File initialDir = new File("src/fileManager/");
+	fc.setCurrentDirectory(initialDir); // Establecer directorio inicial
+	openMenuItem.addActionListener(ev -> {
+	  int returnVal = fc.showOpenDialog(frame);
+	  if (returnVal == JFileChooser.APPROVE_OPTION) {
+	    File file = fc.getSelectedFile();
+	    try {
+	      BufferedReader input = new BufferedReader(new InputStreamReader(
+	          new FileInputStream(file)));
+	      		//System.out.println(file.getPath());
+	      this.negocio.cambiarGrafoPor(file.getName());
+	      //Desde aca hay que seguir para fibujar todos los puntos
+	      	
+	    } catch (Exception e) {
+	      e.printStackTrace();
+	    }
+	  } else {
+	    System.out.println("Operation is CANCELLED :(");
+	  }
+	});
 
-		launchWindows();
-		crearSeccionMapa();
-		crearHead();
-		crearSeccionNombre();
-		crearSeccionProvincia();
-		crearSeccionLatitudYLOngitud();
-		crearBotonAgregarPunto();
-		crearSeccionConexion();
-		crearBotonConectar();
-		negocio.inicializarGrafo();
-		crearBotonUnirTodos();
-		crearMenuDesplegable();
-		crearBotonPlanificar();
+
+		
+		
+		
 		botonAgregar.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
@@ -461,8 +496,7 @@ public class Presentacion {
 				String name = tfName.getText();
 				String prov = tfProv.getText();
 				dibujarUnPunto(longitud, latitud, name);
-				System.out.println(
-						"registrar localidad fue: " + negocio.registrarLocalidad(name, prov, latitud, longitud));
+				negocio.registrarLocalidad(name, prov, latitud, longitud);
 
 			}
 		});
@@ -474,7 +508,10 @@ public class Presentacion {
 				String destino = tfConexion2.getText();
 				System.out.println("Agregar conexion fue: " + negocio.agregarConexion(origen, destino));
 				dibujarConexion(origen, destino);
-
+				actualizarPRecio();
+				// Dentro de un evento o hilo diferente al de la UI
+			
+				
 			}
 		});
 		botonUnir.addActionListener(new ActionListener() {
@@ -482,6 +519,8 @@ public class Presentacion {
 			public void actionPerformed(ActionEvent e) {
 				negocio.generarGrafoCompleto();
 				dibujarTodasLasConexiones();
+				actualizarPRecio();
+				
 			}
 		});
 		botonPlanificar.addActionListener(new ActionListener() {
@@ -489,10 +528,29 @@ public class Presentacion {
 			public void actionPerformed(ActionEvent e) {
 
 				eliminarVisualmenteLasConexiones();
-				// Desarrollar
+				planificar();
+				actualizarPRecio();
+				
 
 			}
 		});
+	}
+
+	private void initialize() {
+
+		launchWindows();
+		crearSeccionMapa();
+		crearHead();
+		crearSeccionNombre();
+		crearSeccionProvincia();
+		crearSeccionLatitudYLOngitud();
+		crearBotonAgregarPunto();
+		crearSeccionConexion();
+		crearBotonConectar();
+		crearBotonUnirTodos();
+		crearMenuDesplegable();
+		crearBotonPlanificar();
+		crearSeccionPrecios();
 
 	}
 }

@@ -1,6 +1,7 @@
 package negocio;
 
 import java.io.Serializable;
+import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -89,20 +90,35 @@ public class Negocio implements Serializable {
 		// seguir mañana
 
 	}
+		/*
+		 * Devuelve el arbol generador minimo del grafo actual, en forma de lista de pares StringString ordenados, los
+		 * cuales son el NOmbre Origen de Ciudad y el nombre Destino de ciudad
+		 * **/
+	public  List<AbstractMap.SimpleEntry<String, String>> CrearArbolGeneradorMinimo() {
+		 List<AbstractMap.SimpleEntry<String, String>> lista = new ArrayList<>();
 
-	public /* Grafo */void CrearArbolGeneradorMinimo() {
-
-		// desarrollar para que la capa de presentacion no maneje ni nodos ni grafos,
-		// solo strings o coordenadas
+		List<Arista> recorrer=new ArrayList<Arista>();
+				recorrer=AGMPrim.AGMPrim(this.grafo);
+				for (Arista ar:recorrer) {
+					 lista.add(new AbstractMap.SimpleEntry<>(ar.getNodoOrigen().getNombreCiudad(), ar.getNodoDestino().getNombreCiudad()));	
+				}
+				return lista;
 	};
 
 	/**
 	 * Si las dos localidades pasadas pertenecen a provincias distintas devuelve el
 	 * costo fijo, sino 0
 	 */
-	public int CostoFijoPesosProvDiff(String localidad_1, String localidad_2) {
-		if (IsProvinciasDistintas(localidad_1, localidad_2)) {
-			return costoFijoprovDistinta;
+	public int CostoFijoPesosProvDiff() {
+		if(this.grafo==null) {return 0;}
+		for (Nodo n:this.grafo.getNodos()) {
+			for(Nodo comparar:this.grafo.getNodos()) {
+				if(!n.equals(comparar)&&!n.getNombreProvincia().equals(comparar.getNombreProvincia())) {
+					return costoFijoprovDistinta;
+			
+				}
+		}
+	
 		}
 
 		return 0;
@@ -122,6 +138,9 @@ public class Negocio implements Serializable {
 
 	/* Devuelve el costo en pesos total de la conexion */
 	public double darCostoEnpesos() {
+		if(this.grafo==null) {
+			return 0;
+		}
 		double ret = 0;
 		List<Arista> arbol = AGMPrim.AGMPrim(this.grafo);
 		for (Arista a : arbol) {
@@ -175,6 +194,13 @@ public class Negocio implements Serializable {
 
 		this.grafo.setNodos(nodos);
 
+	}
+
+	public void cambiarGrafoPor(String name) {
+		GestorArchivos gestor = new GestorArchivos();
+		this.grafo.setNodos(gestor.cargarJsonLista(name));
+		// TODO Auto-generated method stub
+		
 	}
 
 }
