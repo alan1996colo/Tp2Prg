@@ -30,7 +30,7 @@ public class Negocio implements Serializable {
 	/*
 	 * Dado el nombre de ciudad pasadas, revisa si esta y devuelve las coordenadas
 	 */
-	public Coordinate getCoordenadasFrom(String localidad) {
+	public Coordinate getCoordenadasFrom(String localidad) { //OK
 		Nodo n = this.grafo.buscarNodoCiudad(localidad);
 		if (n != null) {
 			Coordinate ret = new Coordinate(n.getLatitud(), n.getLongitud());
@@ -41,7 +41,7 @@ public class Negocio implements Serializable {
 		}
 	}
 
-	public ArrayList<String> todasLasLocalidades() {
+	public ArrayList<String> todasLasLocalidades() { // OK
 		ArrayList<String> ret = new ArrayList<String>();
 		for (Nodo n : this.grafo.getNodos()) {
 			ret.add(n.getNombreCiudad());
@@ -50,7 +50,7 @@ public class Negocio implements Serializable {
 	}
 
 	/** Inteta registrar la localidad, true-> se logro , false->algo fallo. */
-	public boolean registrarLocalidad(String nombreCiudad, String nombreProvincia, double latitud, double longitud) {
+	public boolean registrarLocalidad(String nombreCiudad, String nombreProvincia, double latitud, double longitud) { // OK
 		Nodo nodo = new Nodo(nombreCiudad, nombreProvincia, latitud, longitud);
 		try {
 			this.grafo.agregarNodo(nodo);
@@ -65,7 +65,7 @@ public class Negocio implements Serializable {
 	 * Dado un nombre de ciudad pasado, lo busca en el archivo pasado y lo agrega a
 	 * la lista de nodos del grafo.
 	 **/
-	public void agregarNodoConNombreDesdeArchivoJson(String name, String fname) {
+	public void agregarNodoConNombreDesdeArchivoJson(String name, String fname) { // "NO SE USA"
 		GestorArchivos gest = new GestorArchivos();
 		GrafoLista temp = new GrafoLista(gest.cargarJsonLista(fname));
 		this.grafo.agregarNodo(temp.buscarNodoCiudad(name));
@@ -78,7 +78,7 @@ public class Negocio implements Serializable {
 	 * nodo al grafo primero.
 	 * 
 	 **/
-	public boolean agregarConexion(String ciudadOrigen, String ciudadDestino) {
+	public boolean agregarConexion(String ciudadOrigen, String ciudadDestino) { // OK
 		Nodo origen = this.grafo.buscarNodoCiudad(ciudadOrigen);
 		Nodo destino = this.grafo.buscarNodoCiudad(ciudadDestino);
 		if (origen != null && destino != null) {
@@ -94,7 +94,7 @@ public class Negocio implements Serializable {
 		 * Devuelve el arbol generador minimo del grafo actual, en forma de lista de pares StringString ordenados, los
 		 * cuales son el NOmbre Origen de Ciudad y el nombre Destino de ciudad
 		 * **/
-	public  List<AbstractMap.SimpleEntry<String, String>> CrearArbolGeneradorMinimo() {
+	public  List<AbstractMap.SimpleEntry<String, String>> CrearArbolGeneradorMinimo() { //OK
 		 List<AbstractMap.SimpleEntry<String, String>> lista = new ArrayList<>();
 
 		List<Arista> recorrer=new ArrayList<Arista>();
@@ -109,7 +109,7 @@ public class Negocio implements Serializable {
 	 * Si las dos localidades pasadas pertenecen a provincias distintas devuelve el
 	 * costo fijo, sino 0
 	 */
-	public int CostoFijoPesosProvDiff() {
+	public int CostoFijoPesosProvDiff() { // OK
 		if(this.grafo==null) {return 0;}
 		for (Nodo n:this.grafo.getNodos()) {
 			for(Nodo comparar:this.grafo.getNodos()) {
@@ -125,20 +125,20 @@ public class Negocio implements Serializable {
 	};
 
 	/* Devuelve el porcentaje adicional del precio de la conexion */
-	public double PorcentajeDeAumentoConexion() {
+	public double PorcentajeDeAumentoConexion() { // OK
 		if (darCostoEnpesos() / costoPesosxKM > 300) {
 			return darCostoEnpesos() * aumentoPesosPorcentaje / 100;
 		}
 		return 0;
 	}
 
-	public boolean IsProvinciasDistintas(String ciudad1, String ciudad2) {
+	public boolean IsProvinciasDistintas(String ciudad1, String ciudad2) { // NO SE USA
 		return this.grafo.isProvDiff(this.grafo.buscarNodoCiudad(ciudad1), this.grafo.buscarNodoCiudad(ciudad2));
 	}
 
 	/* Devuelve el costo en pesos total de la conexion */
-	public double darCostoEnpesos() {
-		if(this.grafo==null) {
+	public double darCostoEnpesos() { // OK
+		if(this.grafo==null) { 
 			return 0;
 		}
 		double ret = 0;
@@ -151,7 +151,7 @@ public class Negocio implements Serializable {
 		return ret;
 	}
 
-	public void MostrarGrafos() {
+	public void MostrarGrafos() { // NO SE USA
 		this.grafo.mostrarGrafoConAristas();
 	}
 
@@ -159,7 +159,7 @@ public class Negocio implements Serializable {
 	 * Intenta borrar la ciudad pasada , true se logro, false no se pudo(quiza no
 	 * estaba en el grafo)
 	 */
-	public boolean quitarCiudad(String ciudadN) {
+	public boolean quitarCiudad(String ciudadN) { // NO SE USA
 		return this.grafo.eliminarNodoCiudad(ciudadN);
 
 	}
@@ -167,12 +167,12 @@ public class Negocio implements Serializable {
 	/**
 	 * Muestra las aristas del nodo indice pasado.
 	 **/
-	public void mostrarConexionNodoNumero(int i) {
+	public void mostrarConexionNodoNumero(int i) { // NO SE USA
 		this.grafo.mostrarVecinosNodoNumero(i);
 
 	}
 
-	public void generarGrafoCompleto() {
+	public void generarGrafoCompleto() { // OK
 		ArrayList<Nodo> nodos = new ArrayList<Nodo>();
 		for (int j = 0; j < grafo.getTamanio(); j++) {
 			Nodo origen = grafo.getNodoNum(j);
@@ -196,7 +196,7 @@ public class Negocio implements Serializable {
 
 	}
 
-	public void cambiarGrafoPor(String name) {
+	public void cambiarGrafoPor(String name) { //  OK
 		GestorArchivos gestor = new GestorArchivos();
 		this.grafo.setNodos(gestor.cargarJsonLista(name));
 		// TODO Auto-generated method stub

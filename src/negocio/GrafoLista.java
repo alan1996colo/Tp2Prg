@@ -10,23 +10,23 @@ public class GrafoLista implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private List<Nodo> nodos;// lista de nodos
 
-	public GrafoLista() {
+	public GrafoLista() {// OK
 		this.nodos = new ArrayList<>();
 	}
 
-	public GrafoLista(ArrayList<Nodo> nodos) {// construir grafo lista con una lista de nodos ya creada.
+	public GrafoLista(ArrayList<Nodo> nodos) { //OK// construir grafo lista con una lista de nodos ya creada.
 		this.nodos = nodos;
 	}
 
-	public void setNodos(ArrayList<Nodo> nodos) {
+	public void setNodos(ArrayList<Nodo> nodos) { // OK
 		this.nodos = nodos;
 	}
 
-	public Nodo getNodoNum(int n) {
+	public Nodo getNodoNum(int n) { // OK
 		return this.nodos.get(n);
 	}
 
-	public void agregarNodo(Nodo nodo) {
+	public void agregarNodo(Nodo nodo) {// OK
 		if (this.nodos.contains(nodo)) {
 			throw new IllegalArgumentException("El nodo ya estaba incluido en el grafo");
 		} else {
@@ -34,21 +34,21 @@ public class GrafoLista implements Serializable {
 		}
 	}
 
-	public void incializarVecinosNodos() {
+	public void incializarVecinosNodos() { // NO SE USA
 		for (Nodo iter : this.nodos) {
 			if (iter.getAristas() == null)
 				iter.inicializarVecinos();
 		}
 	}
 
-	public void mostrarVecinosNodoNumero(int i) {
+	public void mostrarVecinosNodoNumero(int i) { // OK
 		this.nodos.get(i).mostrarVecinos();
 	}
 
 	/*
 	 * Intenta agreagar la arista entre dos nodos
 	 */
-	public void agregarArista(Nodo nodoOrigen, Nodo nodoDestino) {
+	public void agregarArista(Nodo nodoOrigen, Nodo nodoDestino) { // OK
 		if (nodoOrigen.equals(nodoDestino)) {
 			throw new IllegalArgumentException("No se permiten bucles");
 		} else {
@@ -59,16 +59,16 @@ public class GrafoLista implements Serializable {
 	}
 
 	// devuelvo los nodos del grafo
-	public List<Nodo> getNodos() {
+	public List<Nodo> getNodos() {//OK
 		return nodos;
 	}
 
-	public int getTamanio() {// cambiarle nombre a getTamanio mas tarde
+	public int getTamanio() {//OK // cambiarle nombre a getTamanio mas tarde
 		return this.nodos.size();
 	}
 
 	// cambiar nombre a getVecinos mas tarde
-	public Set<Arista> getVecinos(int i) {
+	public Set<Arista> getVecinos(int i) { // NO SE USA
 		return this.nodos.get(i).getAristas();
 
 	}
@@ -77,8 +77,8 @@ public class GrafoLista implements Serializable {
 	 * Busca la ciudad pasada en la lista de nodos y la elimina de la lista,
 	 * devuelve true si se elimino el nodo
 	 */
-	public boolean eliminarNodoCiudad(String name) {
-		Nodo borrar = buscarNodoCiudad(name);
+	public boolean eliminarNodoCiudad(String name) { // OK
+		Nodo borrar = buscarNodoCiudad(name); 
 		if (borrar == null || borrar.equals(null)) {
 			throw new IllegalArgumentException("No se puede quitar una ciudad que no existe en el grafo");
 		}
@@ -97,7 +97,7 @@ public class GrafoLista implements Serializable {
 	 * Busca el nodo por nombre de ciudad, si lo encuentra retorna el nodo,sino
 	 * nada.
 	 */
-	public Nodo buscarNodoCiudad(String name) {
+	public Nodo buscarNodoCiudad(String name) { // OK
 		if (this.nodos == null || this.nodos.equals(null)) {
 			throw new NullPointerException("La lista de nodos esta vacia");
 
@@ -115,7 +115,7 @@ public class GrafoLista implements Serializable {
 	/**
 	 * True =contiene al nodo en su lista False= el nodo no está
 	 **/
-	public boolean contains(Nodo nodo) {
+	public boolean contains(Nodo nodo) { //  NO SE USA
 		for (Nodo iter : this.nodos) {
 			if (iter.equals(nodo)) {
 				return true;
@@ -124,7 +124,7 @@ public class GrafoLista implements Serializable {
 		return false;
 	}
 
-	public static double distanciaEntreNodos(Nodo ciudad1, Nodo ciudad2) {
+	public static double distanciaEntreNodos(Nodo ciudad1, Nodo ciudad2) { //OK
 		double latitud1 = ciudad1.getLatitud();
 		double latitud2 = ciudad2.getLatitud();
 		double longitud1 = ciudad1.getLongitud();
@@ -140,11 +140,11 @@ public class GrafoLista implements Serializable {
 		return distancia;
 	}
 
-	public boolean isProvDiff(Nodo n1, Nodo n2) {
+	public boolean isProvDiff(Nodo n1, Nodo n2) { //OK
 		return !n1.equalsProv(n2);
 	}
-
-	public void mostrarGrafo() {
+ 
+	public void mostrarGrafo() { // NO SE USA
 		// TODO Auto-generated method stub
 		for (Nodo iter : this.nodos) {
 			System.out.println(iter.toString());
@@ -152,7 +152,7 @@ public class GrafoLista implements Serializable {
 
 	}
 
-	public void mostrarGrafoConAristas() {
+	public void mostrarGrafoConAristas() { //OK
 		for (Nodo iter : this.nodos) {
 			System.out.println(iter.getNombreCiudad() + " :");
 			iter.mostrarAristas();

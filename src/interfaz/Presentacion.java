@@ -50,6 +50,8 @@ import java.awt.Color;
 import java.util.Random;
 import org.openstreetmap.gui.jmapviewer.Coordinate;
 import org.openstreetmap.gui.jmapviewer.MapPolygonImpl;
+import javax.swing.ImageIcon;
+import java.awt.Font;
 
 public class Presentacion {
 	private JSpinner latitudSpinner;
@@ -127,11 +129,12 @@ public class Presentacion {
 	// --------------Botones y secciones de interfaz grafica---------------
 	private void crearBotonAgregarPunto() {
 		botonAgregar = new JButton("Haz click aquí");
+		botonAgregar.setFont(new Font("Tahoma", Font.BOLD, 13));
 		botonAgregar.setName("Botón de ejemplo");
 		botonAgregar.setSize(300, 200);
 		botonAgregar.setText("Agregar punto");
 		botonAgregar.setLayout(new FlowLayout());
-		frame.add(botonAgregar);
+		frame.getContentPane().add(botonAgregar);
 		botonAgregar.setBounds(80, 200, 170, 31);
 		botonAgregar.setVisible(true);
 
@@ -139,10 +142,11 @@ public class Presentacion {
 
 	private void crearBotonPlanificar() {
 		botonPlanificar = new JButton("Planificar");
+		botonPlanificar.setFont(new Font("Tahoma", Font.BOLD, 13));
 		botonPlanificar.setName("Planificar");
 		botonPlanificar.setSize(300, 200);
 		botonPlanificar.setLayout(new FlowLayout());
-		frame.add(botonPlanificar);
+		frame.getContentPane().add(botonPlanificar);
 		botonPlanificar.setBounds(80, 500, 170, 31);
 		botonPlanificar.setToolTipText("Haga click para Mostrar la solucion \n(Crea un arbol generador minimo)");
 		botonPlanificar.setVisible(true);
@@ -151,10 +155,11 @@ public class Presentacion {
 
 	private void crearBotonUnirTodos() {
 		botonUnir = new JButton("Unir todos");
+		botonUnir.setFont(new Font("Tahoma", Font.BOLD, 13));
 		botonUnir.setName("Unir todo");
 		botonUnir.setSize(300, 200);
 		botonUnir.setLayout(new FlowLayout());
-		frame.add(botonUnir);
+		frame.getContentPane().add(botonUnir);
 		botonUnir.setBounds(80, 400, 170, 31);
 		botonUnir.setToolTipText("Haga click para unir todas las ciudades con todas(Crea un grafo completo)");
 		botonUnir.setVisible(true);
@@ -163,20 +168,22 @@ public class Presentacion {
 
 	private void crearBotonConectar() {
 		conectar = new JButton("Conectar");
+		conectar.setFont(new Font("Tahoma", Font.BOLD, 13));
 		conectar.setName("Conectar");
 		// conectar.setLayout(new FlowLayout());
 		conectar.setSize(30, 30);
 		conectar.setText("Conectar");
 
-		frame.add(conectar);
+		frame.getContentPane().add(conectar);
 		conectar.setBounds(350, 300, 100, 31);
 		conectar.setVisible(true);
 
 	}
 
 	private void crearHead() {
-		JLabel lbl = new JLabel("Agregar Ciudad:");
-		lbl.setBounds(80, 12, 170, 31);
+		JLabel lbl = new JLabel("Agregar Ciudad");
+		lbl.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lbl.setBounds(10, 7, 170, 31);
 		frame.getContentPane().add(lbl);
 	}
 
@@ -187,7 +194,7 @@ public class Presentacion {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		panelMapa = new JPanel();
-		panelMapa.setBounds(461, 173, 532, 450);
+		panelMapa.setBounds(461, 171, 502, 430);
 		frame.getContentPane().add(panelMapa);
 		frame.getContentPane().setLayout(null);
 	}
@@ -202,30 +209,40 @@ public class Presentacion {
 	}
 
 	private void crearSeccionNombre() {
-		JLabel lblNewLabel = new JLabel("Nombre:");
+		JLabel lblNewLabel = new JLabel("Nombre");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNewLabel.setBounds(10, 44, 170, 31);
 		frame.getContentPane().add(lblNewLabel);
 
 		tfName = new JTextField();
-		tfName.setBounds(160, 49, 170, 20);
+		tfName.setBounds(80, 50, 170, 20);
 		frame.getContentPane().add(tfName);
 		tfName.setColumns(10);
 	}
 	private void crearSeccionPrecios() {
 		 labelcosto = new JLabel("Precio de la conexion: "+costoenPesos);
+		 labelcosto.setFont(new Font("Tahoma", Font.BOLD, 13));
 		labelcosto.setBounds(400, 44, 300, 31);
 		labelporcen= new JLabel("Porcentaje aumento: "+negocio.PorcentajeDeAumentoConexion());
+		labelporcen.setFont(new Font("Tahoma", Font.BOLD, 13));
 		labelporcen.setBounds(400, 24, 300, 31);
 		labelfijo= new JLabel("Costo fijo provincias distintas: "+negocio.CostoFijoPesosProvDiff());
+		labelfijo.setFont(new Font("Tahoma", Font.BOLD, 13));
 		labelfijo.setBounds(400, 64, 300, 31);
 		frame.getContentPane().add(labelcosto);
 		frame.getContentPane().add(labelporcen);
 		frame.getContentPane().add(labelfijo);
+		
+		JLabel lblFondo = new JLabel("Fondo");
+		lblFondo.setIcon(new ImageIcon("src\\ImagenFondo\\Fondo.jpg"));
+		lblFondo.setBounds(0, 0, 1015, 623);
+		frame.getContentPane().add(lblFondo);
 	}
 
 	private void crearSeccionConexion() {
-		JLabel lblNewLabel = new JLabel("Conexion desde:");
-		lblNewLabel.setBounds(10, 300, 170, 31);
+		JLabel lblNewLabel = new JLabel("Conexion desde");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel.setBounds(10, 294, 170, 31);
 		frame.getContentPane().add(lblNewLabel);
 
 		tfConexion = new JTextField();
@@ -233,23 +250,25 @@ public class Presentacion {
 		frame.getContentPane().add(tfConexion);
 		tfConexion.setColumns(10);
 
-		JLabel lblNewLabel2 = new JLabel("Conexion Hacia:");
+		JLabel lblNewLabel2 = new JLabel("Conexion Hacia");
+		lblNewLabel2.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNewLabel2.setBounds(10, 320, 170, 31);
 		frame.getContentPane().add(lblNewLabel2);
 
 		tfConexion2 = new JTextField();
-		tfConexion2.setBounds(160, 320, 170, 20);
+		tfConexion2.setBounds(160, 326, 170, 20);
 		frame.getContentPane().add(tfConexion2);
 		tfConexion2.setColumns(10);
 	}
 
 	private void crearSeccionProvincia() {
-		JLabel lblNewLabel = new JLabel("Provincia:");
+		JLabel lblNewLabel = new JLabel("Provincia");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNewLabel.setBounds(10, 70, 170, 31);
 		frame.getContentPane().add(lblNewLabel);
 
 		tfProv = new JTextField();
-		tfProv.setBounds(160, 70, 170, 20);
+		tfProv.setBounds(80, 76, 170, 20);
 		frame.getContentPane().add(tfProv);
 		tfProv.setColumns(10);
 	}
@@ -257,10 +276,12 @@ public class Presentacion {
 	private void crearSeccionLatitudYLOngitud() {
 
 		JLabel lblLongitud = new JLabel("Longitud");
+		lblLongitud.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblLongitud.setBounds(10, 100, 170, 31);
 		frame.getContentPane().add(lblLongitud);
 
 		JLabel lblLatitud = new JLabel("Latitud");
+		lblLatitud.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblLatitud.setBounds(10, 150, 170, 31);
 		frame.getContentPane().add(lblLatitud);
 
@@ -268,7 +289,6 @@ public class Presentacion {
 		latitudSpinner = new JSpinner(new SpinnerNumberModel(0, -89.99999999, 90.0, 0.000001));
 		longitudSpinner = new JSpinner(new SpinnerNumberModel(0.0, -180.0, 180.0, 0.0001));
 
-		// Obtener el editor del JSpinner y establecer su formato
 		JSpinner.NumberEditor latitudEditor = (JSpinner.NumberEditor) latitudSpinner.getEditor();
 		latitudEditor.getFormat().applyPattern("#0.000000");
 
@@ -276,8 +296,8 @@ public class Presentacion {
 		longitudEditor.getFormat().applyPattern("#0.0000");
 
 		// Establecer el tamaño y la posición de los spinners
-		latitudSpinner.setBounds(140, 150, 170, 31);
-		longitudSpinner.setBounds(140, 100, 170, 31);
+		latitudSpinner.setBounds(80, 151, 170, 31);
+		longitudSpinner.setBounds(80, 101, 170, 31);
 
 		// Agregar los spinners al panel
 		frame.getContentPane().add(new JLabel("Latitud:"));
@@ -342,20 +362,20 @@ public class Presentacion {
 		punto.getStyle().setColor(Color.yellow);
 		mapa.addMapMarker(punto);
 	}
-
-	private void dibujarPuntos() {
-		for (Nodo coordenadas : ciudad) {
-			double latitud = coordenadas.getLatitud();
-			double longitud = coordenadas.getLongitud();
-			// System.out.println(latitud);
-			String NombreCiudad = coordenadas.getNombreCiudad();
-			Coordinate coordinate = new Coordinate(latitud, longitud);
-			MapMarker punto = new MapMarkerDot(coordinate);
-			punto.getStyle().setBackColor(Color.black);
-			punto.getStyle().setColor(Color.yellow);
-			mapa.addMapMarker(punto);
-		}
-	}
+//
+//	private void dibujarPuntos() {
+//		for (Nodo coordenadas : ciudad) {
+//			double latitud = coordenadas.getLatitud();
+//			double longitud = coordenadas.getLongitud();
+//			// System.out.println(latitud);
+//			String NombreCiudad = coordenadas.getNombreCiudad();
+//			Coordinate coordinate = new Coordinate(latitud, longitud);
+//			MapMarker punto = new MapMarkerDot(coordinate);
+//			punto.getStyle().setBackColor(Color.black);
+//			punto.getStyle().setColor(Color.yellow);
+//			mapa.addMapMarker(punto);
+//		}
+//	}
 
 	private ArrayList<Nodo> ObtenerCiudadDeArchivo(GrafoLista ciudades, String provincia) {
 
@@ -369,30 +389,30 @@ public class Presentacion {
 		return ciudad;
 	}
 
-	private void dibujarAristas(List<Arista> aristas) {
-
-		ArrayList<Coordinate> coordenadas = new ArrayList<Coordinate>();
-		Nodo nodoOrigen = null;
-		Nodo nodoDestino = null;
-		for (Arista arista : aristas) {
-			nodoOrigen = arista.getNodoOrigen();
-			nodoDestino = arista.getNodoDestino();
-
-			if (yaSeDibujaronLosNodos(nodoOrigen, nodoDestino, aristasDibujadas)) {
-				continue; // No se dibuja la arista para evitar triángulos
-			}
-
-			aristasDibujadas.add(arista);
-		}
-		coordenadas.add(new Coordinate(nodoOrigen.getLatitud(), nodoOrigen.getLongitud()));
-		coordenadas.add(new Coordinate(nodoDestino.getLatitud(), nodoDestino.getLongitud()));
-		MapPolygon poligono = new MapPolygonImpl(coordenadas);
-		// System.out.println(coordenadas);
-
-		mapa.addMapPolygon(poligono);
-		mapa.addMapPolygon(poligono);
-
-	}
+//	private void dibujarAristas(List<Arista> aristas) {
+//
+//		ArrayList<Coordinate> coordenadas = new ArrayList<Coordinate>();
+//		Nodo nodoOrigen = null;
+//		Nodo nodoDestino = null;
+//		for (Arista arista : aristas) {
+//			nodoOrigen = arista.getNodoOrigen();
+//			nodoDestino = arista.getNodoDestino();
+//
+//			if (yaSeDibujaronLosNodos(nodoOrigen, nodoDestino, aristasDibujadas)) {
+//				continue; // No se dibuja la arista para evitar triángulos
+//			}
+//
+//			aristasDibujadas.add(arista);
+//		}
+//		coordenadas.add(new Coordinate(nodoOrigen.getLatitud(), nodoOrigen.getLongitud()));
+//		coordenadas.add(new Coordinate(nodoDestino.getLatitud(), nodoDestino.getLongitud()));
+//		MapPolygon poligono = new MapPolygonImpl(coordenadas);
+//		// System.out.println(coordenadas);
+//
+//		mapa.addMapPolygon(poligono);
+//		mapa.addMapPolygon(poligono);
+//
+//	}
 
 	private boolean yaSeDibujaronLosNodos(Nodo nodo1, Nodo nodo2, List<Arista> aristasDibujadas) {
 		for (Arista arista : aristasDibujadas) {
@@ -440,25 +460,25 @@ public class Presentacion {
 		return new Coordinate(latitudMedia, longitudMedia);
 	}
 
-	private void dibujarPuntosEnMapa() {
-		GestorArchivos gestor = new GestorArchivos();
-		ArrayList<Nodo> nodo = gestor.cargarJsonLista("argentinaCitys.json");
-		GrafoLista TodasLasciudades = new GrafoLista(nodo);
-		GrafoLista ciudadesSeleccionadas = new GrafoLista(ObtenerCiudadDeArchivo(TodasLasciudades, "Entre Ríos"));
-		// obtenerCoordenadasDeCiudades();
-		// generarConexionGrafoCompleto(ciudadesSeleccionadas);
-		dibujarPuntos();
-
-		AGMPrim calcular = new AGMPrim();
-		List<Arista> AristasMinimas = calcular.AGMPrim(ciudadesSeleccionadas);
-		System.out.println(AristasMinimas);
-		dibujarAristas(AristasMinimas);
-
-		// System.out.println("Las ciudades seleccionadas son:" +
-		// ciudadesSeleccionadas.getNodos());
-		// System.out.println(nodo);
-
-	}
+//	private void dibujarPuntosEnMapa() {
+//		GestorArchivos gestor = new GestorArchivos();
+//		ArrayList<Nodo> nodo = gestor.cargarJsonLista("argentinaCitys.json");
+//		GrafoLista TodasLasciudades = new GrafoLista(nodo);
+//		GrafoLista ciudadesSeleccionadas = new GrafoLista(ObtenerCiudadDeArchivo(TodasLasciudades, "Entre Ríos"));
+//		// obtenerCoordenadasDeCiudades();
+//		// generarConexionGrafoCompleto(ciudadesSeleccionadas);
+//		dibujarPuntos();
+//
+//		AGMPrim calcular = new AGMPrim();
+//		List<Arista> AristasMinimas = calcular.AGMPrim(ciudadesSeleccionadas);
+//		System.out.println(AristasMinimas);
+//		dibujarAristas(AristasMinimas);
+//
+//		// System.out.println("Las ciudades seleccionadas son:" +
+//		// ciudadesSeleccionadas.getNodos());
+//		// System.out.println(nodo);
+//
+//	}
 
 	/* Todos los eventos , acciones del usuario en un solo lugar. */
 	private void eventos() {JFileChooser fc = new JFileChooser();
