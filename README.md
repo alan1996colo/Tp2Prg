@@ -68,9 +68,10 @@ _Recordemos que estamos trabajando con programacion orientada a objetos y usar m
 
 ## CheckList antes de entregar  
 - [ ] Modificar la estructura de GrafoLista para que las operaciones de recorrido se hagan en otra clase como en bfs. -->Alejandro 
-- [ ] Revisar metodos publicos que no necesitan ser publicos, pasarlos a privados o modificador de acceso por defecto. --Alejandro  
-- [x] Agregar estructura heap a prim para mejorar su rendimiento y su orden de complejidad  --Alan
-- [ ] Agregar opciones en la interfaz visual para guardar el archivo que se estuvo trabajando y cargarlo mas tarde. -->Hernan  
+- [ ] Revisar metodos publicos que no necesitan ser publicos, pasarlos a privados o modificador de acceso por defecto. -->Alejandro  
+- [x] Agregar estructura heap a prim para mejorar su rendimiento y su orden de complejidad  -->Alan
+- [x] Agregar opciones en la interfaz visual para guardar el archivo que se estuvo trabajando y cargarlo mas tarde. ~~Hernan~~ -->*Alan*    
+
 - [ ] Revisar todas las funciones y aplicar las buenas practicas de programacion de las lecturas del inicio de las clases.-->Todos
 - [ ] Agregar todos los tests que se hayan omitido de la capa de negocio. -->Alejandro
 - [ ] Dessarrollar una herramienta para permitir que el usuario modifique la soluci´on, cambiando una conexion por otra y
