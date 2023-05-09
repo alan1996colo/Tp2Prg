@@ -14,10 +14,11 @@ public class GrafoLista implements Serializable {
 		this.nodos = new ArrayList<>();
 	}
 
-	public GrafoLista(ArrayList<Nodo> nodos) { //OK// construir grafo lista con una lista de nodos ya creada.
+	public GrafoLista(ArrayList<Nodo> nodos) { // OK// construir grafo lista con una lista de nodos ya creada.
 		this.nodos = nodos;
 	}
 
+	/* Cambia la lista de nodos a la lista pasada */
 	public void setNodos(ArrayList<Nodo> nodos) { // OK
 		this.nodos = nodos;
 	}
@@ -59,11 +60,11 @@ public class GrafoLista implements Serializable {
 	}
 
 	// devuelvo los nodos del grafo
-	public List<Nodo> getNodos() {//OK
+	public List<Nodo> getNodos() {// OK
 		return nodos;
 	}
 
-	public int getTamanio() {//OK // cambiarle nombre a getTamanio mas tarde
+	public int getTamanio() {// OK // cambiarle nombre a getTamanio mas tarde
 		return this.nodos.size();
 	}
 
@@ -78,7 +79,7 @@ public class GrafoLista implements Serializable {
 	 * devuelve true si se elimino el nodo
 	 */
 	public boolean eliminarNodoCiudad(String name) { // OK
-		Nodo borrar = buscarNodoCiudad(name); 
+		Nodo borrar = buscarNodoCiudad(name);
 		if (borrar == null || borrar.equals(null)) {
 			throw new IllegalArgumentException("No se puede quitar una ciudad que no existe en el grafo");
 		}
@@ -115,7 +116,7 @@ public class GrafoLista implements Serializable {
 	/**
 	 * True =contiene al nodo en su lista False= el nodo no está
 	 **/
-	public boolean contains(Nodo nodo) { //  NO SE USA
+	public boolean contains(Nodo nodo) { // NO SE USA
 		for (Nodo iter : this.nodos) {
 			if (iter.equals(nodo)) {
 				return true;
@@ -124,7 +125,7 @@ public class GrafoLista implements Serializable {
 		return false;
 	}
 
-	public static double distanciaEntreNodos(Nodo ciudad1, Nodo ciudad2) { //OK
+	public static double distanciaEntreNodos(Nodo ciudad1, Nodo ciudad2) { // OK
 		double latitud1 = ciudad1.getLatitud();
 		double latitud2 = ciudad2.getLatitud();
 		double longitud1 = ciudad1.getLongitud();
@@ -140,10 +141,10 @@ public class GrafoLista implements Serializable {
 		return distancia;
 	}
 
-	public boolean isProvDiff(Nodo n1, Nodo n2) { //OK
+	public boolean isProvDiff(Nodo n1, Nodo n2) { // OK
 		return !n1.equalsProv(n2);
 	}
- 
+
 	public void mostrarGrafo() { // NO SE USA
 		// TODO Auto-generated method stub
 		for (Nodo iter : this.nodos) {
@@ -152,7 +153,7 @@ public class GrafoLista implements Serializable {
 
 	}
 
-	public void mostrarGrafoConAristas() { //OK
+	public void mostrarGrafoConAristas() { // OK
 		for (Nodo iter : this.nodos) {
 			System.out.println(iter.getNombreCiudad() + " :");
 			iter.mostrarAristas();

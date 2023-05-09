@@ -11,16 +11,23 @@ import fileManager.GestorArchivos;
 
 public class Negocio implements Serializable {
 	private static final long serialVersionUID = 1L;
-	int aumentoPesosPorcentaje;
-	int costoFijoprovDistinta;
-	int costoPesosxKM;
+	double aumentoPesosPorcentaje;
+	double costoFijoprovDistinta;
+	double costoPesosxKM;
 	GrafoLista grafo;
 
-	public Negocio(int aumentoPesosPorcentaje, int costoFijoprovDistancia, int costoPesos) {
+	public Negocio(double aumentoPesosPorcentaje, double costoFijoprovDistancia, double costoPesos) {
 		this.costoPesosxKM = costoPesos;
 		this.aumentoPesosPorcentaje = aumentoPesosPorcentaje;
 		this.costoFijoprovDistinta = costoFijoprovDistancia;
 
+	}
+
+	/* Modifica los precios del negocio actual */
+	public void setPrecios(double aumentoPesosPorcentaje, double costoFijoprovDistancia, double costoPesos) {
+		this.costoPesosxKM = costoPesos;
+		this.aumentoPesosPorcentaje = aumentoPesosPorcentaje;
+		this.costoFijoprovDistinta = costoFijoprovDistancia;
 	}
 
 	public void inicializarGrafo() {
@@ -30,7 +37,7 @@ public class Negocio implements Serializable {
 	/*
 	 * Dado el nombre de ciudad pasadas, revisa si esta y devuelve las coordenadas
 	 */
-	public Coordinate getCoordenadasFrom(String localidad) { //OK
+	public Coordinate getCoordenadasFrom(String localidad) { // OK
 		Nodo n = this.grafo.buscarNodoCiudad(localidad);
 		if (n != null) {
 			Coordinate ret = new Coordinate(n.getLatitud(), n.getLongitud());
@@ -41,6 +48,9 @@ public class Negocio implements Serializable {
 		}
 	}
 
+	/*
+	 * Retorna un arrayList con el nombre de todas las localidades en el grafo.
+	 */
 	public ArrayList<String> todasLasLocalidades() { // OK
 		ArrayList<String> ret = new ArrayList<String>();
 		for (Nodo n : this.grafo.getNodos()) {
@@ -90,35 +100,40 @@ public class Negocio implements Serializable {
 		// seguir mañana
 
 	}
-		/*
-		 * Devuelve el arbol generador minimo del grafo actual, en forma de lista de pares StringString ordenados, los
-		 * cuales son el NOmbre Origen de Ciudad y el nombre Destino de ciudad
-		 * **/
-	public  List<AbstractMap.SimpleEntry<String, String>> CrearArbolGeneradorMinimo() { //OK
-		 List<AbstractMap.SimpleEntry<String, String>> lista = new ArrayList<>();
 
-		List<Arista> recorrer=new ArrayList<Arista>();
-				recorrer=AGMPrim.AGMPrim(this.grafo);
-				for (Arista ar:recorrer) {
-					 lista.add(new AbstractMap.SimpleEntry<>(ar.getNodoOrigen().getNombreCiudad(), ar.getNodoDestino().getNombreCiudad()));	
-				}
-				return lista;
+	/*
+	 * Devuelve el arbol generador minimo del grafo actual, en forma de lista de
+	 * pares StringString ordenados, los cuales son el NOmbre Origen de Ciudad y el
+	 * nombre Destino de ciudad
+	 **/
+	public List<AbstractMap.SimpleEntry<String, String>> CrearArbolGeneradorMinimo() { // OK
+		List<AbstractMap.SimpleEntry<String, String>> lista = new ArrayList<>();
+
+		List<Arista> recorrer = new ArrayList<Arista>();
+		recorrer = AGMPrim.AGMPrim(this.grafo);
+		for (Arista ar : recorrer) {
+			lista.add(new AbstractMap.SimpleEntry<>(ar.getNodoOrigen().getNombreCiudad(),
+					ar.getNodoDestino().getNombreCiudad()));
+		}
+		return lista;
 	};
 
 	/**
-	 * Si las dos localidades pasadas pertenecen a provincias distintas devuelve el
-	 * costo fijo, sino 0
+	 * Si existe alguna conexion entre ciudades que sean de distintas provincias,
+	 * entonces devolvera el costo fijo
 	 */
-	public int CostoFijoPesosProvDiff() { // OK
-		if(this.grafo==null) {return 0;}
-		for (Nodo n:this.grafo.getNodos()) {
-			for(Nodo comparar:this.grafo.getNodos()) {
-				if(!n.equals(comparar)&&!n.getNombreProvincia().equals(comparar.getNombreProvincia())) {
-					return costoFijoprovDistinta;
-			
-				}
+	public double CostoFijoPesosProvDiff() { // OK
+		if (this.grafo == null) {
+			return 0;
 		}
-	
+		for (Nodo n : this.grafo.getNodos()) {
+			for (Nodo comparar : this.grafo.getNodos()) {
+				if (!n.equals(comparar) && !n.getNombreProvincia().equals(comparar.getNombreProvincia())) {
+					return costoFijoprovDistinta;
+
+				}
+			}
+
 		}
 
 		return 0;
@@ -132,13 +147,28 @@ public class Negocio implements Serializable {
 		return 0;
 	}
 
+	/* Devuelve el porcentaje adicional del precio de la conexion sin planificar */
+	public double PorcentajeDeAumentoConexionSinPlanificar() { // OK
+		if (darCostoEnpesosSinPLanificar() / costoPesosxKM > 300) {
+			return darCostoEnpesosSinPLanificar() * aumentoPesosPorcentaje / 100;
+		}
+		return 0;
+	}
+
 	public boolean IsProvinciasDistintas(String ciudad1, String ciudad2) { // NO SE USA
 		return this.grafo.isProvDiff(this.grafo.buscarNodoCiudad(ciudad1), this.grafo.buscarNodoCiudad(ciudad2));
 	}
 
-	/* Devuelve el costo en pesos total de la conexion */
+	public double darCostoEnpesosSinPLanificar() { // OK
+		if (this.grafo == null) {
+			return 0;
+		}
+		return AGMPrim.pesoDelGrafo(this.grafo);
+	}
+
+	/* Devuelve el costo en pesos total de la conexion despues de planificar */
 	public double darCostoEnpesos() { // OK
-		if(this.grafo==null) { 
+		if (this.grafo == null) {
 			return 0;
 		}
 		double ret = 0;
@@ -172,35 +202,40 @@ public class Negocio implements Serializable {
 
 	}
 
-	public void generarGrafoCompleto() { // OK
+	/*
+	 * Genera conexion entre todas las ciudades con todas, la anterior
+	 * implementacion era O(n**2)-->ahora O(n**"2/2)
+	 */
+	public void generarGrafoCompleto() {
 		ArrayList<Nodo> nodos = new ArrayList<Nodo>();
 		for (int j = 0; j < grafo.getTamanio(); j++) {
 			Nodo origen = grafo.getNodoNum(j);
 			origen.inicializarVecinos();
-			// System.out.println(origen);
-			for (int i = 0; i < grafo.getTamanio(); i++) {
-
-				if (i != j) {
-					Nodo destino = grafo.getNodoNum(i);
-
-					origen.agregarVecino(origen, destino, GrafoLista.distanciaEntreNodos(origen, destino));
-					nodos.add(origen);
-					// System.out.println("La "+origen+ " con: "+destino + "el peso es:"+
-					// GrafoLista.distanciaEntreNodos(origen, destino));
-				}
+			for (int i = j + 1; i < grafo.getTamanio(); i++) {
+				Nodo destino = grafo.getNodoNum(i);
+				destino.inicializarVecinos();
+				origen.agregarVecino(origen, destino, GrafoLista.distanciaEntreNodos(origen, destino));
+				destino.agregarVecino(destino, origen, GrafoLista.distanciaEntreNodos(origen, destino));
 			}
-
+			nodos.add(origen);
 		}
-
 		this.grafo.setNodos(nodos);
+	}
+
+	public void guardarSesion(String fname) {
+		GestorArchivos gestor = new GestorArchivos();
+		gestor.generarJSON(fname, this.grafo.getNodos());
 
 	}
 
-	public void cambiarGrafoPor(String name) { //  OK
+	/*
+	 * Reemplaza el grafo actual por el archivo pasado
+	 **/
+	public void cambiarGrafoPor(String name) { // OK
 		GestorArchivos gestor = new GestorArchivos();
 		this.grafo.setNodos(gestor.cargarJsonLista(name));
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

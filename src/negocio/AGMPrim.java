@@ -38,4 +38,21 @@ public class AGMPrim {
 	    return arbol;
 	}
 
+	/*
+	 * Recorre un grafo y devuelve el peso total  de todas las aristas.
+	 * */
+	public static double pesoDelGrafo(GrafoLista grafo) {
+
+		double ret=0.0;
+		for(Nodo n:grafo.getNodos()) {
+			for(Arista a:n.getAristas()) {
+				ret=ret+a.getPeso();
+				
+			}
+		}
+		//Como existe la arista Origen--fin y la fin--origen, entonces el peso que va devolver es el doble del peso real.
+		//por lo tanto dividimos 2
+		
+		return ret/2;
+	}
 }

@@ -1,0 +1,98 @@
+[
+  {
+    "nombreCiudad": "Buenos Aires",
+    "latitud": -34.5997,
+    "longitud": -58.3819,
+    "nombreProvincia": "Buenos Aires, Ciudad Autónoma de"
+  },
+  {
+    "nombreCiudad": " ",
+    "latitud": -31.4167,
+    "longitud": -64.1833,
+    "nombreProvincia": "Córdoba"
+  },
+  {
+    "nombreCiudad": "Rosario",
+    "latitud": -32.9575,
+    "longitud": -60.6394,
+    "nombreProvincia": "Santa Fe"
+  },
+  {
+    "nombreCiudad": "Comodoro Rivadavia",
+    "latitud": -45.8667,
+    "longitud": -67.5,
+    "nombreProvincia": "Chubut"
+  },
+  {
+    "nombreCiudad": "San Miguel de Tucumán",
+    "latitud": -26.8167,
+    "longitud": -65.2167,
+    "nombreProvincia": "Tucumán"
+  },
+  {
+    "nombreCiudad": "Mar del Plata",
+    "latitud": -38.0,
+    "longitud": -57.55,
+    "nombreProvincia": "Buenos Aires"
+  },
+  {
+    "nombreCiudad": "Salta",
+    "latitud": -24.7883,
+    "longitud": -65.4106,
+    "nombreProvincia": "Salta"
+  },
+  {
+    "nombreCiudad": "San Juan",
+    "latitud": -31.5375,
+    "longitud": -68.5364,
+    "nombreProvincia": "San Juan"
+  },
+  {
+    "nombreCiudad": "Lanús",
+    "latitud": -34.7,
+    "longitud": -58.4,
+    "nombreProvincia": "Buenos Aires"
+  },
+  {
+    "nombreCiudad": "Florencio Varela",
+    "latitud": -34.8167,
+    "longitud": -58.2833,
+    "nombreProvincia": "Buenos Aires"
+  },
+  {
+    "nombreCiudad": "Santa Fe",
+    "latitud": -31.6333,
+    "longitud": -60.7,
+    "nombreProvincia": "Santa Fe"
+  },
+  {
+    "nombreCiudad": "Corrientes",
+    "latitud": -27.4833,
+    "longitud": -58.8167,
+    "nombreProvincia": "Corrientes"
+  },
+  {
+    "nombreCiudad": "San Salvador de Jujuy",
+    "latitud": -24.1856,
+    "longitud": -65.2994,
+    "nombreProvincia": "Jujuy"
+  },
+  {
+    "nombreCiudad": "Bahía Blanca",
+    "latitud": -38.7167,
+    "longitud": -62.2667,
+    "nombreProvincia": "Buenos Aires"
+  },
+  {
+    "nombreCiudad": "Resistencia",
+    "latitud": -27.4514,
+    "longitud": -58.9867,
+    "nombreProvincia": "Chaco"
+  },
+  {
+    "nombreCiudad": "Posadas",
+    "latitud": -27.3667,
+    "longitud": -55.8969,
+    "nombreProvincia": "Misiones"
+  }
+]

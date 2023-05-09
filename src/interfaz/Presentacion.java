@@ -71,12 +71,9 @@ public class Presentacion {
 	private JButton botonPlanificar;
 	private JButton botonUnir;
 	private JButton conectar;
-	JMenuItem openMenuItem;
-	private double costoenPesos=0;
-	private ArrayList<Nodo> ciudad = new ArrayList<Nodo>(); // puntos de las ciudades
-
-	private GrafoLista ciudadesSeleccionadas = new GrafoLista();
-	private List<Arista> aristasDibujadas = new ArrayList<>();
+	private JMenuItem saveMenu;
+	private JMenuItem openMenuItem;
+	private double costoenPesos = 0;
 
 	/**
 	 * Launch the application.
@@ -98,7 +95,7 @@ public class Presentacion {
 
 		initialize();
 		negocio.inicializarGrafo();
-		
+
 		eventos();
 	}
 
@@ -111,12 +108,12 @@ public class Presentacion {
 		JMenu fileMenu = new JMenu("Archivo");
 
 		// Crear la opción "Open" y agregarla al menú "File"
-		 openMenuItem = new JMenuItem("Abrir archivo");
+		openMenuItem = new JMenuItem("Abrir archivo");
 		fileMenu.add(openMenuItem);
 
 		// Crear la opción "Exit" y agregarla al menú "File"
-		JMenuItem exitMenuItem = new JMenuItem("Exit");
-		fileMenu.add(exitMenuItem);
+		saveMenu = new JMenuItem("Guardar Archivo");
+		fileMenu.add(saveMenu);
 
 		// Agregar el menú "File" a la barra de menú
 		menuBar.add(fileMenu);
@@ -219,22 +216,23 @@ public class Presentacion {
 		frame.getContentPane().add(tfName);
 		tfName.setColumns(10);
 	}
+
 	private void crearSeccionPrecios() {
-		 labelcosto = new JLabel("Precio de la conexion: "+costoenPesos);
-		 labelcosto.setFont(new Font("Tahoma", Font.BOLD, 13));
+		labelcosto = new JLabel("Precio de la conexion: " + costoenPesos);
+		labelcosto.setFont(new Font("Tahoma", Font.BOLD, 13));
 		labelcosto.setBounds(400, 44, 300, 31);
-		labelporcen= new JLabel("Porcentaje aumento: "+negocio.PorcentajeDeAumentoConexion());
+		labelporcen = new JLabel("Porcentaje aumento: " + negocio.PorcentajeDeAumentoConexion());
 		labelporcen.setFont(new Font("Tahoma", Font.BOLD, 13));
 		labelporcen.setBounds(400, 24, 300, 31);
-		labelfijo= new JLabel("Costo fijo provincias distintas: "+negocio.CostoFijoPesosProvDiff());
+		labelfijo = new JLabel("Costo fijo provincias distintas: " + negocio.CostoFijoPesosProvDiff());
 		labelfijo.setFont(new Font("Tahoma", Font.BOLD, 13));
 		labelfijo.setBounds(400, 64, 300, 31);
 		frame.getContentPane().add(labelcosto);
 		frame.getContentPane().add(labelporcen);
 		frame.getContentPane().add(labelfijo);
-		
+
 		JLabel lblFondo = new JLabel("Fondo");
-		lblFondo.setIcon(new ImageIcon("src\\ImagenFondo\\Fondo.jpg"));
+		lblFondo.setIcon(new ImageIcon("src" + File.separator + "ImagenFondo" + File.separator + "Fondo.jpg"));
 		lblFondo.setBounds(0, 0, 1015, 623);
 		frame.getContentPane().add(lblFondo);
 	}
@@ -309,6 +307,20 @@ public class Presentacion {
 
 	// ------------metodos y funcionalidades--------------------------------
 
+	/*
+	 * 
+	 * */
+	public void cambiarSesion(String fname) {
+		this.mapa.removeAllMapPolygons();
+		this.mapa.removeAllMapMarkers();
+		this.mapa.repaint();
+		this.negocio.cambiarGrafoPor(fname);
+		for (String localidad : negocio.todasLasLocalidades()) {
+			dibujarUnPunto(getCoord(localidad).getLon(), getCoord(localidad).getLat(), localidad);
+		}
+
+	}
+
 	/****
 	 * Ingresa la localidad, devuelve true o false si se pudo o no
 	 ***/
@@ -318,36 +330,37 @@ public class Presentacion {
 
 	/** Quita del mapa las lineas creadas anteriormente. */
 	private void eliminarVisualmenteLasConexiones() {
-		List<MapPolygon> polygons = new ArrayList<>(mapa.getMapPolygonList());
-
-		// Eliminar cada polígono de la lista
-		for (MapPolygon polygon : polygons) {
-			mapa.removeMapPolygon(polygon);
-		}
-	}
-
-	/***
-	 * Este metodo va pedir a la clase negocio el camino minimo, y va intentar
-	 * mostrar el menor camino por pantalla
-	 **/
-	public void DameElArbolGeneradorMInimo() {
+		this.mapa.removeAllMapPolygons();
+		this.mapa.repaint();
 	}
 
 	/***
 	 * Permite al usuario modificar la solucion, este metodo va meter mano en la
 	 * clase negocio
 	 **/
-	public void ModificarSolucion() {
+	public void ModificarSolucion() {// desarrollar...
 	}
 
-	private void actualizarPRecio() {	SwingUtilities.invokeLater(() -> {
-	    // Actualizar el texto del JLabel
-		labelcosto.setText("El precio es"+negocio.darCostoEnpesos());
-		labelporcen.setText("El porcentaje de aumento es"+negocio.PorcentajeDeAumentoConexion());
-		labelfijo.setText("El costo fijo es es"+negocio.CostoFijoPesosProvDiff());
-		
-	});
+	private void actualizarPrecio() {
+		SwingUtilities.invokeLater(() -> {
+			// Actualizar el texto del JLabel
+			labelcosto.setText("El precio es" + negocio.darCostoEnpesos());
+			labelporcen.setText("El porcentaje de aumento es" + negocio.PorcentajeDeAumentoConexion());
+			labelfijo.setText("El costo fijo es es" + negocio.CostoFijoPesosProvDiff());
+
+		});
 	}
+
+	private void actualizarPrecioSinPlanificar() {
+		SwingUtilities.invokeLater(() -> {
+			// Actualizar el texto del JLabel
+			labelcosto.setText("El precio es" + negocio.darCostoEnpesosSinPLanificar());
+			labelporcen.setText("El porcentaje de aumento es" + negocio.PorcentajeDeAumentoConexionSinPlanificar());
+			labelfijo.setText("El costo fijo es es" + negocio.CostoFijoPesosProvDiff());
+
+		});
+	}
+
 	public void planificar() {
 		for (AbstractMap.SimpleEntry<String, String> entrada : negocio.CrearArbolGeneradorMinimo()) {
 			dibujarConexion(entrada.getKey(), entrada.getValue());
@@ -362,75 +375,11 @@ public class Presentacion {
 		punto.getStyle().setColor(Color.yellow);
 		mapa.addMapMarker(punto);
 	}
-//
-//	private void dibujarPuntos() {
-//		for (Nodo coordenadas : ciudad) {
-//			double latitud = coordenadas.getLatitud();
-//			double longitud = coordenadas.getLongitud();
-//			// System.out.println(latitud);
-//			String NombreCiudad = coordenadas.getNombreCiudad();
-//			Coordinate coordinate = new Coordinate(latitud, longitud);
-//			MapMarker punto = new MapMarkerDot(coordinate);
-//			punto.getStyle().setBackColor(Color.black);
-//			punto.getStyle().setColor(Color.yellow);
-//			mapa.addMapMarker(punto);
-//		}
-//	}
-
-	private ArrayList<Nodo> ObtenerCiudadDeArchivo(GrafoLista ciudades, String provincia) {
-
-		for (int i = 0; i < ciudades.getTamanio(); i++) {
-			if (ciudades.getNodoNum(i).getNombreProvincia().equals(provincia)) {
-				this.ciudad.add(ciudades.getNodoNum(i));
-
-			}
-
-		}
-		return ciudad;
-	}
-
-//	private void dibujarAristas(List<Arista> aristas) {
-//
-//		ArrayList<Coordinate> coordenadas = new ArrayList<Coordinate>();
-//		Nodo nodoOrigen = null;
-//		Nodo nodoDestino = null;
-//		for (Arista arista : aristas) {
-//			nodoOrigen = arista.getNodoOrigen();
-//			nodoDestino = arista.getNodoDestino();
-//
-//			if (yaSeDibujaronLosNodos(nodoOrigen, nodoDestino, aristasDibujadas)) {
-//				continue; // No se dibuja la arista para evitar triángulos
-//			}
-//
-//			aristasDibujadas.add(arista);
-//		}
-//		coordenadas.add(new Coordinate(nodoOrigen.getLatitud(), nodoOrigen.getLongitud()));
-//		coordenadas.add(new Coordinate(nodoDestino.getLatitud(), nodoDestino.getLongitud()));
-//		MapPolygon poligono = new MapPolygonImpl(coordenadas);
-//		// System.out.println(coordenadas);
-//
-//		mapa.addMapPolygon(poligono);
-//		mapa.addMapPolygon(poligono);
-//
-//	}
-
-	private boolean yaSeDibujaronLosNodos(Nodo nodo1, Nodo nodo2, List<Arista> aristasDibujadas) {
-		for (Arista arista : aristasDibujadas) {
-			Nodo aristaNodo1 = arista.getNodoOrigen();
-			Nodo aristaNodo2 = arista.getNodoDestino();
-
-			if ((nodo1.equals(aristaNodo1) && nodo2.equals(aristaNodo2))
-					|| (nodo1.equals(aristaNodo2) && nodo2.equals(aristaNodo1))) {
-				return true; // Ya se dibujó una arista que conecta estos nodos
-			}
-		}
-		return false;
-	}
 
 	private void dibujarTodasLasConexiones() {
-
-		for (String origen : negocio.todasLasLocalidades()) {
-			for (String destino : negocio.todasLasLocalidades()) {
+		ArrayList<String> todas = negocio.todasLasLocalidades();
+		for (String origen : todas) {
+			for (String destino : todas) {
 				if (!origen.equals(destino)) {
 					dibujarConexion(origen, destino);
 				}
@@ -458,56 +407,47 @@ public class Presentacion {
 		double latitudMedia = (coordenada1.getLat() + coordenada2.getLat()) / 2.0;
 		double longitudMedia = (coordenada1.getLon() + coordenada2.getLon()) / 2.0;
 		return new Coordinate(latitudMedia, longitudMedia);
-	}
+	} /* Todos los eventos , acciones del usuario en un solo lugar. */
 
-//	private void dibujarPuntosEnMapa() {
-//		GestorArchivos gestor = new GestorArchivos();
-//		ArrayList<Nodo> nodo = gestor.cargarJsonLista("argentinaCitys.json");
-//		GrafoLista TodasLasciudades = new GrafoLista(nodo);
-//		GrafoLista ciudadesSeleccionadas = new GrafoLista(ObtenerCiudadDeArchivo(TodasLasciudades, "Entre Ríos"));
-//		// obtenerCoordenadasDeCiudades();
-//		// generarConexionGrafoCompleto(ciudadesSeleccionadas);
-//		dibujarPuntos();
-//
-//		AGMPrim calcular = new AGMPrim();
-//		List<Arista> AristasMinimas = calcular.AGMPrim(ciudadesSeleccionadas);
-//		System.out.println(AristasMinimas);
-//		dibujarAristas(AristasMinimas);
-//
-//		// System.out.println("Las ciudades seleccionadas son:" +
-//		// ciudadesSeleccionadas.getNodos());
-//		// System.out.println(nodo);
-//
-//	}
+	private void eventos() {
 
-	/* Todos los eventos , acciones del usuario en un solo lugar. */
-	private void eventos() {JFileChooser fc = new JFileChooser();
-	GestorArchivos gestor=new GestorArchivos();
-	File initialDir = new File("src/fileManager/");
-	fc.setCurrentDirectory(initialDir); // Establecer directorio inicial
-	openMenuItem.addActionListener(ev -> {
-	  int returnVal = fc.showOpenDialog(frame);
-	  if (returnVal == JFileChooser.APPROVE_OPTION) {
-	    File file = fc.getSelectedFile();
-	    try {
-	      BufferedReader input = new BufferedReader(new InputStreamReader(
-	          new FileInputStream(file)));
-	      		//System.out.println(file.getPath());
-	      this.negocio.cambiarGrafoPor(file.getName());
-	      //Desde aca hay que seguir para fibujar todos los puntos
-	      	
-	    } catch (Exception e) {
-	      e.printStackTrace();
-	    }
-	  } else {
-	    System.out.println("Operation is CANCELLED :(");
-	  }
-	});
+		JFileChooser fc = new JFileChooser();
+		File initialDir = new File("src/fileManager/");
+		fc.setCurrentDirectory(initialDir); // Establecer directorio inicial
+		openMenuItem.addActionListener(ev -> {
+			int returnVal = fc.showOpenDialog(frame);
+			if (returnVal == JFileChooser.APPROVE_OPTION) {
+				File file = fc.getSelectedFile();
+				try {
+					// System.out.println(file.getPath());
+					cambiarSesion(file.getName());
+					// Desde aca hay que seguir para fibujar todos los puntos
 
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} else {
+				System.out.println("Operation is CANCELLED :(");
+			}
+		});
 
-		
-		
-		
+		saveMenu.addActionListener(ev -> {
+			fc.setDialogTitle("Especifique el archivo a guardar");
+			int returnVal = fc.showSaveDialog(frame);
+			if (returnVal == JFileChooser.APPROVE_OPTION) {
+				File fileToSave = fc.getSelectedFile();
+				try {
+					negocio.guardarSesion(fileToSave.getName());
+					// Desde acá hay que seguir para dibujar todos los puntos
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} else {
+				// El usuario canceló el diálogo de selección de archivo
+				System.out.println("Selección de archivo cancelada");
+			}
+		});
+
 		botonAgregar.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
@@ -528,10 +468,9 @@ public class Presentacion {
 				String destino = tfConexion2.getText();
 				System.out.println("Agregar conexion fue: " + negocio.agregarConexion(origen, destino));
 				dibujarConexion(origen, destino);
-				actualizarPRecio();
+				actualizarPrecioSinPlanificar();
 				// Dentro de un evento o hilo diferente al de la UI
-			
-				
+
 			}
 		});
 		botonUnir.addActionListener(new ActionListener() {
@@ -539,8 +478,8 @@ public class Presentacion {
 			public void actionPerformed(ActionEvent e) {
 				negocio.generarGrafoCompleto();
 				dibujarTodasLasConexiones();
-				actualizarPRecio();
-				
+				actualizarPrecioSinPlanificar();
+
 			}
 		});
 		botonPlanificar.addActionListener(new ActionListener() {
@@ -549,8 +488,7 @@ public class Presentacion {
 
 				eliminarVisualmenteLasConexiones();
 				planificar();
-				actualizarPRecio();
-				
+				actualizarPrecio();
 
 			}
 		});
