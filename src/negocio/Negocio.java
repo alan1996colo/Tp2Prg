@@ -75,7 +75,7 @@ public class Negocio implements Serializable {
 	 * Dado un nombre de ciudad pasado, lo busca en el archivo pasado y lo agrega a
 	 * la lista de nodos del grafo.
 	 **/
-	public void agregarNodoConNombreDesdeArchivoJson(String name, String fname) { // "NO SE USA"
+	public void agregarNodoConNombreDesdeArchivoJson(String name, String fname) { // "NO SE USA"..disponible para futuras imlementaciones
 		GestorArchivos gest = new GestorArchivos();
 		GrafoLista temp = new GrafoLista(gest.cargarJsonLista(fname));
 		this.grafo.agregarNodo(temp.buscarNodoCiudad(name));
@@ -214,8 +214,8 @@ public class Negocio implements Serializable {
 			for (int i = j + 1; i < grafo.getTamanio(); i++) {
 				Nodo destino = grafo.getNodoNum(i);
 				destino.inicializarVecinos();
-				origen.agregarVecino(origen, destino, GrafoLista.distanciaEntreNodos(origen, destino));
-				destino.agregarVecino(destino, origen, GrafoLista.distanciaEntreNodos(origen, destino));
+				origen.agregarVecino( destino, GrafoLista.distanciaEntreNodos(origen, destino));
+				destino.agregarVecino(origen, GrafoLista.distanciaEntreNodos(origen, destino));
 			}
 			nodos.add(origen);
 		}

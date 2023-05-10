@@ -4,9 +4,7 @@ import java.io.Serializable;
 import java.util.*;
 
 public class GrafoLista implements Serializable {
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	private List<Nodo> nodos;// lista de nodos
 
@@ -53,9 +51,9 @@ public class GrafoLista implements Serializable {
 		if (nodoOrigen.equals(nodoDestino)) {
 			throw new IllegalArgumentException("No se permiten bucles");
 		} else {
-			double peso = this.distanciaEntreNodos(nodoOrigen, nodoDestino);
-			nodoOrigen.agregarVecino(nodoOrigen, nodoDestino, peso);
-			nodoDestino.agregarVecino(nodoDestino, nodoOrigen, peso);
+			double peso = GrafoLista.distanciaEntreNodos(nodoOrigen, nodoDestino);
+			nodoOrigen.agregarVecino(nodoDestino, peso);
+			nodoDestino.agregarVecino( nodoOrigen, peso);
 		}
 	}
 
@@ -64,7 +62,7 @@ public class GrafoLista implements Serializable {
 		return nodos;
 	}
 
-	public int getTamanio() {// OK // cambiarle nombre a getTamanio mas tarde
+	public int getTamanio() {// OK 
 		return this.nodos.size();
 	}
 

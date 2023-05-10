@@ -3,7 +3,6 @@ package negocio;
 import java.io.Serializable;
 import java.util.*;
 
-import org.openstreetmap.gui.jmapviewer.Coordinate;
 
 public class Nodo implements Serializable {
 	/**
@@ -28,11 +27,11 @@ public class Nodo implements Serializable {
 		this.vecinos = new HashSet<Arista>();
 	}
 
-	public void agregarVecino(Nodo nodoOrigen, Nodo nodoDestino, double peso) {
-		if (this.vecinos.contains(new Arista(nodoOrigen, nodoDestino, peso))) {
+	public void agregarVecino( Nodo nodoDestino, double peso) {
+		if (this.vecinos.contains(new Arista(this, nodoDestino, peso))) {
 			throw new IllegalArgumentException("La arista ya existe");
 		}
-		vecinos.add(new Arista(nodoOrigen, nodoDestino, peso));
+		vecinos.add(new Arista(this, nodoDestino, peso));
 
 	}
 

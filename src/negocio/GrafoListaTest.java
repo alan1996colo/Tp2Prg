@@ -3,9 +3,9 @@ package negocio;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
-import java.util.List;
+//import java.util.List;
 
-import org.junit.Before;
+//import org.junit.Before;
 import org.junit.Test;
 
 public class GrafoListaTest {
@@ -89,7 +89,7 @@ public class GrafoListaTest {
 		Escobar.inicializarVecinos();
 		grafo.agregarArista(Escobar, Garin);
 		grafo.agregarArista(Escobar, bb);
-		Arista eg = new Arista(Escobar, Garin, grafo.distanciaEntreNodos(Garin, Escobar));
+		Arista eg = new Arista(Escobar, Garin, GrafoLista.distanciaEntreNodos(Garin, Escobar));
 		assertTrue(Escobar.getAristas().contains(eg));
 
 	}

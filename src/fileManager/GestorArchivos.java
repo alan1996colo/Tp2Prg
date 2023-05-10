@@ -13,7 +13,6 @@ import java.io.ObjectOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -63,7 +62,7 @@ public class GestorArchivos implements Serializable {
 
 	}
 
-	public void recorrerXml(Node node) {
+	private void recorrerXml(Node node) {
 		// Recorrer los hijos del nodo actual
 		NodeList hijos = node.getChildNodes();
 		for (int i = 0; i < hijos.getLength(); i++) {

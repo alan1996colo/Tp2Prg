@@ -13,7 +13,7 @@ public class NodoTest {
 	    Nodo Polvorines =new Nodo("Polvorines", "BSAS",-34.49933901727254, -58.693703801287086);
 	    grafo.agregarNodo(Escobar);
 	    grafo.agregarNodo(Polvorines);
-	    Escobar.agregarVecino(Escobar, Polvorines,5);
+	    Escobar.agregarVecino( Polvorines,5);
 	    
 	    // Buscar la arista que tiene a Polvorines como destino
 	    Arista arista = null;

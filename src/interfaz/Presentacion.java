@@ -4,19 +4,14 @@ import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
-import java.text.NumberFormat;
+
 import java.util.AbstractMap;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+
 
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
-import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -27,29 +22,15 @@ import org.openstreetmap.gui.jmapviewer.Coordinate;
 import org.openstreetmap.gui.jmapviewer.JMapViewer;
 import org.openstreetmap.gui.jmapviewer.MapMarkerDot;
 import org.openstreetmap.gui.jmapviewer.MapPolygonImpl;
-import org.openstreetmap.gui.jmapviewer.interfaces.MapMarker;
 import org.openstreetmap.gui.jmapviewer.interfaces.MapPolygon;
 
-import fileManager.GestorArchivos;
-import negocio.AGMPrim;
-import negocio.Arista;
-import negocio.GrafoLista;
 import negocio.Negocio;
-import negocio.Nodo;
-
-import java.awt.BorderLayout;
-import java.awt.Canvas;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.SwingUtilities;
-
-import java.awt.Color;
-import java.util.Random;
-import org.openstreetmap.gui.jmapviewer.Coordinate;
-import org.openstreetmap.gui.jmapviewer.MapPolygonImpl;
 import javax.swing.ImageIcon;
 import java.awt.Font;
 
@@ -101,24 +82,13 @@ public class Presentacion {
 
 	private void crearMenuDesplegable() {
 
-		// Crear la barra de menú
 		JMenuBar menuBar = new JMenuBar();
-
-		// Crear el menú "File"
 		JMenu fileMenu = new JMenu("Archivo");
-
-		// Crear la opción "Open" y agregarla al menú "File"
 		openMenuItem = new JMenuItem("Abrir archivo");
 		fileMenu.add(openMenuItem);
-
-		// Crear la opción "Exit" y agregarla al menú "File"
 		saveMenu = new JMenuItem("Guardar Archivo");
 		fileMenu.add(saveMenu);
-
-		// Agregar el menú "File" a la barra de menú
 		menuBar.add(fileMenu);
-
-		// Agregar la barra de menú al frame
 		frame.setJMenuBar(menuBar);
 
 	}
@@ -167,7 +137,6 @@ public class Presentacion {
 		conectar = new JButton("Conectar");
 		conectar.setFont(new Font("Tahoma", Font.BOLD, 13));
 		conectar.setName("Conectar");
-		// conectar.setLayout(new FlowLayout());
 		conectar.setSize(30, 30);
 		conectar.setText("Conectar");
 
@@ -292,12 +261,8 @@ public class Presentacion {
 
 		JSpinner.NumberEditor longitudEditor = (JSpinner.NumberEditor) longitudSpinner.getEditor();
 		longitudEditor.getFormat().applyPattern("#0.0000");
-
-		// Establecer el tamaño y la posición de los spinners
 		latitudSpinner.setBounds(80, 151, 170, 31);
 		longitudSpinner.setBounds(80, 101, 170, 31);
-
-		// Agregar los spinners al panel
 		frame.getContentPane().add(new JLabel("Latitud:"));
 		frame.getContentPane().add(latitudSpinner);
 		frame.getContentPane().add(new JLabel("Longitud:"));
@@ -308,7 +273,7 @@ public class Presentacion {
 	// ------------metodos y funcionalidades--------------------------------
 
 	/*
-	 * 
+	 * Cambia el estado del programa, al de un archivo json que se pase
 	 * */
 	public void cambiarSesion(String fname) {
 		this.mapa.removeAllMapPolygons();
@@ -321,24 +286,11 @@ public class Presentacion {
 
 	}
 
-	/****
-	 * Ingresa la localidad, devuelve true o false si se pudo o no
-	 ***/
-	public boolean IngresarLocalidad(String localidad) {
-		return false;
-	}
 
 	/** Quita del mapa las lineas creadas anteriormente. */
 	private void eliminarVisualmenteLasConexiones() {
 		this.mapa.removeAllMapPolygons();
 		this.mapa.repaint();
-	}
-
-	/***
-	 * Permite al usuario modificar la solucion, este metodo va meter mano en la
-	 * clase negocio
-	 **/
-	public void ModificarSolucion() {// desarrollar...
 	}
 
 	private void actualizarPrecio() {
@@ -407,8 +359,9 @@ public class Presentacion {
 		double latitudMedia = (coordenada1.getLat() + coordenada2.getLat()) / 2.0;
 		double longitudMedia = (coordenada1.getLon() + coordenada2.getLon()) / 2.0;
 		return new Coordinate(latitudMedia, longitudMedia);
-	} /* Todos los eventos , acciones del usuario en un solo lugar. */
-
+	}
+	
+	/* Todos los eventos , acciones del usuario en un solo lugar. */
 	private void eventos() {
 
 		JFileChooser fc = new JFileChooser();
