@@ -1,12 +1,16 @@
 package negocio;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 import java.util.*;
+import negocio.Negocio;
+
 
 public class GrafoLista implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	private List<Nodo> nodos;// lista de nodos
+	private Negocio negocio;
 
 	public GrafoLista() {// OK
 		this.nodos = new ArrayList<>();
@@ -51,10 +55,28 @@ public class GrafoLista implements Serializable {
 		if (nodoOrigen.equals(nodoDestino)) {
 			throw new IllegalArgumentException("No se permiten bucles");
 		} else {
-			double peso = GrafoLista.distanciaEntreNodos(nodoOrigen, nodoDestino);
+			double peso= calcularPeso(nodoOrigen,nodoDestino);
+		//	double peso = GrafoLista.distanciaEntreNodos(nodoOrigen, nodoDestino);
 			nodoOrigen.agregarVecino(nodoDestino, peso);
 			nodoDestino.agregarVecino( nodoOrigen, peso);
 		}
+	}
+	
+	
+	private double calcularPeso(Nodo nodoOrigen, Nodo nodoDestino) {
+		
+		double distancia =distanciaEntreNodos(nodoOrigen, nodoDestino);
+		double PesoDistanciaPorKilometro = distancia* negocio.getCostoPesosxKM();
+		
+		if(nodoOrigen.getNombreProvincia()!=nodoDestino.getNombreProvincia()) {
+			PesoDistanciaPorKilometro= PesoDistanciaPorKilometro + negocio.getCostoFijoprovDistinta();
+		}
+		if (distancia>negocio.getKmExcedido()) {
+				PesoDistanciaPorKilometro= ((PesoDistanciaPorKilometro*20)/100)+PesoDistanciaPorKilometro;
+		}
+		
+		
+		return PesoDistanciaPorKilometro;
 	}
 
 	// devuelvo los nodos del grafo
@@ -157,5 +179,6 @@ public class GrafoLista implements Serializable {
 			iter.mostrarAristas();
 		}
 	}
+	
 
 }

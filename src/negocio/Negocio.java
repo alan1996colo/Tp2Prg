@@ -11,6 +11,7 @@ import fileManager.GestorArchivos;
 
 public class Negocio implements Serializable {
 	private static final long serialVersionUID = 1L;
+	double kmExcedido=300;
 	double aumentoPesosPorcentaje;
 	double costoFijoprovDistinta;
 	double costoPesosxKM;
@@ -237,5 +238,36 @@ public class Negocio implements Serializable {
 		// TODO Auto-generated method stub
 
 	}
+	public double getAumentoPesosPorcentaje() {
+		return aumentoPesosPorcentaje;
+	}
+
+	public void setAumentoPesosPorcentaje(double aumentoPesosPorcentaje) {
+		this.aumentoPesosPorcentaje = aumentoPesosPorcentaje;
+	}
+
+	public double getCostoFijoprovDistinta() {
+		return costoFijoprovDistinta;
+	}
+
+	public void setCostoFijoprovDistinta(double costoFijoprovDistinta) {
+		this.costoFijoprovDistinta = costoFijoprovDistinta;
+	}
+
+	public double getCostoPesosxKM() {
+		return costoPesosxKM;
+	}
+
+	public void setCostoPesosxKM(double costoPesosxKM) {
+		this.costoPesosxKM = costoPesosxKM;
+	}
+	public double getKmExcedido() {
+		return kmExcedido;
+	}
+
+	public void setKmExcedido(double kmExcedido) {
+		this.kmExcedido = kmExcedido;
+	}
+
 
 }

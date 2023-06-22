@@ -37,7 +37,7 @@ import java.awt.Font;
 public class Presentacion {
 	private JSpinner latitudSpinner;
 	private JSpinner longitudSpinner;
-	private Negocio negocio = new Negocio(2, 3, 4);
+	private Negocio negocio = new Negocio(20, 200, 10);
 	private JFrame frame;
 	private JMapViewer mapa;
 	private JPanel panelMapa;
