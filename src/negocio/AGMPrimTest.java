@@ -8,43 +8,47 @@ import org.junit.Test;
 
 public class AGMPrimTest {
 
+	//	TEST DEL EJEMPLO DADO EN CLASE SEMANA 3 AL 9 DE ABRIL.
 	GrafoLista grafo = new GrafoLista();
-	Nodo CABA = new Nodo("CABA", "CABA", -34.6144934119689, -58.4458563545429);
-	Nodo Salta = new Nodo("Salta", "Salta", -24.2991344492002, -64.8144629600627);
-	Nodo Neuquen = new Nodo("Neuquen", "Neuquen", -38.6417575824599, -70.1185705180601);
-	Nodo Misiones = new Nodo("Misiones", "Misiones", -26.8753965086829, -54.6516966230371);
-	Nodo SanLuis = new Nodo("San Luis", "San Luis", -33.7577257449137, -66.0281298195836);
-	Nodo SanJuan = new Nodo("San Juan", "San Juan", -30.8653679979618, -68.8894908486844);
-	Nodo EntreRios = new Nodo("Entre Rios", "Entre Rios", -32.0588735436448, -59.2014475514635);
-	Nodo Cordoba = new Nodo("Cordoba", "Cordoba", -32.142932663607, -63.8017532741662);
-	Nodo Mendoza = new Nodo("Mendoza", "Mendoza", -34.6298873058957, -68.5831228183798);
+	Nodo a = new Nodo("A", "CABA", -34.6144934119689, -58.4458563545429);//las coordenadas para este test son irrelevantes
+	Nodo b = new Nodo("B", "CABA", -24.2991344492002, -64.8144629600627);//porque se les dara el mismo peso mas adelante
+	Nodo c = new Nodo("C", "CABA", -38.6417575824599, -70.1185705180601);//que se les dio en la clase
+	Nodo d = new Nodo("D", "CABA", -26.8753965086829, -54.6516966230371);
+	Nodo e = new Nodo("E", "CABA", -33.7577257449137, -66.0281298195836);
+	Nodo f = new Nodo("F", "CABA", -30.8653679979618, -68.8894908486844);
+	Nodo g = new Nodo("G", "CABA", -32.0588735436448, -59.2014475514635);
+	Nodo h = new Nodo("H", "CABA", -32.142932663607, -63.8017532741662);
+	Nodo i = new Nodo("I", "CABA", -34.6298873058957, -68.5831228183798);
 
 	@Test
-	public void agmMainTest() {
-		grafo.agregarNodo(CABA);
-		grafo.agregarNodo(Salta);
-		grafo.agregarNodo(Neuquen);
-		grafo.agregarNodo(Misiones);
-		grafo.agregarNodo(SanLuis);
-		grafo.agregarNodo(SanJuan);
-		grafo.agregarNodo(EntreRios);
-		grafo.agregarNodo(Cordoba);
-		grafo.agregarNodo(Mendoza);
+	public void agmMainTestDelAgmDadoEnClase() {//esto demuestra que el agm funciona.
+		grafo.agregarNodo(a);
+		grafo.agregarNodo(b);
+		grafo.agregarNodo(c);
+		grafo.agregarNodo(d);
+		grafo.agregarNodo(e);
+		grafo.agregarNodo(f);
+		grafo.agregarNodo(g);
+		grafo.agregarNodo(h);
+		grafo.agregarNodo(i);
 
-		grafo.agregarArista(CABA, Salta);
-		grafo.agregarArista(CABA, Neuquen);
-		grafo.agregarArista(Salta, Neuquen);
-		grafo.agregarArista(Neuquen, SanJuan);
-		grafo.agregarArista(Neuquen, SanLuis);
-		grafo.agregarArista(Salta, Misiones);
-		grafo.agregarArista(Misiones, SanLuis);
-		grafo.agregarArista(SanLuis, SanJuan);
-		grafo.agregarArista(Misiones, EntreRios);
-		grafo.agregarArista(SanJuan, Cordoba);
-		grafo.agregarArista(Misiones, Cordoba);
-		grafo.agregarArista(EntreRios, Cordoba);
-		grafo.agregarArista(EntreRios, Mendoza);
-		grafo.agregarArista(Cordoba, Mendoza);
+		grafo.agregarArista(a, b,4);
+		grafo.agregarArista(a, h,8);
+		grafo.agregarArista(b, h, 12);
+		grafo.agregarArista(b, c, 8);
+		grafo.agregarArista(h, i, 6);
+		grafo.agregarArista(h, g, 1);
+		grafo.agregarArista(c, i, 3);
+		grafo.agregarArista(i, g, 5);
+		grafo.agregarArista(g, f, 3);
+		grafo.agregarArista(c, f, 4);
+		grafo.agregarArista(c, d, 6);
+		grafo.agregarArista(d, f, 13);
+		grafo.agregarArista(d, e, 9);
+		grafo.agregarArista(f, e, 10);
+		
+		
+		
 
 		System.out.println("*********Todas las aristas del grafo******");
 		for (Nodo nodo : grafo.getNodos()) {
@@ -67,78 +71,19 @@ public class AGMPrimTest {
 		System.out.println("***********");
 		System.out.println("Peso total del arbol minimo: " + pesoDelArbolMinimo);
 	}
-
+	
 	@Test
-	public void otraPruebaTest() {
-
-		// TODO Auto-generated method stub
-
-		GrafoLista grafo = new GrafoLista();
-		Nodo CABA = new Nodo("Buenos Aires", "Buenos Aires, Ciudad Autónoma de", -34.5997, -58.3819);
-		grafo.agregarNodo(CABA);
-		Nodo Cordoba = new Nodo("Córdoba", "Córdoba", -31.4167, -64.1833);
-		grafo.agregarNodo(Cordoba);
-		Nodo Rosario = new Nodo("Rosario", "Santa Fe", -32.9575, -60.6394);
-		grafo.agregarNodo(Rosario);
-		Nodo Parana = new Nodo("Paraná", "Entre Ríos", -31.7444, -60.5175);
-		grafo.agregarNodo(Parana);
-		Nodo Merlo = new Nodo("Merlo", "Buenos Aires", -34.6653, -58.7275);
-		grafo.agregarNodo(Merlo);
-		Nodo Quilmes = new Nodo("Quilmes", "Buenos Aires", -34.7167, -58.2667);
-		grafo.agregarNodo(Quilmes);
-		Nodo Banfield = new Nodo("Banfield", "Buenos Aires", -34.7500, -58.3833);
-		grafo.agregarNodo(Banfield);
-		Nodo Concordia = new Nodo("Concordia", "Entre Rios", -31.3922, -58.0169);
-		grafo.agregarNodo(Concordia);
-		Nodo Cafayate = new Nodo("Cafayate", "Salta", -26.0700, -65.9800);
-		grafo.agregarNodo(Cafayate);
-		Nodo Chepes = new Nodo("Chepes", "La Rioja", -31.3500, -66.6000);
-		grafo.agregarNodo(Chepes);
-
-		grafo.agregarArista(CABA, Rosario);
-		grafo.agregarArista(CABA, Cordoba);
-		grafo.agregarArista(CABA, Parana);
-		grafo.agregarArista(CABA, Quilmes);
-		grafo.agregarArista(Rosario, Parana);
-		grafo.agregarArista(Rosario, Chepes);
-		grafo.agregarArista(Rosario, Merlo);
-		grafo.agregarArista(Cordoba, Parana);
-		grafo.agregarArista(Cordoba, Cafayate);
-		grafo.agregarArista(Cordoba, Merlo);
-		grafo.agregarArista(Concordia, Parana);
-		grafo.agregarArista(Concordia, Rosario);
-		grafo.agregarArista(Parana, Cafayate);
-		grafo.agregarArista(Parana, Chepes);
-		grafo.agregarArista(Cafayate, Chepes);
-		grafo.agregarArista(Merlo, Banfield);
-		grafo.agregarArista(Merlo, Quilmes);
-		grafo.agregarArista(Banfield, CABA);
-		grafo.agregarArista(Chepes, Concordia);
-		grafo.agregarArista(Quilmes, Banfield);
-		grafo.agregarArista(Merlo, Concordia);
-
-		for (Nodo nodo : grafo.getNodos()) {
-			for (Arista arista : nodo.getAristas()) {
-				System.out.println("De " + arista.getNodoOrigen().getNombreCiudad() + " a "
-						+ arista.getNodoDestino().getNombreCiudad() + " hay " + arista.getPeso() + " km");
-			}
+	public void agmDanielBertacciniTest() {
+		Nodo bahia=new Nodo("Bahia","Buenos Aires",-38.71959,-62.27243);
+		Nodo  generalAcha= new Nodo("General Acha","La Pampa",-37.37698,-64.60431);
+		Nodo generalRoca=new Nodo("General Roca","Rio Negro",-39.03333,-67.58333);
+		Nodo santaRosa= new Nodo("Santa Rosa","La Pampa",-36.61667,-64.28333);
+		Nodo mardelPlata= new Nodo("Mar del Plata","Buenos Aires",-38.0042,-57.5562);
+		Nodo viedma= new Nodo("VIedma","Rio Negro",-40.81345,-62.99668);
+		Nodo Tandil= new Nodo("Tandil","Buenos Aires",-37.32167,-59.13316);
+		
+		Negocio neg=new Negocio(0,0,1);
+		//continuar
 		}
-
-		System.out.println("****************************************************");
-
-		AGMPrim conexiones = new AGMPrim();
-		List<Arista> todasLasAristas = conexiones.AGMPrim(grafo);
-
-		int pesoDelArbolMinimo = 0;
-		for (Arista arista : todasLasAristas) {
-
-			System.out.println(arista.getNodoOrigen().getNombreCiudad() + " a "
-					+ arista.getNodoDestino().getNombreCiudad() + " Peso : " + arista.getPeso());
-			pesoDelArbolMinimo += arista.getPeso();
-		}
-		System.out.println("***********");
-		System.out.println("Peso total del arbol minimo: " + pesoDelArbolMinimo);
-
-	}
-
+	
 }

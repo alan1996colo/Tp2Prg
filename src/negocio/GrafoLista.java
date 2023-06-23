@@ -51,11 +51,11 @@ public class GrafoLista implements Serializable {
 	/*
 	 * Intenta agreagar la arista entre dos nodos
 	 */
-	public void agregarArista(Nodo nodoOrigen, Nodo nodoDestino) { // OK
+	public void agregarArista(Nodo nodoOrigen, Nodo nodoDestino, double peso) { // OK
 		if (nodoOrigen.equals(nodoDestino)) {
 			throw new IllegalArgumentException("No se permiten bucles");
 		} else {
-			double peso= calcularPeso(nodoOrigen,nodoDestino);
+			
 		//	double peso = GrafoLista.distanciaEntreNodos(nodoOrigen, nodoDestino);
 			nodoOrigen.agregarVecino(nodoDestino, peso);
 			nodoDestino.agregarVecino( nodoOrigen, peso);
@@ -63,21 +63,6 @@ public class GrafoLista implements Serializable {
 	}
 	
 	
-	private double calcularPeso(Nodo nodoOrigen, Nodo nodoDestino) {
-		
-		double distancia =distanciaEntreNodos(nodoOrigen, nodoDestino);
-		double PesoDistanciaPorKilometro = distancia* negocio.getCostoPesosxKM();
-		
-		if(nodoOrigen.getNombreProvincia()!=nodoDestino.getNombreProvincia()) {
-			PesoDistanciaPorKilometro= PesoDistanciaPorKilometro + negocio.getCostoFijoprovDistinta();
-		}
-		if (distancia>negocio.getKmExcedido()) {
-				PesoDistanciaPorKilometro= ((PesoDistanciaPorKilometro*20)/100)+PesoDistanciaPorKilometro;
-		}
-		
-		
-		return PesoDistanciaPorKilometro;
-	}
 
 	// devuelvo los nodos del grafo
 	public List<Nodo> getNodos() {// OK
@@ -145,21 +130,7 @@ public class GrafoLista implements Serializable {
 		return false;
 	}
 
-	public static double distanciaEntreNodos(Nodo ciudad1, Nodo ciudad2) { // OK
-		double latitud1 = ciudad1.getLatitud();
-		double latitud2 = ciudad2.getLatitud();
-		double longitud1 = ciudad1.getLongitud();
-		double longitud2 = ciudad2.getLongitud();
-		final int radioTierra = 6371; // Radio de la Tierra en kilómetros
-		double latitudDistancia = Math.toRadians(latitud2 - latitud1);
-		double longitudDistancia = Math.toRadians(longitud2 - longitud1);
-		double a = Math.sin(latitudDistancia / 2) * Math.sin(latitudDistancia / 2)
-				+ Math.cos(Math.toRadians(latitud1)) * Math.cos(Math.toRadians(latitud2))
-						* Math.sin(longitudDistancia / 2) * Math.sin(longitudDistancia / 2);
-		double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-		double distancia = radioTierra * c;
-		return distancia;
-	}
+
 
 	public boolean isProvDiff(Nodo n1, Nodo n2) { // OK
 		return !n1.equalsProv(n2);

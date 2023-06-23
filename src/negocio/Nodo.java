@@ -108,6 +108,15 @@ public class Nodo implements Serializable {
 			return false;
 		return true;
 	}
+	@Override
+	public int hashCode() {
+	    int result = 17;
+	    result = 31 * result + Objects.hashCode(latitud);
+	    result = 31 * result + Objects.hashCode(longitud);
+	    result = 31 * result + Objects.hashCode(nombreCiudad);
+	    result = 31 * result + Objects.hashCode(nombreProvincia);
+	    return result;
+	}
 
 	public boolean equalsProv(Nodo n) {
 		return this.getNombreProvincia().equals(n.getNombreProvincia());

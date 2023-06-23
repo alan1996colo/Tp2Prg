@@ -82,3 +82,38 @@ mostrando el costo de esta modificacion -->Hernan
 ------------------------------------------------
 update 8/5
 - Se quito el metodo generarJsonDesdeLista, ya que el metodo generarJSON hace exactamente lo mismo, pasandole cualquier tipo de objeto. Es decir es mas generico.
+----------------------------------------
+
+Al parecer tuvimos el error en el planteo:
+• Costo en pesos por kil´ometro de una conexi´on entre dos localidades.
+• Porcentaje de aumento del costo si la conexi´on tiene m´as de 300 km.
+• Costo fijo que se agrega si la conexi´on involucra localidades de dos provincias distintas.
+Es decir, el usuario debe proporcionar el costo cada vez que agrega una conexion nueva, por lo que entiendo.
+
+** El costo de cada conexión debería calcularse solamente al momento de agregar la arista al grafo completo.**
+
+Como el costo de cada conexion deberia calcularse solamente al momento de agregar la arista al grafo, entonces directamente el peso de cada arista, deja de ser distancia y pasa a ser el resultado del calculo del precio de esa conexion usando la distancia.
+Luego para conocer el precio de la conexion total solo recorremos las aristas del agm, y las sumamos.
+
+Estuve viendo el error que paso de correccion el profesor.
+
+distancia mardel plata--> tandil 158,35km
+tandil bahia blanca --->316km
+mar del plata bahia blanca--->420km
+
+Solo quedaria emular exactamente el mismo grafo en los test de negocio, para descartar que el agm este funcionando mal.
+
+
+Por el momento , sabemos que el metodo que calcula la distancia funciona aproximadamente bien, por lo tanto no es de alli el error.
+
+Por lo tanto, quizas el bug se encuentre en la capa de presentacion.
+
+pd: modificar generar grafo completo, para que la aristas sean igual al precio.
+
+-------------
+
+Al parcer el agmPrim no funciona correctamente como pensabamos, estoy revisando si es por algun error del equals o hashCode en alguna clase.
+
+
+
+

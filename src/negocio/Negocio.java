@@ -93,7 +93,8 @@ public class Negocio implements Serializable {
 		Nodo origen = this.grafo.buscarNodoCiudad(ciudadOrigen);
 		Nodo destino = this.grafo.buscarNodoCiudad(ciudadDestino);
 		if (origen != null && destino != null) {
-			this.grafo.agregarArista(origen, destino);
+			double peso= calcularPeso(origen,destino);
+			this.grafo.agregarArista(origen, destino,peso);
 			return true;
 		} else {
 			return false;
@@ -140,19 +141,14 @@ public class Negocio implements Serializable {
 		return 0;
 	};
 
-	/* Devuelve el porcentaje adicional del precio de la conexion */
-	public double PorcentajeDeAumentoConexion() { // OK
-		if (darCostoEnpesos() / costoPesosxKM > 300) {
-			return darCostoEnpesos() * aumentoPesosPorcentaje / 100;
-		}
+	/*Este metodo se va eliminar porque correspondia a la anterior modelo */
+	public double PorcentajeDeAumentoConexion() { //borrar luego.
+		
 		return 0;
 	}
 
-	/* Devuelve el porcentaje adicional del precio de la conexion sin planificar */
+	/* Este metodo tambien se va borrar porque correspondia al anterior modelo. */
 	public double PorcentajeDeAumentoConexionSinPlanificar() { // OK
-		if (darCostoEnpesosSinPLanificar() / costoPesosxKM > 300) {
-			return darCostoEnpesosSinPLanificar() * aumentoPesosPorcentaje / 100;
-		}
 		return 0;
 	}
 
@@ -175,7 +171,7 @@ public class Negocio implements Serializable {
 		double ret = 0;
 		List<Arista> arbol = AGMPrim.AGMPrim(this.grafo);
 		for (Arista a : arbol) {
-			ret = ret + (a.getPeso() * costoPesosxKM);
+			ret = ret + (a.getPeso());
 
 		}
 
@@ -215,8 +211,8 @@ public class Negocio implements Serializable {
 			for (int i = j + 1; i < grafo.getTamanio(); i++) {
 				Nodo destino = grafo.getNodoNum(i);
 				destino.inicializarVecinos();
-				origen.agregarVecino( destino, GrafoLista.distanciaEntreNodos(origen, destino));
-				destino.agregarVecino(origen, GrafoLista.distanciaEntreNodos(origen, destino));
+				origen.agregarVecino( destino, this.distanciaEntreNodos(origen, destino));
+				destino.agregarVecino(origen, this.distanciaEntreNodos(origen, destino));
 			}
 			nodos.add(origen);
 		}
@@ -235,7 +231,7 @@ public class Negocio implements Serializable {
 	public void cambiarGrafoPor(String name) { // OK
 		GestorArchivos gestor = new GestorArchivos();
 		this.grafo.setNodos(gestor.cargarJsonLista(name));
-		// TODO Auto-generated method stub
+	
 
 	}
 	public double getAumentoPesosPorcentaje() {
@@ -269,5 +265,40 @@ public class Negocio implements Serializable {
 		this.kmExcedido = kmExcedido;
 	}
 
+	/**Este metodo calcula el precio total del enunciado , considerando todo, y se usa para asignar el peso a las aristas.*/
+	private double calcularPeso(Nodo nodoOrigen, Nodo nodoDestino) {
+		
+		double distancia =distanciaEntreNodos(nodoOrigen, nodoDestino);
+		double PesoDistanciaPorKilometro = distancia* this.getCostoPesosxKM();
+		
+		if(nodoOrigen.getNombreProvincia()!=nodoDestino.getNombreProvincia()) {
+			PesoDistanciaPorKilometro= PesoDistanciaPorKilometro + this.getCostoFijoprovDistinta();
+		}
+		if (distancia>this.getKmExcedido()) {
+				PesoDistanciaPorKilometro= ((PesoDistanciaPorKilometro*(aumentoPesosPorcentaje/100)))+PesoDistanciaPorKilometro;
+		}
+		
+		return PesoDistanciaPorKilometro;
+	}
+	
+	
+	public static double distanciaEntreNodos(Nodo ciudad1, Nodo ciudad2) { // OK
+		double latitud1 = ciudad1.getLatitud();
+		double latitud2 = ciudad2.getLatitud();
+		double longitud1 = ciudad1.getLongitud();
+		double longitud2 = ciudad2.getLongitud();
+		final int radioTierra = 6371; // Radio de la Tierra en kilómetros
+		double latitudDistancia = Math.toRadians(latitud2 - latitud1);
+		double longitudDistancia = Math.toRadians(longitud2 - longitud1);
+		double a = Math.sin(latitudDistancia / 2) * Math.sin(latitudDistancia / 2)
+				+ Math.cos(Math.toRadians(latitud1)) * Math.cos(Math.toRadians(latitud2))
+						* Math.sin(longitudDistancia / 2) * Math.sin(longitudDistancia / 2);
+		double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+		double distancia = radioTierra * c;
+		return distancia;
+	}
+	public GrafoLista getGrafo() {
+		return this.grafo;
+	}
 
 }
