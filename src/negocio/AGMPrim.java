@@ -6,7 +6,9 @@ public class AGMPrim {
 	
 	//Antes de heap-->O(V^2) , despues de heap --> O(E log V).
 	public static List<Arista> AGMPrim(GrafoLista grafo){
-		
+		if(grafo==null||grafo.getTamanio()==0) {
+			throw new IllegalArgumentException("No se puede calcular el agm de un grafo vacio");
+		}
 	    List<Arista> arbol = new ArrayList<>();
 	    Set<Nodo> visitados = new HashSet<>();
 	    PriorityQueue<Arista> heap = new PriorityQueue<>(Comparator.comparing(Arista::getPeso));
@@ -15,6 +17,7 @@ public class AGMPrim {
 	    visitados.add(actual);
 
 	    for (Arista arista : actual.getAristas()) {
+	    	if(arista.getPeso()<0) {throw new RuntimeException("Prim no admite pesos negativos");}
 	        heap.add(arista);
 	    }
 

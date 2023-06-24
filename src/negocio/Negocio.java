@@ -200,23 +200,17 @@ public class Negocio implements Serializable {
 	}
 
 	/*
-	 * Genera conexion entre todas las ciudades con todas, la anterior
-	 * implementacion era O(n**2)-->ahora O(n**"2/2)
+	 * Genera conexion entre todas las ciudades con todas.
 	 */
 	public void generarGrafoCompleto() {
-		ArrayList<Nodo> nodos = new ArrayList<Nodo>();
-		for (int j = 0; j < grafo.getTamanio(); j++) {
-			Nodo origen = grafo.getNodoNum(j);
+		for(Nodo origen:this.grafo.getNodos()) {
 			origen.inicializarVecinos();
-			for (int i = j + 1; i < grafo.getTamanio(); i++) {
-				Nodo destino = grafo.getNodoNum(i);
-				destino.inicializarVecinos();
-				origen.agregarVecino( destino, this.distanciaEntreNodos(origen, destino));
-				destino.agregarVecino(origen, this.distanciaEntreNodos(origen, destino));
+			for(Nodo destino:this.grafo.getNodos()) {
+				if(!origen.equals(destino)) {
+					origen.agregarVecino(destino,calcularPeso(origen,destino));
+				}
 			}
-			nodos.add(origen);
 		}
-		this.grafo.setNodos(nodos);
 	}
 
 	public void guardarSesion(String fname) {

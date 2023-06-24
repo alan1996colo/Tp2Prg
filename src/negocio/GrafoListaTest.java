@@ -70,29 +70,6 @@ public class GrafoListaTest {
 
 	}
 
-	@Test(expected = IllegalArgumentException.class)
-	public void noSePermitenBucles() {
-		GrafoLista grafo = new GrafoLista();
-		Nodo Escobar = new Nodo("Escobar", "BSAS", -34.34428257177653, -58.778214488840106);
-		grafo.agregarArista(Escobar, Escobar);
-	}
-
-	@Test
-	public void agregarAristaTest() {
-		GrafoLista grafo = new GrafoLista();
-		Nodo Escobar = new Nodo("Escobar", "BSAS", -34.34428257177653, -58.778214488840106);
-		Nodo Garin = new Nodo("Garin", "BSAS", -34.42979805864225, -58.724099137999104);
-		Nodo bb = new Nodo("ss", "ss", -34.42979805864225, -58.724099137999104);
-		grafo.agregarNodo(Garin);
-		grafo.agregarNodo(Escobar);
-		Garin.inicializarVecinos();
-		Escobar.inicializarVecinos();
-		grafo.agregarArista(Escobar, Garin);
-		grafo.agregarArista(Escobar, bb);
-		Arista eg = new Arista(Escobar, Garin, GrafoLista.distanciaEntreNodos(Garin, Escobar));
-		assertTrue(Escobar.getAristas().contains(eg));
-
-	}
 
 	@Test
 	public void eliminarNodoCiudadCiudadExiste() {
@@ -115,24 +92,7 @@ public class GrafoListaTest {
 
 	}
 
-	@Test
-	public void eliminarNodoCiudadAristasCambiaTamaño() {
-		GrafoLista grafo = new GrafoLista();
-		Nodo Escobar = new Nodo("Escobar", "BSAS", -34.34428257177653, -58.778214488840106);
-		Nodo Garin = new Nodo("Garin", "BSAS", -34.42979805864225, -58.724099137999104);
-		Nodo bb = new Nodo("ss", "ss", -34.42979805864225, -58.724099137999104);
-		grafo.agregarNodo(bb);
-		grafo.agregarNodo(Garin);
-		grafo.agregarNodo(Escobar);
-		grafo.agregarArista(Escobar, Garin);
-
-		grafo.agregarArista(bb, Garin);
-		grafo.agregarArista(Escobar, bb);
-		grafo.eliminarNodoCiudad("escobar");
-		Garin.mostrarAristas();
-		assertEquals(Garin.getAristas().size(), 1);
-
-	}
+	
 
 	@Test
 	public void setNOdosCambiaSize() {

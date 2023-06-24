@@ -114,6 +114,17 @@ pd: modificar generar grafo completo, para que la aristas sean igual al precio.
 
 Al parcer el agmPrim no funciona correctamente como pensabamos, estoy revisando si es por algun error del equals o hashCode en alguna clase.
 
+------------------------
+Luego de un largo debug sin sentido del agm, que funcionaba correctamente como inicialmente pensé. Revise la funcion que crea el grafo completo, y ahi se encontraba el bug. Ese metodo solo creaba aristas desde un lado del nodo, y no en las dos direcciones. Actualizado, ahora crea en ambas direcciones pero tarda mas.
 
+Resuelto el problema principal del agm,falta terminar la siguiente lista de tareas para la reentrega:
+- [ ] Los tres parámetros de entrada que intervienen en el cálculo del costo deberían ser ingresados por el usuario, y no estar fijos en el código.
+- [ ] Sería conveniente que se mostrara en pantalla el costo de cada conexión que forma el AGM, para poder ver cómo se desglosa el costo total.
+- [ ] El botón "Unir todos" no debería existir, porque es algo interno de la lógica de negocio. Al usuario final no le agrega ninguna información ver el grafo completo en pantalla.
+- [ ] No está claro qué representa el valor que se muestra en pantalla como "porcentaje de aumento".
+- [ ] Para dibujar una conexión en el mapa, es mejor repetir uno de los dos extremos de la conexión, en lugar de utilizar una coordenada intermedia. Si los puntos están muy lejanos entre sí, en el mapa se ven dos líneas en lugar de una.
+- [ ] Los tests que hicieron sobre AGM no son automáticos, no tienen ningún assert. Sólo tienen prints por consola.
+- [ ] "Negocio" no es un buen nombre para una clase, es muy genérico y no da una idea de cuál es su responsabilidad.
+- [ ] El ingreso de los campos de latitud y longitud en la pantalla están invertidos con respecto al orden habitual.
 
 

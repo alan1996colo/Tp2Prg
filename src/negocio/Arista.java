@@ -41,17 +41,20 @@ public class Arista implements Serializable {
         return result;
     }
     
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
         if (getClass() != obj.getClass()) return false;
-        final Arista other = (Arista)obj;
-        if (!nodoDestino.equals(other.nodoDestino)) return false;
-        if(!nodoOrigen.equals(other.nodoOrigen)) return false;
-       
-        return true;
+        final Arista other = (Arista) obj;
+        if ((nodoDestino.equals(other.nodoDestino) && nodoOrigen.equals(other.nodoOrigen)) ||
+                (nodoDestino.equals(other.nodoOrigen) && nodoOrigen.equals(other.nodoDestino))) {
+            return true;
+        }
+        return false;
     }
+
 
     
     

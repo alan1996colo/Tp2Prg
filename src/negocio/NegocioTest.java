@@ -88,12 +88,18 @@ public class NegocioTest {
 	@Test
 	public void eliminarCiudadEliminaTodasSusAristas() {
 		neg.registrarLocalidad("SanMI", "Buenos Aires", 0, 0);
-		neg.registrarLocalidad("Muñiz", "tucuman", 3, 4);
-		neg.registrarLocalidad("jcp", "tucuman", 3, 4);
+		neg.registrarLocalidad("Muñiz", "tucuman", 0, 0);
+		neg.registrarLocalidad("jcp", "tucuman", 0, 0);
 		neg.agregarConexion("SanMI", "Muñiz");
 		neg.agregarConexion("jcp", "Muñiz");
+		Nodo sanmi=neg.getGrafo().getNodoNum(0);
+		Nodo muniz=neg.getGrafo().getNodoNum(1);
+		Nodo jcp=neg.getGrafo().getNodoNum(2);
+		Arista ar=new Arista(sanmi,muniz,0);
+		Arista ar2=new Arista(jcp,muniz,0);
 		neg.quitarCiudad("Muñiz");
-		neg.MostrarGrafos();
+		
+		assertFalse(neg.getGrafo().getNodoNum(0).getAristas().contains(ar)||neg.getGrafo().getNodoNum(0).getAristas().contains(ar2));
 		
 		
 	}
@@ -112,7 +118,7 @@ public class NegocioTest {
 		neg.registrarLocalidad("SanMI", "Buenos Aires", -34.54335,-58.71229);
 		neg.registrarLocalidad("jcp", "Buenos Aires", -34.51541, -58.76813);
 		neg.agregarConexion("SanMI", "jcp");
-		System.out.println(neg.darCostoEnpesos());
+		//System.out.println(neg.darCostoEnpesos());
 		assertTrue(neg.darCostoEnpesos()>11.8 && neg.darCostoEnpesos()<12);
 	}
 	@Test
@@ -156,9 +162,51 @@ public class NegocioTest {
 		assertTrue(neg.distanciaEntreNodos(bahiaBlanca,marDelPlata)>=418 && neg.distanciaEntreNodos(bahiaBlanca,marDelPlata)<=420);
 		
 	}
+	@Test
+	public void agmDanielBertacciniAristaMasCortaDebeEstarEnElAGM() {
+		Negocio neg= new Negocio(0,0,1);
+		neg.inicializarGrafo();
+		neg.cambiarGrafoPor("pruebaDB.json");
+		neg.generarGrafoCompleto();
+		AGMPrim conexiones=new AGMPrim();
+		List<Arista> todasLasAristas = conexiones.AGMPrim(neg.getGrafo());
+		Nodo acha=neg.getGrafo().buscarNodoCiudad("General Acha");
+		Nodo rosa=neg.getGrafo().buscarNodoCiudad("Santa Rosa");
+		Arista ar=new Arista(acha,rosa,Negocio.distanciaEntreNodos(acha,rosa));
+		Arista ar2=new Arista(rosa,acha,Negocio.distanciaEntreNodos(acha,rosa));
+		assertTrue(todasLasAristas.contains(ar)||todasLasAristas.contains(ar2));
+		
+		
+	}
+	@Test
+	public void agmDanielBertacciniAristaMasLargaNoDebeEstarEnElAGM() {
+		Negocio neg= new Negocio(0,0,1);
+		neg.inicializarGrafo();
+		neg.cambiarGrafoPor("pruebaDB.json");
+		neg.generarGrafoCompleto();
+		AGMPrim conexiones=new AGMPrim();
+		List<Arista> todasLasAristas = conexiones.AGMPrim(neg.getGrafo());
+		Nodo roca=neg.getGrafo().buscarNodoCiudad("General Roca");
+		Nodo tandil=neg.getGrafo().buscarNodoCiudad("Tandil");
+		Arista ar=new Arista(roca,tandil,Negocio.distanciaEntreNodos(roca,tandil));
+		Arista ar2=new Arista(tandil,roca,Negocio.distanciaEntreNodos(tandil,roca));
+		assertFalse(todasLasAristas.contains(ar)||todasLasAristas.contains(ar2));
+		
+	}
+	@Test
+	public void agmDanielBertacciniCantidadDeAristaCantidadDeVerticeMenosUno() {
+		Negocio neg= new Negocio(0,0,1);
+		neg.inicializarGrafo();
+		neg.cambiarGrafoPor("pruebaDB.json");
+		neg.generarGrafoCompleto();
+		AGMPrim conexiones=new AGMPrim();
+		List<Arista> todasLasAristas = conexiones.AGMPrim(neg.getGrafo());
+		assertTrue(todasLasAristas.size()==neg.getGrafo().getTamanio()-1);
+	}
+	
 	
 	@Test
-	public void agmDanielBertacciniTest() {
+	public void agmDanielBertacciniTest() {//test visual.
 		Negocio neg= new Negocio(0,0,1);
 		neg.inicializarGrafo();
 		neg.cambiarGrafoPor("pruebaDB.json");
