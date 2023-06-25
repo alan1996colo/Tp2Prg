@@ -37,7 +37,9 @@ import java.awt.Font;
 public class Presentacion {
 	private JSpinner latitudSpinner;
 	private JSpinner longitudSpinner;
-	private Negocio negocio = new Negocio(20, 200, 10);
+//	private Negocio negocio = new Negocio(20, 200, 10);
+	
+	private Negocio negocio;
 	private JFrame frame;
 	private JMapViewer mapa;
 	private JPanel panelMapa;
@@ -55,6 +57,9 @@ public class Presentacion {
 	private JMenuItem saveMenu;
 	private JMenuItem openMenuItem;
 	private double costoenPesos = 0;
+	private JTextField tf_CostoKm;
+	private JTextField tf_CostoSup300KM;
+	private JTextField tf_CambioProv;
 
 	/**
 	 * Launch the application.
@@ -73,11 +78,28 @@ public class Presentacion {
 	}
 
 	public Presentacion() {
-
+		
 		initialize();
+		inicializarNegocio(); // REVISAR
+		
+		
 		negocio.inicializarGrafo();
+		
+		
+		
 
 		eventos();
+	}
+
+	private void inicializarNegocio() {
+		int CostoPorKM=Integer.parseInt(tf_CostoKm.getText());
+		int CostoSup300=Integer.parseInt(tf_CostoSup300KM.getText());
+		int CostoCambProv=Integer.parseInt(tf_CambioProv.getText());
+		negocio.setCostoPesosxKM(CostoPorKM);
+		negocio.setKmExcedido(CostoSup300);
+		negocio.setCostoFijoprovDistinta(CostoCambProv);
+		
+		
 	}
 
 	private void crearMenuDesplegable() {
@@ -102,7 +124,7 @@ public class Presentacion {
 		botonAgregar.setText("Agregar punto");
 		botonAgregar.setLayout(new FlowLayout());
 		frame.getContentPane().add(botonAgregar);
-		botonAgregar.setBounds(80, 200, 170, 31);
+		botonAgregar.setBounds(80, 252, 170, 31);
 		botonAgregar.setVisible(true);
 
 	}
@@ -114,7 +136,7 @@ public class Presentacion {
 		botonPlanificar.setSize(300, 200);
 		botonPlanificar.setLayout(new FlowLayout());
 		frame.getContentPane().add(botonPlanificar);
-		botonPlanificar.setBounds(80, 500, 170, 31);
+		botonPlanificar.setBounds(80, 537, 170, 31);
 		botonPlanificar.setToolTipText("Haga click para Mostrar la solucion \n(Crea un arbol generador minimo)");
 		botonPlanificar.setVisible(true);
 
@@ -127,7 +149,7 @@ public class Presentacion {
 		botonUnir.setSize(300, 200);
 		botonUnir.setLayout(new FlowLayout());
 		frame.getContentPane().add(botonUnir);
-		botonUnir.setBounds(80, 400, 170, 31);
+		botonUnir.setBounds(80, 447, 170, 31);
 		botonUnir.setToolTipText("Haga click para unir todas las ciudades con todas(Crea un grafo completo)");
 		botonUnir.setVisible(true);
 
@@ -141,7 +163,7 @@ public class Presentacion {
 		conectar.setText("Conectar");
 
 		frame.getContentPane().add(conectar);
-		conectar.setBounds(350, 300, 100, 31);
+		conectar.setBounds(351, 364, 100, 31);
 		conectar.setVisible(true);
 
 	}
@@ -177,11 +199,11 @@ public class Presentacion {
 	private void crearSeccionNombre() {
 		JLabel lblNewLabel = new JLabel("Nombre");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel.setBounds(10, 44, 170, 31);
+		lblNewLabel.setBounds(10, 84, 67, 31);
 		frame.getContentPane().add(lblNewLabel);
 
 		tfName = new JTextField();
-		tfName.setBounds(80, 50, 170, 20);
+		tfName.setBounds(80, 90, 170, 20);
 		frame.getContentPane().add(tfName);
 		tfName.setColumns(10);
 	}
@@ -189,41 +211,78 @@ public class Presentacion {
 	private void crearSeccionPrecios() {
 		labelcosto = new JLabel("Precio de la conexion: " + costoenPesos);
 		labelcosto.setFont(new Font("Tahoma", Font.BOLD, 13));
-		labelcosto.setBounds(400, 44, 300, 31);
+		labelcosto.setBounds(663, 33, 300, 31);
 		labelporcen = new JLabel("Porcentaje aumento: " + negocio.PorcentajeDeAumentoConexion());
 		labelporcen.setFont(new Font("Tahoma", Font.BOLD, 13));
-		labelporcen.setBounds(400, 24, 300, 31);
+		labelporcen.setBounds(663, 8, 300, 31);
 		labelfijo = new JLabel("Costo fijo provincias distintas: " + negocio.CostoFijoPesosProvDiff());
 		labelfijo.setFont(new Font("Tahoma", Font.BOLD, 13));
-		labelfijo.setBounds(400, 64, 300, 31);
+		labelfijo.setBounds(663, 60, 300, 31);
 		frame.getContentPane().add(labelcosto);
 		frame.getContentPane().add(labelporcen);
 		frame.getContentPane().add(labelfijo);
 
 		JLabel lblFondo = new JLabel("Fondo");
 		lblFondo.setIcon(new ImageIcon("src" + File.separator + "ImagenFondo" + File.separator + "Fondo.jpg"));
-		lblFondo.setBounds(0, 0, 1015, 623);
+		lblFondo.setBounds(-22, 472, 1015, 623);
 		frame.getContentPane().add(lblFondo);
+		
+		
+		
+		
+		
+		
+		JLabel lblCostoPorKM = new JLabel("Costo por KM");
+		lblCostoPorKM.setBounds(302, 42, 77, 14);
+		frame.getContentPane().add(lblCostoPorKM);
+		
+		JLabel lblCostoMas300KM = new JLabel("Costo + 300KM");
+		lblCostoMas300KM.setBounds(302, 69, 77, 14);
+		frame.getContentPane().add(lblCostoMas300KM);
+		
+		JLabel lblCostoPorCamProv = new JLabel("Costo por cambio de provincia");
+		lblCostoPorCamProv.setBounds(302, 93, 149, 14);
+		frame.getContentPane().add(lblCostoPorCamProv);
+		
+		tf_CostoKm = new JTextField();
+		tf_CostoKm.setBounds(473, 39, 109, 20);
+		frame.getContentPane().add(tf_CostoKm);
+		tf_CostoKm.setColumns(10);
+		
+		tf_CostoSup300KM = new JTextField();
+		tf_CostoSup300KM.setBounds(473, 66, 109, 20);
+		frame.getContentPane().add(tf_CostoSup300KM);
+		tf_CostoSup300KM.setColumns(10);
+		
+		tf_CambioProv = new JTextField();
+		tf_CambioProv.setBounds(473, 90, 109, 20);
+		frame.getContentPane().add(tf_CambioProv);
+		tf_CambioProv.setColumns(10);
+		
+		JLabel lblNewLabel_4 = new JLabel("Agregar costos");
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNewLabel_4.setBounds(302, 10, 148, 24);
+		frame.getContentPane().add(lblNewLabel_4);
 	}
 
 	private void crearSeccionConexion() {
 		JLabel lblNewLabel = new JLabel("Conexion desde");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel.setBounds(10, 294, 170, 31);
+		lblNewLabel.setBounds(10, 344, 170, 31);
 		frame.getContentPane().add(lblNewLabel);
 
 		tfConexion = new JTextField();
-		tfConexion.setBounds(160, 300, 170, 20);
+		tfConexion.setBounds(160, 350, 170, 20);
 		frame.getContentPane().add(tfConexion);
 		tfConexion.setColumns(10);
 
 		JLabel lblNewLabel2 = new JLabel("Conexion Hacia");
 		lblNewLabel2.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel2.setBounds(10, 320, 170, 31);
+		lblNewLabel2.setBounds(10, 386, 170, 31);
 		frame.getContentPane().add(lblNewLabel2);
 
 		tfConexion2 = new JTextField();
-		tfConexion2.setBounds(160, 326, 170, 20);
+		tfConexion2.setBounds(160, 392, 170, 20);
 		frame.getContentPane().add(tfConexion2);
 		tfConexion2.setColumns(10);
 	}
@@ -231,11 +290,11 @@ public class Presentacion {
 	private void crearSeccionProvincia() {
 		JLabel lblNewLabel = new JLabel("Provincia");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel.setBounds(10, 70, 170, 31);
+		lblNewLabel.setBounds(10, 126, 67, 31);
 		frame.getContentPane().add(lblNewLabel);
 
 		tfProv = new JTextField();
-		tfProv.setBounds(80, 76, 170, 20);
+		tfProv.setBounds(80, 132, 170, 20);
 		frame.getContentPane().add(tfProv);
 		tfProv.setColumns(10);
 	}
@@ -244,12 +303,12 @@ public class Presentacion {
 
 		JLabel lblLongitud = new JLabel("Longitud");
 		lblLongitud.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblLongitud.setBounds(10, 100, 170, 31);
+		lblLongitud.setBounds(10, 168, 58, 31);
 		frame.getContentPane().add(lblLongitud);
 
 		JLabel lblLatitud = new JLabel("Latitud");
 		lblLatitud.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblLatitud.setBounds(10, 150, 170, 31);
+		lblLatitud.setBounds(10, 210, 58, 31);
 		frame.getContentPane().add(lblLatitud);
 
 		// Crear un JSpinner con un SpinnerNumberModel
@@ -261,8 +320,8 @@ public class Presentacion {
 
 		JSpinner.NumberEditor longitudEditor = (JSpinner.NumberEditor) longitudSpinner.getEditor();
 		longitudEditor.getFormat().applyPattern("#0.0000");
-		latitudSpinner.setBounds(80, 151, 170, 31);
-		longitudSpinner.setBounds(80, 101, 170, 31);
+		latitudSpinner.setBounds(80, 211, 170, 31);
+		longitudSpinner.setBounds(80, 169, 170, 31);
 		frame.getContentPane().add(new JLabel("Latitud:"));
 		frame.getContentPane().add(latitudSpinner);
 		frame.getContentPane().add(new JLabel("Longitud:"));
@@ -448,7 +507,7 @@ public class Presentacion {
 	}
 
 	private void initialize() {
-
+		
 		launchWindows();
 		crearSeccionMapa();
 		crearHead();
