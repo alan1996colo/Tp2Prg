@@ -122,7 +122,7 @@ public class Negocio implements Serializable {
 		} else {
 			return false;
 		}
-		// seguir mañana
+	
 
 	}
 
@@ -248,6 +248,7 @@ public class Negocio implements Serializable {
 	public void cambiarGrafoPor(String name) { // OK
 		GestorArchivos gestor = new GestorArchivos();
 		this.grafo.setNodos(gestor.cargarJsonLista(name));
+		this.grafo.incializarVecinosNodos();
 	
 
 	}
@@ -280,6 +281,15 @@ public class Negocio implements Serializable {
 
 	public void setKmExcedido(double kmExcedido) {
 		this.kmExcedido = kmExcedido;
+	}
+	/**Recorre todos los nodos del grafo, si alguno contiene una arista, entonces devuelve true.**/
+	public boolean contieneAlgunArista() {
+		for(Nodo n:this.grafo.getNodos()) {
+			
+			if (n.getAristas() != null && !n.getAristas().isEmpty()) {
+			return true;}
+		}
+		return false;
 	}
 
 	/**Este metodo calcula el precio total del enunciado , considerando todo, y se usa para asignar el peso a las aristas.*/

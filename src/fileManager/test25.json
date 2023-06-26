@@ -1,0 +1,14 @@
+[
+  {
+    "nombreCiudad": "tortuga",
+    "latitud": -33.234233,
+    "longitud": -34.32323,
+    "nombreProvincia": "buenos aires"
+  },
+  {
+    "nombreCiudad": "martin",
+    "latitud": -20.234233,
+    "longitud": -34.3197,
+    "nombreProvincia": "buenos aires"
+  }
+]

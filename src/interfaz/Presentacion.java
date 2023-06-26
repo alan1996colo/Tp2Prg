@@ -382,7 +382,7 @@ public class Presentacion {
 		ArrayList<Coordinate> coordenadas = new ArrayList<Coordinate>();
 		coordenadas.add(getCoord(localidadOrigen));
 		coordenadas.add(getCoord(localidadDestino));
-		coordenadas.add(coordenadaIntermedia(getCoord(localidadOrigen), getCoord(localidadDestino)));
+		coordenadas.add(getCoord(localidadDestino));//reemplazada la coordenada intermedia por repetir la ultima como fue solicitado.
 		MapPolygon poligono = new MapPolygonImpl(coordenadas);
 		mapa.addMapPolygon(poligono);
 
@@ -509,13 +509,23 @@ public class Presentacion {
 		
 
 		botonPlanificar.addActionListener(new ActionListener() {
-
+			//vamos a modificar esto para que solo genere el grafoCompleto si no existian aristas previas.
 			public void actionPerformed(ActionEvent e) {
-				negocio.generarGrafoCompleto();
+				try {
+					if(!negocio.contieneAlgunArista()) {
+						negocio.generarGrafoCompleto();//Si no existe ninguna arista previamente cargada, entonces generamos un grafo completo, de lo contrario usamos las que estaban cargadas previamente.
+					}
+				
 				eliminarVisualmenteLasConexiones();
 				planificar();
 				mostrarDatosPeso();
 				//actualizarPrecio();
+				}
+				catch(Exception exc) {
+					 JOptionPane.showMessageDialog(null, exc, "Error al planificar", JOptionPane.INFORMATION_MESSAGE);
+					
+				}
+				
 
 			}
 
