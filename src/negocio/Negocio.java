@@ -1,6 +1,7 @@
 package negocio;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,11 +11,13 @@ import org.openstreetmap.gui.jmapviewer.Coordinate;
 import fileManager.GestorArchivos;
 
 public class Negocio implements Serializable {
+	private List<Arista> recorrer = new ArrayList<Arista>();
 	private static final long serialVersionUID = 1L;
 	double kmExcedido=300;
 	double aumentoPesosPorcentaje;
 	double costoFijoprovDistinta;
 	double costoPesosxKM;
+	
 	GrafoLista grafo;
 
 	public Negocio(double aumentoPesosPorcentaje, double costoFijoprovDistancia, double costoPesos) {
@@ -29,6 +32,26 @@ public class Negocio implements Serializable {
 		this.costoPesosxKM = costoPesos;
 		this.aumentoPesosPorcentaje = aumentoPesosPorcentaje;
 		this.costoFijoprovDistinta = costoFijoprovDistancia;
+	}
+	
+	public double calcularPesoMinimo() {
+		double valor=0;
+		
+		for(Arista re:recorrer) {
+			valor=valor+re.getPeso();
+			
+		}
+		return valor;
+	}
+	
+	public List<String> dameDatosAGM() {
+		List<String> lista= new  ArrayList<String>();
+		DecimalFormat df = new DecimalFormat("#.00");
+		for(Arista ar : recorrer) {
+			lista.add(ar.getNodoOrigen().getNombreCiudad()+"--->"+ar.getNodoDestino().getNombreCiudad()+", el peso es: "+ df.format(ar.getPeso())+"\n" );
+		}
+		
+		return lista;
 	}
 
 	public void inicializarGrafo() {
@@ -111,11 +134,11 @@ public class Negocio implements Serializable {
 	public List<AbstractMap.SimpleEntry<String, String>> CrearArbolGeneradorMinimo() { // OK
 		List<AbstractMap.SimpleEntry<String, String>> lista = new ArrayList<>();
 
-		List<Arista> recorrer = new ArrayList<Arista>();
+		//List<Arista> recorrer = new ArrayList<Arista>();
 		recorrer = AGMPrim.AGMPrim(this.grafo);
 		for (Arista ar : recorrer) {
-			lista.add(new AbstractMap.SimpleEntry<>(ar.getNodoOrigen().getNombreCiudad(),
-					ar.getNodoDestino().getNombreCiudad()));
+			lista.add(new AbstractMap.SimpleEntry<>(ar.getNodoOrigen().getNombreCiudad(),ar.getNodoDestino().getNombreCiudad()));
+			
 		}
 		return lista;
 	};
@@ -294,5 +317,7 @@ public class Negocio implements Serializable {
 	public GrafoLista getGrafo() {
 		return this.grafo;
 	}
+
+
 
 }
