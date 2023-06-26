@@ -298,7 +298,7 @@ public class Negocio implements Serializable {
 		double distancia =distanciaEntreNodos(nodoOrigen, nodoDestino);
 		double PesoDistanciaPorKilometro = distancia* this.getCostoPesosxKM();
 		
-		if(nodoOrigen.getNombreProvincia()!=nodoDestino.getNombreProvincia()) {
+		if(!nodoOrigen.getNombreProvincia().equals(nodoDestino.getNombreProvincia())) {
 			PesoDistanciaPorKilometro= PesoDistanciaPorKilometro + this.getCostoFijoprovDistinta();
 		}
 		if (distancia>this.getKmExcedido()) {
