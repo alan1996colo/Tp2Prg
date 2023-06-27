@@ -109,5 +109,19 @@ public class GrafoListaTest {
 		assertTrue(antes < grafo.getTamanio());
 
 	}
+	@Test
+	public void agregarAristaTest() {
+		GrafoLista grafo = new GrafoLista();
+		Nodo Escobar = new Nodo("Escobar", "BSAS", -34.34428257177653, -58.778214488840106);
+		Nodo algo = new Nodo("asd", "BSAS", -34.34428257177653, -58.778214488840106);
+		grafo.agregarNodo(algo);
+		grafo.agregarNodo(Escobar);
+		grafo.agregarArista(Escobar, algo, 10);
+		Arista comparar=new Arista(Escobar,algo,10);
+		Arista comparar2=new Arista(algo,Escobar,10);
+		assertTrue(Escobar.getAristas().contains(comparar)&&algo.getAristas().contains(comparar2));
+		
+	}
+	
 
 }

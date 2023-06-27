@@ -234,6 +234,55 @@ public class NegocioTest {
 		System.out.println("Peso total del arbol minimo: " + pesoDelArbolMinimo);
 		
 	}
+	@Test
+	public void calcularPesoTestMarDelPlataAcha624km() {
+		neg.setPrecios(0, 0, 1);
+		neg.registrarLocalidad("mdp", "bsas", -38.0042, -57.5562);
+		neg.registrarLocalidad("acha", "pampa", -37.37698, -64.60431);
+		neg.agregarConexion("mdp", "acha");
+		//AGMPrim conexiones = new AGMPrim();
+	//	List<Arista> todasLasAristas = conexiones.AGMPrim(neg.getGrafo());
+		double peso=AGMPrim.pesoDelGrafo(neg.getGrafo());
+		assertTrue(peso>623.0&&peso<625.0);
+	}
+	@Test
+	public void calcularPesoSupera300kmMarDelPlataAcha() {
+		neg.setPrecios(100, 0, 1);
+		neg.registrarLocalidad("mdp", "bsas", -38.0042, -57.5562);
+		neg.registrarLocalidad("acha", "pampa", -37.37698, -64.60431);
+		neg.agregarConexion("mdp", "acha");
+		double peso=AGMPrim.pesoDelGrafo(neg.getGrafo());
+		assertTrue(peso>1240.0&&peso<1250.0);
+	}
+	@Test
+	public void calcularPesoSoloProvDistinta() {
+		neg.setPrecios(0, 1000, 0);
+		neg.registrarLocalidad("mdp", "bsas", -38.0042, -57.5562);
+		neg.registrarLocalidad("acha", "pampa", -37.37698, -64.60431);
+		neg.agregarConexion("mdp", "acha");
+		double peso=AGMPrim.pesoDelGrafo(neg.getGrafo());
+		assertTrue(peso==1000.0);
+	}
+	@Test
+	public void calcularPesoProvIguales() {
+		neg.setPrecios(0, 1000, 0);
+		neg.registrarLocalidad("mdp", "bsas", -38.0042, -57.5562);
+		neg.registrarLocalidad("acha", "bsas", -37.37698, -64.60431);
+		neg.agregarConexion("mdp", "acha");
+		double peso=AGMPrim.pesoDelGrafo(neg.getGrafo());
+		assertTrue(peso==0.0);
+		
+	}
+	@Test
+	public void calcularPesoTodoAchaMardelPlata624() {
+		neg.setPrecios(100, 1000, 1);//1000+624=1624+1624(100%de 1624)=3248
+		neg.registrarLocalidad("mdp", "bsas", -38.0042, -57.5562);
+		neg.registrarLocalidad("acha", "pampa", -37.37698, -64.60431);
+		neg.agregarConexion("mdp", "acha");
+		double peso=AGMPrim.pesoDelGrafo(neg.getGrafo());
+		assertTrue(peso>=3247&&peso<=3250);
+	}
+	
 	
 	
 }

@@ -31,13 +31,9 @@ import javax.swing.JPanel;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
-import javax.swing.SwingUtilities;
 import javax.swing.ImageIcon;
 import java.awt.Font;
-import javax.swing.JTextPane;
-import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.JTextArea;
-import javax.swing.JList;
 import javax.swing.JScrollPane;
 
 public class Presentacion {
@@ -56,7 +52,6 @@ public class Presentacion {
 	private JButton conectar;
 	private JMenuItem saveMenu;
 	private JMenuItem openMenuItem;
-	private double costoenPesos = 0;
 	private JTextField tf_CostoKm;
 	private JTextField tf_CostoSup300KM;
 	private JTextField tf_CambioProv;
@@ -331,26 +326,6 @@ public class Presentacion {
 		this.mapa.repaint();
 	}
 
-//	private void actualizarPrecio() {
-//		SwingUtilities.invokeLater(() -> {
-//			// Actualizar el texto del JLabel
-//			labelcosto.setText("El precio es" + negocio.darCostoEnpesos());
-//			labelporcen.setText("El porcentaje de aumento es" + negocio.PorcentajeDeAumentoConexion());
-//			labelfijo.setText("El costo fijo es es" + negocio.CostoFijoPesosProvDiff());
-//
-//		});
-//	}
-
-//	private void actualizarPrecioSinPlanificar() {
-//		SwingUtilities.invokeLater(() -> {
-//			// Actualizar el texto del JLabel
-//			labelcosto.setText("El precio es" + negocio.darCostoEnpesosSinPLanificar());
-//			labelporcen.setText("El porcentaje de aumento es" + negocio.PorcentajeDeAumentoConexionSinPlanificar());
-//			labelfijo.setText("El costo fijo es es" + negocio.CostoFijoPesosProvDiff());
-//
-//		});
-//	}
-
 	public void planificar() {
 		for (AbstractMap.SimpleEntry<String, String> entrada : negocio.CrearArbolGeneradorMinimo()) {
 			dibujarConexion(entrada.getKey(), entrada.getValue());
@@ -366,17 +341,6 @@ public class Presentacion {
 		mapa.addMapMarker(punto);
 	}
 
-	private void dibujarTodasLasConexiones() {
-		ArrayList<String> todas = negocio.todasLasLocalidades();
-		for (String origen : todas) {
-			for (String destino : todas) {
-				if (!origen.equals(destino)) {
-					dibujarConexion(origen, destino);
-				}
-			}
-		}
-
-	}
 
 	private void dibujarConexion(String localidadOrigen, String localidadDestino) {
 		ArrayList<Coordinate> coordenadas = new ArrayList<Coordinate>();
@@ -459,10 +423,7 @@ public class Presentacion {
 				String destino = tfConexion2.getText();
 				System.out.println("Agregar conexion fue: " + negocio.agregarConexion(origen, destino));
 				dibujarConexion(origen, destino);
-				//actualizarPrecioSinPlanificar();
-				// Dentro de un evento o hilo diferente al de la UI
-
-			}
+				}
 		});
 		
 		

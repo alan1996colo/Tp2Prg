@@ -1,16 +1,15 @@
 package negocio;
 
 import java.io.Serializable;
-import java.text.DecimalFormat;
 import java.util.*;
-import negocio.Negocio;
+
 
 
 public class GrafoLista implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	private List<Nodo> nodos;// lista de nodos
-	private Negocio negocio;
+	
 
 	public GrafoLista() {// OK
 		this.nodos = new ArrayList<>();
